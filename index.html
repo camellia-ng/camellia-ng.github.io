@@ -39,12 +39,11 @@
             </a>
             
             <nav class="nav-menu" id="navMenu">
-                <a href="#about" class="nav-link active" id="navLinkAbout"><i class="fa-regular fa-user"></i> About</a>
+                <a href="#hero" class="nav-link active" id="navLinkAbout"><i class="fa-regular fa-user"></i> About</a>
                 <a href="#education" class="nav-link" id="navLinkEducation"><i class="fa-solid fa-graduation-cap"></i> Education</a>
                 <a href="#skills" class="nav-link" id="navLinkSkills"><i class="fa-solid fa-code"></i> Skills</a>
                 <a href="#projects" class="nav-link" id="navLinkProjects"><i class="fa-solid fa-chart-pie"></i> Projects</a>
                 <a href="resume/" class="nav-link" id="navLinkResume"><i class="fa-regular fa-file-lines"></i> Resume</a>
-                <a href="#contact" class="nav-link" id="navLinkContact"><i class="fa-regular fa-envelope"></i> Contact</a>
             </nav>
 
             <div class="nav-actions">
@@ -84,7 +83,7 @@
                     <div class="hero-actions">
                         <a href="#projects" class="btn btn-primary" id="btnHeroProjects"><i class="fa-solid fa-arrow-right"></i> View Projects</a>
                         <a href="resume/" class="btn btn-secondary" id="btnHeroCV"><i class="fa-regular fa-file-lines"></i> View CV</a>
-                        <a href="#contact" class="btn btn-outline" id="btnHeroContact"><i class="fa-regular fa-envelope"></i> Contact Me</a>
+                        <a href="mailto:nguyenthithugiang3105@gmail.com" class="btn btn-outline" id="btnHeroContact"><i class="fa-regular fa-envelope"></i> Email Me</a>
                     </div>
                     <div class="hero-socials">
                         <a href="https://www.linkedin.com/in/giang-ntt/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
@@ -98,64 +97,27 @@
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- About & Objectives Section -->
-        <section class="about-section section-padding" id="about">
-            <div class="section-container">
-                <div class="section-header">
-                    <span class="section-subtitle">About Me</span>
-                    <h2 class="section-title">Career Objective</h2>
-                    <div class="title-underline"></div>
-                </div>
-                
-                <div class="about-grid">
-                    <div class="about-card glass" id="objectiveCard">
-                        <div class="card-icon-container">
-                            <i class="fa-solid fa-bullseye"></i>
-                        </div>
-                        <h3>Vision & Direction</h3>
-                        <p class="about-objective-text">
-                            Driven by an analytical mindset cultivated in the dynamic environment of <strong>Foreign Trade University</strong>, my short-term goal is to secure a <strong>Data Analyst</strong> internship or entry-level position. I am eager to apply my technical skills (SQL, Python, Power BI) to clean, model, and visualize business data.
-                        </p>
-                        <p class="about-objective-text">
-                            In the long term, I aspire to grow into a <strong>Senior Business Analytics Specialist</strong> or <strong>Data Scientist</strong>, focusing on customer behavior analysis, market research, and operational optimization, helping organizations build sustainable competitive advantages through data-driven strategies.
-                        </p>
+            
+            <!-- Merged Career Objective Card -->
+            <div class="section-container" style="margin-top: 3rem; position: relative; z-index: 2;">
+                <div class="hero-objective-card glass" style="padding: 2.5rem; border-radius: var(--border-radius-lg); display: grid; grid-template-columns: auto 1fr; gap: 2rem; align-items: center;">
+                    <div class="card-icon-container" style="margin-bottom: 0; width: 50px; height: 50px; border-radius: var(--border-radius-md); background: var(--accent-gradient); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.5rem; flex-shrink: 0;">
+                        <i class="fa-solid fa-bullseye"></i>
                     </div>
-                    
-                    <div class="about-quick-info grid-two-cols">
-                        <div class="info-box glass">
-                            <div class="info-icon"><i class="fa-solid fa-user-tag"></i></div>
-                            <div>
-                                <h4>Full Name</h4>
-                                <p>Nguyễn Thị Thu Giang</p>
-                            </div>
-                        </div>
-                        <div class="info-box glass">
-                            <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
-                            <div>
-                                <h4>Location</h4>
-                                <p>Hanoi, Vietnam</p>
-                            </div>
-                        </div>
-                        <div class="info-box glass">
-                            <div class="info-icon"><i class="fa-regular fa-envelope"></i></div>
-                            <div>
-                                <h4>Email</h4>
-                                <p><a href="mailto:nguyenthithugiang3105@gmail.com" class="info-link">nguyenthithugiang3105@gmail.com</a></p>
-                            </div>
-                        </div>
-                        <div class="info-box glass">
-                            <div class="info-icon"><i class="fa-brands fa-linkedin"></i></div>
-                            <div>
-                                <h4>LinkedIn</h4>
-                                <p><a href="https://www.linkedin.com/in/giang-ntt/" target="_blank" rel="noopener noreferrer" class="info-link">giang-ntt</a></p>
-                            </div>
-                        </div>
+                    <div>
+                        <h3 style="font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-primary);">Career Objective</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; text-align: justify; margin-bottom: 0.5rem;">
+                            Driven by an analytical mindset cultivated at <strong>Foreign Trade University</strong>, my short-term goal is to secure a <strong>Data Analyst</strong> internship or entry-level position where I can apply SQL, Python, and Power BI to clean, model, and visualize business data.
+                        </p>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; text-align: justify; margin-bottom: 0;">
+                            In the long term, I aspire to grow into a <strong>Senior Business Analytics Specialist</strong> or <strong>Data Scientist</strong>, focusing on customer behavior analysis, market research, and operational optimization to help organizations build sustainable competitive advantages through data-driven strategies.
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
+
+
 
         <!-- Education & Certifications Section -->
         <section class="edu-cert-section section-padding" id="education">
@@ -394,72 +356,7 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section class="contact-section section-padding" id="contact">
-            <div class="section-container">
-                <div class="section-header">
-                    <span class="section-subtitle">Get In Touch</span>
-                    <h2 class="section-title">Contact Me</h2>
-                    <div class="title-underline"></div>
-                </div>
-                
-                <div class="contact-grid">
-                    <!-- Contact Cards -->
-                    <div class="contact-info-panel">
-                        <div class="contact-item-card glass">
-                            <div class="contact-icon-box"><i class="fa-solid fa-location-dot"></i></div>
-                            <div class="contact-text-box">
-                                <h3>Location</h3>
-                                <p>Hanoi, Vietnam</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item-card glass">
-                            <div class="contact-icon-box"><i class="fa-regular fa-envelope"></i></div>
-                            <div class="contact-text-box">
-                                <h3>Email</h3>
-                                <p><a href="mailto:nguyenthithugiang3105@gmail.com">nguyenthithugiang3105@gmail.com</a></p>
-                            </div>
-                        </div>
 
-                        <div class="contact-item-card glass">
-                            <div class="contact-icon-box"><i class="fa-brands fa-linkedin-in"></i></div>
-                            <div class="contact-text-box">
-                                <h3>LinkedIn</h3>
-                                <p><a href="https://www.linkedin.com/in/giang-ntt/" target="_blank" rel="noopener noreferrer">linkedin.com/in/giang-ntt/</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Contact Form -->
-                    <div class="contact-form-panel glass">
-                        <form id="contactForm">
-                            <div class="form-group-row">
-                                <div class="form-group">
-                                    <label for="formName">Full Name</label>
-                                    <input type="text" id="formName" name="name" required placeholder="Your name...">
-                                </div>
-                                <div class="form-group">
-                                    <label for="formEmail">Email</label>
-                                    <input type="email" id="formEmail" name="email" required placeholder="name@example.com">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="formSubject">Subject</label>
-                                <input type="text" id="formSubject" name="subject" required placeholder="Topic of discussion...">
-                            </div>
-                            <div class="form-group">
-                                <label for="formMessage">Message Details</label>
-                                <textarea id="formMessage" name="message" rows="5" required placeholder="Your message here..."></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary btn-block" id="btnSubmitForm">
-                                <i class="fa-regular fa-paper-plane"></i> Send Message
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
     <!-- Footer -->
@@ -470,11 +367,10 @@
                 <p class="footer-tech-tag">Built with HTML, CSS, JavaScript • Hosted on GitHub Pages</p>
             </div>
             <div class="footer-right">
-                <a href="#about">About</a>
+                <a href="#hero">About</a>
                 <a href="#education">Education</a>
                 <a href="#skills">Skills</a>
                 <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
             </div>
         </div>
     </footer>
