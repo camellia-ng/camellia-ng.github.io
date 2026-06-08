@@ -3,8 +3,8 @@
    ========================================================================== */
 :root {
     /* Fonts */
-    --font-heading: 'Outfit', sans-serif;
-    --font-body: 'Plus Jakarta Sans', sans-serif;
+    --font-heading: 'Inter', sans-serif;
+    --font-body: 'Inter', sans-serif;
 
     /* Spacing */
     --section-padding-y: 6rem;
@@ -29,7 +29,7 @@
     --accent-gradient: linear-gradient(135deg, var(--accent-secondary) 0%, var(--accent-primary) 100%);
     --accent-gradient-hover: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
     --glass-bg: rgba(18, 22, 32, 0.7);
-    --glass-border: rgba(255, 255, 255, 0.06);
+    --glass-border: rgba(255, 255, 255, 0.15);
     --glass-shadow: rgba(0, 0, 0, 0.3);
     --card-hover-bg: rgba(26, 31, 46, 0.8);
     --card-hover-border: rgba(0, 242, 254, 0.3);
@@ -51,7 +51,7 @@
     --accent-gradient: linear-gradient(135deg, var(--accent-secondary) 0%, var(--accent-primary) 100%);
     --accent-gradient-hover: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
     --glass-bg: rgba(255, 255, 255, 0.75);
-    --glass-border: rgba(15, 23, 42, 0.08);
+    --glass-border: rgba(15, 23, 42, 0.16);
     --glass-shadow: rgba(15, 23, 42, 0.06);
     --card-hover-bg: rgba(239, 242, 247, 0.7);
     --card-hover-border: rgba(37, 99, 235, 0.3);
@@ -104,21 +104,21 @@ ul {
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 8px;
+    height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-    background: var(--bg-primary);
+    background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--bg-tertiary);
-    border: 2px solid var(--bg-primary);
-    border-radius: var(--border-radius-sm);
+    background: var(--text-muted);
+    border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--text-muted);
+    background: var(--accent-primary);
 }
 
 /* Selection style */
