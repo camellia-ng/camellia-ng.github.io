@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume | Nguyễn Thị Thu Giang</title>
+    
+    <!-- Google Fonts for Print & Web -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Georgia:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ==========================================================================
+           HARVARD RESUME STYLING
+           ========================================================================== */
+        :root {
+            --primary-color: #111111;
+            --secondary-color: #444444;
+            --border-color: #999999;
+            --accent-color: #a51c30; /* Harvard Crimson */
+            --bg-web: #f4f6f9;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Georgia', Times, serif;
+            color: var(--primary-color);
+            background-color: var(--bg-web);
+            line-height: 1.4;
+            padding: 2rem 1rem;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        /* Web Interface Controls */
+        .controls-container {
+            max-width: 800px;
+            margin: 0 auto 1.5rem auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .btn-control {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.2rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: var(--secondary-color);
+            background-color: #ffffff;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-control:hover {
+            color: var(--primary-color);
+            background-color: #f9fafb;
+            border-color: #9ca3af;
+            transform: translateY(-1px);
+        }
+
+        .btn-primary-control {
+            color: #ffffff;
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+
+        .btn-primary-control:hover {
+            color: #ffffff;
+            background-color: #821424;
+            border-color: #821424;
+        }
+
+        /* Resume Page Container */
+        .resume-page {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 3.5rem 3rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            border: 1px solid #e5e7eb;
+        }
+
+        /* Header Section */
+        .resume-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .candidate-name {
+            font-size: 2.2rem;
+            font-weight: normal;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .contact-info {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .contact-info span {
+            margin: 0 0.4rem;
+        }
+
+        .contact-info a {
+            color: inherit;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+
+        .contact-info a:hover {
+            border-bottom-color: var(--secondary-color);
+        }
+
+        /* Section Formatting */
+        .resume-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title-container {
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.1rem;
+        }
+
+        .section-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--primary-color);
+        }
+
+        /* Timeline Entries */
+        .resume-entry {
+            margin-bottom: 1rem;
+        }
+
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .entry-subheader {
+            display: flex;
+            justify-content: space-between;
+            font-style: italic;
+            font-size: 0.95rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.4rem;
+        }
+
+        .entry-title {
+            font-weight: bold;
+        }
+
+        .entry-org {
+            font-weight: bold;
+        }
+
+        .entry-date, .entry-location {
+            font-weight: normal;
+            font-style: normal;
+            font-size: 0.95rem;
+        }
+
+        /* Bullet Points description */
+        .entry-bullets {
+            list-style-type: disc;
+            margin-left: 1.25rem;
+            font-size: 0.95rem;
+            color: var(--primary-color);
+        }
+
+        .entry-bullets li {
+            margin-bottom: 0.3rem;
+            text-align: justify;
+        }
+
+        /* Skills Layout */
+        .skills-entry {
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .skills-category {
+            font-weight: bold;
+        }
+
+        /* ==========================================================================
+           PRINT STYLING
+           ========================================================================== */
+        @media print {
+            body {
+                background-color: #ffffff;
+                padding: 0;
+                color: #000000;
+            }
+
+            .controls-container {
+                display: none !important;
+            }
+
+            .resume-page {
+                box-shadow: none !important;
+                border: none !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                max-width: 100% !important;
+                width: 100% !important;
+            }
+
+            .candidate-name {
+                font-size: 2rem;
+            }
+
+            /* Prevent page breaks inside entries */
+            .resume-entry {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Web Interface Controls -->
+    <div class="controls-container">
+        <a href="../" class="btn-control"><i class="fa-solid fa-arrow-left"></i> Back to Portfolio</a>
+        <button class="btn-control btn-primary-control" onclick="window.print()"><i class="fa-solid fa-print"></i> Print CV / Save PDF</button>
+    </div>
+
+    <!-- Harvard Resume Page -->
+    <div class="resume-page">
+        <!-- Header -->
+        <header class="resume-header">
+            <h1 class="candidate-name">Nguyễn Thị Thu Giang</h1>
+            <div class="contact-info">
+                <span>Hanoi, Vietnam</span>
+                <span>|</span>
+                <span><a href="mailto:nguyenthithugiang3105@gmail.com">nguyenthithugiang3105@gmail.com</a></span>
+                <span>|</span>
+                <span><a href="https://www.linkedin.com/in/giang-ntt/" target="_blank" rel="noopener noreferrer">linkedin.com/in/giang-ntt</a></span>
+            </div>
+        </header>
+
+        <!-- Education Section -->
+        <section class="resume-section">
+            <div class="section-title-container">
+                <h2 class="section-title">Education</h2>
+            </div>
+            
+            <div class="resume-entry">
+                <div class="entry-header">
+                    <span class="entry-org">FOREIGN TRADE UNIVERSITY</span>
+                    <span class="entry-location">Hanoi, Vietnam</span>
+                </div>
+                <div class="entry-subheader">
+                    <span class="entry-title">Bachelor of International Economics (Expected Graduation: 2027)</span>
+                    <span class="entry-date">2023 – Present</span>
+                </div>
+                <ul class="entry-bullets">
+                    <li>Cumulative Grade Point Average (GPA): <strong>3.63 / 4.00</strong></li>
+                    <li>Awarded Academic Scholarship for outstanding academic performance.</li>
+                    <li><strong>Relevant Coursework:</strong> Business Statistics, Econometrics, Data Analysis, Microeconomics, Macroeconomics, International Trade.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="resume-section">
+            <div class="section-title-container">
+                <h2 class="section-title">Academic & Leadership Experience</h2>
+            </div>
+            
+            <div class="resume-entry">
+                <div class="entry-header">
+                    <span class="entry-org">FOREIGN TRADE UNIVERSITY STUDENT ASSOCIATION</span>
+                    <span class="entry-location">Hanoi, Vietnam</span>
+                </div>
+                <div class="entry-subheader">
+                    <span class="entry-title">Active Member & Data Assistant</span>
+                    <span class="entry-date">2024 – Present</span>
+                </div>
+                <ul class="entry-bullets">
+                    <li>Collaborated in organizing 5+ student club events, managing participant registration and attendance datasets.</li>
+                    <li>Analyzed feedback survey data from 300+ attendees using Excel PivotTables to identify participant satisfaction drivers, contributing to a 15% increase in subsequent event attendance.</li>
+                    <li>Synthesized operational metrics and created quantitative progress reports presented to the Executive Committee.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="resume-section">
+            <div class="section-title-container">
+                <h2 class="section-title">Analytics Projects</h2>
+            </div>
+            
+            <!-- Project 1 -->
+            <div class="resume-entry">
+                <div class="entry-header">
+                    <span class="entry-org">E-COMMERCE BUSINESS PERFORMANCE DASHBOARD</span>
+                    <span class="entry-location">Power BI & Excel</span>
+                </div>
+                <div class="entry-subheader">
+                    <span class="entry-title">Independent Project</span>
+                    <span class="entry-date">2025</span>
+                </div>
+                <ul class="entry-bullets">
+                    <li>Engineered a relational data model linking sales facts with dimensional branches, products, and customer profiles over 50,000+ transactional records.</li>
+                    <li>Cleaned and parsed raw tables in Power Query, establishing robust pipelines to handle nulls and format discrepancies.</li>
+                    <li>Authored dynamic DAX formulas (YoY sales, running totals, and regional profit margins) to populate interactive charts.</li>
+                    <li>Isolated an 8.5% return rate within the Fashion category and proposed actionable inventory and stock adjustments to senior stakeholders.</li>
+                </ul>
+            </div>
+            
+            <!-- Project 2 -->
+            <div class="resume-entry">
+                <div class="entry-header">
+                    <span class="entry-org">CUSTOMER SEGMENTATION & RFM CLUSTERING</span>
+                    <span class="entry-location">Python (Pandas & Scikit-learn)</span>
+                </div>
+                <div class="entry-subheader">
+                    <span class="entry-title">Data Analytics Project</span>
+                    <span class="entry-date">2025</span>
+                </div>
+                <ul class="entry-bullets">
+                    <li>Constructed an RFM (Recency, Frequency, Monetary) matrix by aggregation of retail transactions using Python Pandas.</li>
+                    <li>Standardized variables and applied the K-Means clustering algorithm, validating the model with Silhouette Scores and the Elbow Method to identify 4 customer clusters.</li>
+                    <li>Discovered that the VIP segment constituted only 8% of customers but yielded 35% of total revenue.</li>
+                    <li>Formulated tailored CRM strategies, proposing personalized vouchers to the At-Risk group to improve customer retention.</li>
+                </ul>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="resume-entry">
+                <div class="entry-header">
+                    <span class="entry-org">EMPLOYEE TURNOVER INVESTIGATION</span>
+                    <span class="entry-location">PostgreSQL & Tableau</span>
+                </div>
+                <div class="entry-subheader">
+                    <span class="entry-title">Database & Visual Analytics Project</span>
+                    <span class="entry-date">2025</span>
+                </div>
+                <ul class="entry-bullets">
+                    <li>Designed an HR database schema and formulated complex SQL queries utilizing Common Table Expressions (CTEs), Subqueries, and Window Functions to compute employee attrition ratios.</li>
+                    <li>Investigated statistical correlations between monthly compensation, weekly overtime hours, and turnover rate.</li>
+                    <li>Found that personnel working 15+ hours of overtime per week with below-average pay left the firm at a 3x higher rate.</li>
+                    <li>Built and delivered a Tableau storytelling dashboard to outline department-specific retention recommendations.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Technical Skills Section -->
+        <section class="resume-section">
+            <div class="section-title-container">
+                <h2 class="section-title">Skills & Credentials</h2>
+            </div>
+            
+            <div class="skills-entry">
+                <span class="skills-category">Technical Stack:</span> SQL (PostgreSQL, MySQL), Python (Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn), Power BI, Tableau, Advanced MS Excel.
+            </div>
+            
+            <div class="skills-entry">
+                <span class="skills-category">Certifications:</span> Microsoft Office Specialist (MOS) Excel Associate, MOS Word Associate, MOS PowerPoint Associate.
+            </div>
+
+            <div class="skills-entry">
+                <span class="skills-category">Languages:</span> Vietnamese (Native), English (Fluent / Professional Working).
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>
