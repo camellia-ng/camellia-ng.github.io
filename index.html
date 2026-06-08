@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyễn Thị Thu Giang | Data Analyst Portfolio</title>
+    
+    <!-- Meta tags for SEO -->
+    <meta name="description" content="Professional portfolio of Nguyễn Thị Thu Giang - Foreign Trade University student aspiring to be a Data Analyst. Explore SQL, Python, Excel, and Power BI projects.">
+    <meta name="keywords" content="Nguyễn Thị Thu Giang, Data Analyst, Portfolio, Foreign Trade University, FTU, SQL, Python, Power BI, Excel, MOS">
+    <meta name="author" content="Nguyễn Thị Thu Giang">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Nguyễn Thị Thu Giang | Data Analyst Portfolio">
+    <meta property="og:description" content="Professional portfolio of Nguyễn Thị Thu Giang - Foreign Trade University student aspiring to be a Data Analyst.">
+    <meta property="og:image" content="assets/avatar.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Custom Cursor Effect -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Navigation Header -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo" id="navLogo">
+                <span class="logo-accent">&lt;</span>Giang<span class="logo-accent">.Data /&gt;</span>
+            </a>
+            
+            <nav class="nav-menu" id="navMenu">
+                <a href="#about" class="nav-link active" id="navLinkAbout"><i class="fa-regular fa-user"></i> About</a>
+                <a href="#education" class="nav-link" id="navLinkEducation"><i class="fa-solid fa-graduation-cap"></i> Education</a>
+                <a href="#skills" class="nav-link" id="navLinkSkills"><i class="fa-solid fa-code"></i> Skills</a>
+                <a href="#projects" class="nav-link" id="navLinkProjects"><i class="fa-solid fa-chart-pie"></i> Projects</a>
+                <a href="#contact" class="nav-link" id="navLinkContact"><i class="fa-regular fa-envelope"></i> Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <i class="fa-solid fa-moon moon-icon"></i>
+                    <i class="fa-solid fa-sun sun-icon"></i>
+                </button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section" id="hero">
+            <div class="hero-bg-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+            </div>
+            
+            <div class="section-container hero-grid">
+                <div class="hero-content">
+                    <div class="hero-tag" id="heroTag">Hello, I am</div>
+                    <h1 class="hero-name" id="heroName">Nguyễn Thị Thu Giang</h1>
+                    <div class="hero-title-container">
+                        <span class="hero-title" id="heroTitle">Aspiring Data Analyst</span>
+                        <span class="typed-cursor">|</span>
+                    </div>
+                    <p class="hero-description" id="heroDesc">
+                        A Foreign Trade University student passionate about uncovering hidden insights from data. I combine analytical thinking with SQL, Python, and Power BI to transform complex datasets into interactive dashboards and drive data-informed decisions.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary" id="btnHeroProjects"><i class="fa-solid fa-arrow-right"></i> View Projects</a>
+                        <a href="#contact" class="btn btn-secondary" id="btnHeroContact"><i class="fa-regular fa-envelope"></i> Contact Me</a>
+                    </div>
+                    <div class="hero-socials">
+                        <a href="https://www.linkedin.com/in/giang-ntt/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="mailto:nguyenthithugiang3105@gmail.com" class="social-icon" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="hero-image-container">
+                    <div class="avatar-glow-ring"></div>
+                    <div class="avatar-frame">
+                        <img src="assets/avatar.png" alt="Nguyễn Thị Thu Giang" class="avatar-img" id="avatarImg">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About & Objectives Section -->
+        <section class="about-section section-padding" id="about">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-subtitle">About Me</span>
+                    <h2 class="section-title">Career Objective</h2>
+                    <div class="title-underline"></div>
+                </div>
+                
+                <div class="about-grid">
+                    <div class="about-card glass" id="objectiveCard">
+                        <div class="card-icon-container">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
+                        <h3>Vision & Direction</h3>
+                        <p class="about-objective-text">
+                            Driven by an analytical mindset cultivated in the dynamic environment of <strong>Foreign Trade University</strong>, my short-term goal is to secure a <strong>Data Analyst</strong> internship or entry-level position. I am eager to apply my technical skills (SQL, Python, Power BI) to clean, model, and visualize business data.
+                        </p>
+                        <p class="about-objective-text">
+                            In the long term, I aspire to grow into a <strong>Senior Business Analytics Specialist</strong> or <strong>Data Scientist</strong>, focusing on customer behavior analysis, market research, and operational optimization, helping organizations build sustainable competitive advantages through data-driven strategies.
+                        </p>
+                    </div>
+                    
+                    <div class="about-quick-info grid-two-cols">
+                        <div class="info-box glass">
+                            <div class="info-icon"><i class="fa-solid fa-user-tag"></i></div>
+                            <div>
+                                <h4>Full Name</h4>
+                                <p>Nguyễn Thị Thu Giang</p>
+                            </div>
+                        </div>
+                        <div class="info-box glass">
+                            <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Hanoi, Vietnam</p>
+                            </div>
+                        </div>
+                        <div class="info-box glass">
+                            <div class="info-icon"><i class="fa-regular fa-envelope"></i></div>
+                            <div>
+                                <h4>Email</h4>
+                                <p><a href="mailto:nguyenthithugiang3105@gmail.com" class="info-link">nguyenthithugiang3105@gmail.com</a></p>
+                            </div>
+                        </div>
+                        <div class="info-box glass">
+                            <div class="info-icon"><i class="fa-brands fa-linkedin"></i></div>
+                            <div>
+                                <h4>LinkedIn</h4>
+                                <p><a href="https://www.linkedin.com/in/giang-ntt/" target="_blank" rel="noopener noreferrer" class="info-link">giang-ntt</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education & Certifications Section -->
+        <section class="edu-cert-section section-padding" id="education">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-subtitle">Background</span>
+                    <h2 class="section-title">Education & Certifications</h2>
+                    <div class="title-underline"></div>
+                </div>
+                
+                <div class="edu-cert-grid">
+                    <!-- Education Column -->
+                    <div class="edu-column">
+                        <h3 class="column-title"><i class="fa-solid fa-graduation-cap"></i> Education</h3>
+                        <div class="timeline">
+                            <div class="timeline-item glass">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-date">2023 - 2027 (Expected)</div>
+                                <h4 class="timeline-title">Foreign Trade University</h4>
+                                <p class="timeline-subtitle">Major in International Economics</p>
+                                <div class="timeline-highlights">
+                                    <div class="highlight-badge"><i class="fa-solid fa-star"></i> GPA: <strong>3.63 / 4.00</strong></div>
+                                    <div class="highlight-badge"><i class="fa-solid fa-award"></i> Academic Scholarship</div>
+                                </div>
+                                <p class="timeline-desc">
+                                    The energetic environment at Foreign Trade University has sharpened my logical reasoning, business problem-solving skills, and ability to present and collaborate in teams. I actively choose coursework focused on Business Statistics, Econometrics, and Data Analysis.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Certifications Column -->
+                    <div class="cert-column">
+                        <h3 class="column-title"><i class="fa-solid fa-award"></i> Office Productivity Certifications</h3>
+                        <div class="cert-card glass">
+                            <div class="cert-badge-container">
+                                <img src="assets/mos_badges.png" alt="Microsoft Office Specialist Badges" class="cert-badge-img" id="certBadgeImg">
+                            </div>
+                            <div class="cert-details">
+                                <h4 class="cert-name">Microsoft Office Specialist (MOS)</h4>
+                                <p class="cert-issuer">Issued by: Microsoft</p>
+                                <ul class="cert-list">
+                                    <li><span class="check-icon"><i class="fa-solid fa-circle-check"></i></span> <strong>MOS Excel Associate</strong> - Proficient in advanced data processing, PivotTable, complex logical functions, and basic visualization.</li>
+                                    <li><span class="check-icon"><i class="fa-solid fa-circle-check"></i></span> <strong>MOS Word Associate</strong> - Creating and formatting professional, international-standard reports.</li>
+                                    <li><span class="check-icon"><i class="fa-solid fa-circle-check"></i></span> <strong>MOS PowerPoint Associate</strong> - Designing structured, persuasive presentation slides for stakeholders.</li>
+                                </ul>
+                                <button class="btn btn-sm btn-outline btn-cert-details" id="btnCertModal">
+                                    <i class="fa-solid fa-expand"></i> Expand Credentials
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="skills-section section-padding" id="skills">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-subtitle">Competence</span>
+                    <h2 class="section-title">Technical & Soft Skills</h2>
+                    <div class="title-underline"></div>
+                </div>
+                
+                <div class="skills-grid">
+                    <!-- Technical Skills -->
+                    <div class="skills-category glass">
+                        <h3 class="skills-cat-title"><i class="fa-solid fa-laptop-code"></i> Technical Skills (Data Stack)</h3>
+                        <div class="skills-list">
+                            <!-- Skill Item: SQL -->
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name"><i class="fa-solid fa-database"></i> SQL (PostgreSQL / MySQL)</span>
+                                    <span class="skill-percentage">80%</span>
+                                </div>
+                                <div class="skill-bar-bg">
+                                    <div class="skill-bar-fill fill-sql"></div>
+                                </div>
+                                <p class="skill-desc">Advanced queries (Subqueries, Joins, Window Functions, CTEs) to extract and manipulate data.</p>
+                            </div>
+                            
+                            <!-- Skill Item: Python -->
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name"><i class="fa-brands fa-python"></i> Python (Pandas / Seaborn)</span>
+                                    <span class="skill-percentage">70%</span>
+                                </div>
+                                <div class="skill-bar-bg">
+                                    <div class="skill-bar-fill fill-python"></div>
+                                </div>
+                                <p class="skill-desc">Data wrangling, descriptive statistical analysis, and data visualization.</p>
+                            </div>
+
+                            <!-- Skill Item: Power BI -->
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name"><i class="fa-solid fa-chart-line"></i> Power BI / Tableau</span>
+                                    <span class="skill-percentage">75%</span>
+                                </div>
+                                <div class="skill-bar-bg">
+                                    <div class="skill-bar-fill fill-powerbi"></div>
+                                </div>
+                                <p class="skill-desc">Data modeling, interactive dashboard design, and writing DAX expressions.</p>
+                            </div>
+
+                            <!-- Skill Item: Excel -->
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name"><i class="fa-regular fa-file-excel"></i> Advanced Excel (MOS)</span>
+                                    <span class="skill-percentage">90%</span>
+                                </div>
+                                <div class="skill-bar-bg">
+                                    <div class="skill-bar-fill fill-excel"></div>
+                                </div>
+                                <p class="skill-desc">PivotTables, PivotCharts, Power Query workflows, and automated reporting.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Soft & Business Skills -->
+                    <div class="skills-category glass">
+                        <h3 class="skills-cat-title"><i class="fa-solid fa-brain"></i> Analytical Mindset & Soft Skills</h3>
+                        <div class="skills-tag-container">
+                            <div class="skill-tag">
+                                <div class="tag-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                                <div>
+                                    <h4>Analytical Thinking</h4>
+                                    <p>Translating business problems into structured technical questions and data solutions.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-tag">
+                                <div class="tag-icon"><i class="fa-solid fa-comments"></i></div>
+                                <div>
+                                    <h4>Data Storytelling</h4>
+                                    <p>Explaining complex technical numbers into easily understood business insights for stakeholders.</p>
+                                </div>
+                            </div>
+
+                            <div class="skill-tag">
+                                <div class="tag-icon"><i class="fa-solid fa-users"></i></div>
+                                <div>
+                                    <h4>Teamwork & Collaboration</h4>
+                                    <p>Effective cross-functional communication and project coordination in team assignments.</p>
+                                </div>
+                            </div>
+
+                            <div class="skill-tag">
+                                <div class="tag-icon"><i class="fa-solid fa-lightbulb"></i></div>
+                                <div>
+                                    <h4>Problem Solving</h4>
+                                    <p>Identifying root causes of operational challenges and proposing data-backed resolutions.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section (Categorization Removed as per User Request) -->
+        <section class="projects-section section-padding" id="projects">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-subtitle">Showcase</span>
+                    <h2 class="section-title">Analytics Projects</h2>
+                    <div class="title-underline"></div>
+                </div>
+                
+                <!-- Projects Grid -->
+                <div class="projects-grid" id="projectsGrid">
+                    <!-- Project 1: Power BI -->
+                    <div class="project-card glass">
+                        <div class="project-img-container">
+                            <img src="assets/project_ecommerce.png" alt="E-commerce Business Dashboard" class="project-img">
+                            <div class="project-category-badge">Power BI / Excel</div>
+                        </div>
+                        <div class="project-info-content">
+                            <h3 class="project-card-title">E-commerce Sales Performance Dashboard</h3>
+                            <p class="project-card-desc">
+                                An interactive business dashboard analyzing 50,000+ sales transactions. Helps stakeholders optimize inventory levels and track regional revenue growth.
+                            </p>
+                            <div class="project-tech-stack">
+                                <span class="tech-badge">Power BI</span>
+                                <span class="tech-badge">DAX</span>
+                                <span class="tech-badge">Power Query</span>
+                                <span class="tech-badge">Excel</span>
+                            </div>
+                            <button class="btn btn-sm btn-primary btn-view-project" data-project-id="1">View Details</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 2: Python -->
+                    <div class="project-card glass">
+                        <div class="project-img-container">
+                            <img src="assets/project_customer.png" alt="Customer Segmentation Analysis" class="project-img">
+                            <div class="project-category-badge">Python</div>
+                        </div>
+                        <div class="project-info-content">
+                            <h3 class="project-card-title">Customer Segmentation & RFM Clustering</h3>
+                            <p class="project-card-desc">
+                                Classifying e-commerce customers using Recency, Frequency, and Monetary metrics. Leveraged the K-Means clustering algorithm in Python to optimize CRM campaigns.
+                            </p>
+                            <div class="project-tech-stack">
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">Pandas</span>
+                                <span class="tech-badge">Scikit-learn</span>
+                                <span class="tech-badge">Matplotlib</span>
+                            </div>
+                            <button class="btn btn-sm btn-primary btn-view-project" data-project-id="2">View Details</button>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: SQL -->
+                    <div class="project-card glass">
+                        <div class="project-img-container">
+                            <img src="assets/project_sql.png" alt="HR Analytics SQL Querying" class="project-img">
+                            <div class="project-category-badge">SQL Query</div>
+                        </div>
+                        <div class="project-info-content">
+                            <h3 class="project-card-title">HR & Employee Turnover Investigation</h3>
+                            <p class="project-card-desc">
+                                Designing a database schema and executing advanced SQL queries to analyze factors leading to sudden employee resignations, helping improve retention.
+                            </p>
+                            <div class="project-tech-stack">
+                                <span class="tech-badge">PostgreSQL</span>
+                                <span class="tech-badge">Window Functions</span>
+                                <span class="tech-badge">CTEs</span>
+                                <span class="tech-badge">Tableau</span>
+                            </div>
+                            <button class="btn btn-sm btn-primary btn-view-project" data-project-id="3">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section section-padding" id="contact">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-subtitle">Get In Touch</span>
+                    <h2 class="section-title">Contact Me</h2>
+                    <div class="title-underline"></div>
+                </div>
+                
+                <div class="contact-grid">
+                    <!-- Contact Cards -->
+                    <div class="contact-info-panel">
+                        <div class="contact-item-card glass">
+                            <div class="contact-icon-box"><i class="fa-solid fa-location-dot"></i></div>
+                            <div class="contact-text-box">
+                                <h3>Location</h3>
+                                <p>Hanoi, Vietnam</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item-card glass">
+                            <div class="contact-icon-box"><i class="fa-regular fa-envelope"></i></div>
+                            <div class="contact-text-box">
+                                <h3>Email</h3>
+                                <p><a href="mailto:nguyenthithugiang3105@gmail.com">nguyenthithugiang3105@gmail.com</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item-card glass">
+                            <div class="contact-icon-box"><i class="fa-brands fa-linkedin-in"></i></div>
+                            <div class="contact-text-box">
+                                <h3>LinkedIn</h3>
+                                <p><a href="https://www.linkedin.com/in/giang-ntt/" target="_blank" rel="noopener noreferrer">linkedin.com/in/giang-ntt/</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact Form -->
+                    <div class="contact-form-panel glass">
+                        <form id="contactForm">
+                            <div class="form-group-row">
+                                <div class="form-group">
+                                    <label for="formName">Full Name</label>
+                                    <input type="text" id="formName" name="name" required placeholder="Your name...">
+                                </div>
+                                <div class="form-group">
+                                    <label for="formEmail">Email</label>
+                                    <input type="email" id="formEmail" name="email" required placeholder="name@example.com">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="formSubject">Subject</label>
+                                <input type="text" id="formSubject" name="subject" required placeholder="Topic of discussion...">
+                            </div>
+                            <div class="form-group">
+                                <label for="formMessage">Message Details</label>
+                                <textarea id="formMessage" name="message" rows="5" required placeholder="Your message here..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block" id="btnSubmitForm">
+                                <i class="fa-regular fa-paper-plane"></i> Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="section-container footer-content">
+            <div class="footer-left">
+                <p>&copy; 2026 Nguyễn Thị Thu Giang. All rights reserved.</p>
+                <p class="footer-tech-tag">Built with HTML, CSS, JavaScript • Hosted on GitHub Pages</p>
+            </div>
+            <div class="footer-right">
+                <a href="#about">About</a>
+                <a href="#education">Education</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Modals -->
+    <!-- Project Modal -->
+    <div class="modal" id="projectModal" aria-hidden="true">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content glass">
+            <button class="modal-close" id="modalCloseBtn" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-body" id="modalBody">
+                <!-- Dynamic Content Injected by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Certificate Modal -->
+    <div class="modal" id="certModal" aria-hidden="true">
+        <div class="modal-overlay" id="certModalOverlay"></div>
+        <div class="modal-content cert-modal-content glass">
+            <button class="modal-close" id="certModalCloseBtn" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-body cert-modal-body">
+                <h3>MOS Credentials - Microsoft Office Specialist</h3>
+                <p class="cert-modal-intro">Expanded view of credentials issued by Microsoft, certifying international-standard office productivity skills.</p>
+                <div class="cert-modal-img-container">
+                    <img src="assets/mos_badges.png" alt="MOS Certificate Badges Large" class="cert-large-img">
+                </div>
+                <div class="cert-modal-description">
+                    <p>My MOS certification bundle includes rigorous exams covering the following tools:</p>
+                    <div class="cert-details-grid">
+                        <div class="cert-detail-item">
+                            <span class="cert-tag cert-excel">Excel</span>
+                            <p>Associate level. Covers managing worksheets, dynamic formulas, tables, charts, Power Query, and basic interactive reporting dashboards.</p>
+                        </div>
+                        <div class="cert-detail-item">
+                            <span class="cert-tag cert-word">Word</span>
+                            <p>Associate level. Covers custom document setups, dynamic tables of contents, document references, references management, and professional formatting guidelines.</p>
+                        </div>
+                        <div class="cert-detail-item">
+                            <span class="cert-tag cert-ppt">PowerPoint</span>
+                            <p>Associate level. Covers structured presentation design, dynamic transitions and animations, custom charts, and optimal slideshow delivery configurations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+</body>
+</html>
