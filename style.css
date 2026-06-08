@@ -640,6 +640,12 @@ ul {
     margin: 0 auto;
 }
 
+@media (min-width: 992px) {
+    .hero-image-container {
+        margin-top: 3rem;
+    }
+}
+
 @media (max-width: 576px) {
     .hero-image-container {
         width: 250px;
