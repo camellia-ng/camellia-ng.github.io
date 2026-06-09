@@ -667,23 +667,19 @@ ul {
     margin-bottom: 0;
 }
 
-/* Hover-Expandable Capsule Buttons */
+/* Capsule Buttons (Default Desktop layout: fully visible capsule shape) */
 .capsule-btn {
     display: inline-flex;
     align-items: center;
     justify-content: flex-start;
     height: 48px;
-    width: 48px;
+    width: auto;
     border-radius: 24px;
-    background: var(--bg-secondary);
-    border: 1px solid var(--glass-border);
-    color: var(--text-secondary);
-    cursor: pointer;
-    overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     white-space: nowrap;
-    padding: 0;
+    padding: 0 1.2rem 0 0;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
 }
 
 .capsule-btn-icon {
@@ -697,31 +693,41 @@ ul {
 }
 
 .capsule-btn-text {
-    opacity: 0;
-    max-width: 0;
+    opacity: 1;
+    max-width: 300px;
     font-family: var(--font-heading);
     font-weight: 600;
-    font-size: 0.9rem;
-    transition: opacity 0.2s ease, max-width 0.4s cubic-bezier(0.16, 1, 0.3, 1), padding-left 0.4s;
+    font-size: 0.95rem;
+    padding-left: 0.3rem;
+    transition: all 0.3s ease;
     overflow: hidden;
 }
 
-/* Hover Expansion State */
-.capsule-btn:hover {
-    width: auto;
-    max-width: 350px;
-    padding-right: 1.2rem;
-    color: #ffffff !important;
+/* Branded Styling & Higher Contrast */
+.btn-primary-capsule {
     background: var(--accent-gradient);
-    border-color: var(--accent-primary);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px var(--ring-glow);
+    color: #ffffff !important;
+    border: 1.5px solid var(--accent-primary);
 }
 
-.capsule-btn:hover .capsule-btn-text {
-    opacity: 1;
-    max-width: 280px;
-    padding-left: 0.3rem;
+.btn-primary-capsule:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px var(--ring-glow);
+    filter: brightness(1.1);
+}
+
+.btn-secondary-capsule, .btn-social-capsule {
+    background: var(--bg-secondary);
+    border: 1.5px solid var(--text-secondary); /* High-contrast border */
+    color: var(--text-primary) !important; /* High-contrast text */
+}
+
+.btn-secondary-capsule:hover, .btn-social-capsule:hover {
+    background: var(--accent-gradient);
+    border-color: var(--accent-primary);
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px var(--ring-glow);
 }
 
 .hero-bottom-block {
@@ -814,6 +820,22 @@ ul {
         justify-content: center;
         gap: 0.8rem;
         width: 100%;
+    }
+    
+    /* Keep capsule buttons as compact circles in mobile view */
+    .capsule-btn {
+        width: 48px;
+        height: 48px;
+        padding: 0;
+        justify-content: center;
+        border-radius: 24px;
+    }
+    
+    .capsule-btn-text {
+        opacity: 0;
+        max-width: 0;
+        padding-left: 0;
+        display: none;
     }
     
     .hero-objective-card {
