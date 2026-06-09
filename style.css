@@ -528,7 +528,7 @@ ul {
 
 .hero-top-block {
     display: grid;
-    grid-template-columns: 200px 1fr;
+    grid-template-columns: 270px 1fr;
     gap: 3.5rem;
     align-items: center;
 }
@@ -540,8 +540,8 @@ ul {
 
 .hero-avatar-wrapper {
     position: relative;
-    width: 180px;
-    height: 180px;
+    width: 250px;
+    height: 250px;
     flex-shrink: 0;
 }
 
@@ -667,78 +667,61 @@ ul {
     margin-bottom: 0;
 }
 
-.hero-buttons-row {
-    display: flex;
-    gap: 1.2rem;
-}
-
-.hero-social-chips {
-    display: flex;
-    gap: 1rem;
-}
-
-/* Social Expandable Chips */
-.social-chip {
+/* Hover-Expandable Capsule Buttons */
+.capsule-btn {
     display: inline-flex;
     align-items: center;
-    height: 44px;
-    width: 44px;
-    border-radius: 22px;
+    justify-content: flex-start;
+    height: 48px;
+    width: 48px;
+    border-radius: 24px;
     background: var(--bg-secondary);
     border: 1px solid var(--glass-border);
     color: var(--text-secondary);
-    font-size: 1.1rem;
     cursor: pointer;
     overflow: hidden;
-    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     white-space: nowrap;
-    position: relative;
+    padding: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
-.social-chip-icon {
-    width: 42px;
-    height: 42px;
+.capsule-btn-icon {
+    width: 46px;
+    height: 46px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    font-size: 1.15rem;
 }
 
-.social-chip-text {
+.capsule-btn-text {
     opacity: 0;
     max-width: 0;
     font-family: var(--font-heading);
     font-weight: 600;
     font-size: 0.9rem;
-    padding-right: 0;
-    transition: all 0.5s ease;
+    transition: opacity 0.2s ease, max-width 0.4s cubic-bezier(0.16, 1, 0.3, 1), padding-left 0.4s;
     overflow: hidden;
 }
 
-/* Hover effect before expanding */
-.social-chip:hover:not(.expanded) {
-    color: #ffffff;
-    background: var(--accent-primary);
-    border-color: var(--accent-primary);
-    transform: translateY(-3px);
-    box-shadow: 0 4px 12px var(--ring-glow);
-}
-
-/* Expanded state when clicked */
-.social-chip.expanded {
+/* Hover Expansion State */
+.capsule-btn:hover {
     width: auto;
     max-width: 350px;
-    background: var(--accent-primary);
-    color: #ffffff;
-    border-color: var(--accent-primary);
-    box-shadow: 0 4px 12px var(--ring-glow);
     padding-right: 1.2rem;
+    color: #ffffff !important;
+    background: var(--accent-gradient);
+    border-color: var(--accent-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px var(--ring-glow);
 }
 
-.social-chip.expanded .social-chip-text {
+.capsule-btn:hover .capsule-btn-text {
     opacity: 1;
-    max-width: 300px;
-    padding-left: 0.2rem;
+    max-width: 280px;
+    padding-left: 0.3rem;
 }
 
 .hero-bottom-block {
@@ -809,46 +792,28 @@ ul {
     }
 
     .hero-avatar-wrapper {
-        width: 150px;
-        height: 150px;
+        width: 200px;
+        height: 200px;
     }
     
     .hero-actions {
-        justify-content: center;
-    }
-    
-    .hero-social-chips {
         justify-content: center;
     }
 }
 
 @media (max-width: 576px) {
+    .hero-avatar-wrapper {
+        width: 160px;
+        height: 160px;
+    }
+
     .hero-actions {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-        width: 100%;
-    }
-
-    .hero-buttons-row {
         display: flex;
-        width: 100%;
-        gap: 0.8rem;
-    }
-
-    .hero-buttons-row .btn {
-        flex: 1;
-        padding: 0.7rem 0.5rem;
-        font-size: 0.85rem;
-        white-space: nowrap;
-    }
-    
-    .hero-social-chips {
-        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
         justify-content: center;
-        width: 100%;
         gap: 0.8rem;
-        margin-top: 0.2rem;
+        width: 100%;
     }
     
     .hero-objective-card {
