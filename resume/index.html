@@ -121,6 +121,12 @@
             margin: 0 0.4rem;
         }
 
+        .contact-info i {
+            font-size: 0.85rem;
+            color: var(--secondary-color);
+            margin-right: 0.25rem;
+        }
+
         .contact-info a {
             color: inherit;
             text-decoration: none;
@@ -213,6 +219,10 @@
            PRINT STYLING
            ========================================================================== */
         @media print {
+            @page {
+                margin: 1in;
+            }
+
             body {
                 background-color: #ffffff;
                 padding: 0;
@@ -226,8 +236,8 @@
             .resume-page {
                 box-shadow: none !important;
                 border: none !important;
-                padding: 3.5rem 3rem !important;
-                margin: 0 auto !important;
+                padding: 0 !important;
+                margin: 0 !important;
                 max-width: 100% !important;
                 width: 100% !important;
             }
@@ -257,11 +267,13 @@
         <header class="resume-header">
             <h1 class="candidate-name">Nguyen Thi Thu Giang</h1>
             <div class="contact-info">
-                <span>Hanoi, Vietnam</span>
+                <span><i class="fa-solid fa-location-dot"></i> Hanoi, Vietnam</span>
                 <span>|</span>
-                <span><a href="mailto:nguyenthithugiang3105@gmail.com">nguyenthithugiang3105@gmail.com</a></span>
+                <span><i class="fa-solid fa-envelope"></i> <a href="mailto:nguyenthithugiang3105@gmail.com">nguyenthithugiang3105@gmail.com</a></span>
                 <span>|</span>
-                <span><a href="https://www.linkedin.com/in/giang-ntt/" target="_blank" rel="noopener noreferrer">linkedin.com/in/giang-ntt</a></span>
+                <span><i class="fa-brands fa-linkedin-in"></i> <a href="https://www.linkedin.com/in/giang-ntt/" target="_blank" rel="noopener noreferrer">linkedin.com/in/giang-ntt</a></span>
+                <span>|</span>
+                <span><i class="fa-solid fa-globe"></i> <a href="https://camellia-ng.github.io/" target="_blank" rel="noopener noreferrer">camellia-ng.github.io</a></span>
             </div>
         </header>
 
@@ -282,7 +294,6 @@
                 </div>
                 <ul class="entry-bullets">
                     <li>Cumulative Grade Point Average (GPA): <strong>3.63 / 4.00</strong></li>
-                    <li>Awarded Academic Scholarship for outstanding academic performance.</li>
                     <li><strong>Relevant Coursework:</strong> Business Statistics, Econometrics, Data Analysis, Microeconomics, Macroeconomics, International Trade.</li>
                 </ul>
             </div>
@@ -293,11 +304,11 @@
                     <span class="entry-location">Vinh Phuc, Vietnam</span>
                 </div>
                 <div class="entry-subheader">
-                    <span class="entry-title">Mathematics Specialization (Chuyên Toán)</span>
+                    <span class="entry-title">Mathematics Specialization</span>
                     <span class="entry-date">2020 – 2023</span>
                 </div>
                 <ul class="entry-bullets">
-                    <li>Awarded <strong>Second Prize</strong> in the Provincial Mathematics Competition for Excellent Students (Giải Nhì HSG Toán Cấp Tỉnh).</li>
+                    <li>Awarded <strong>Second Prize</strong> in the Provincial Mathematics Competition for Excellent Students.</li>
                 </ul>
             </div>
         </section>
