@@ -130,12 +130,20 @@ document.addEventListener("DOMContentLoaded", () => {
     // 5. Mobile Menu Toggle
     const mobileMenuBtn = document.getElementById("mobileMenuBtn");
     const navMenu = document.getElementById("navMenu");
+    const menuCloseBtn = document.getElementById("menuCloseBtn");
     
     if (mobileMenuBtn && navMenu) {
         mobileMenuBtn.addEventListener("click", () => {
             mobileMenuBtn.classList.toggle("open");
             navMenu.classList.toggle("open");
         });
+
+        if (menuCloseBtn) {
+            menuCloseBtn.addEventListener("click", () => {
+                mobileMenuBtn.classList.remove("open");
+                navMenu.classList.remove("open");
+            });
+        }
 
         // Close menu when clicking nav links
         const navLinks = document.querySelectorAll(".nav-link");
