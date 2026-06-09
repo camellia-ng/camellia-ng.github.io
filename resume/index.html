@@ -231,6 +231,8 @@
                 background-color: #ffffff;
                 padding: 0;
                 color: #000000;
+                font-size: 10.5pt; /* Slightly smaller base font size for 100% scale fit */
+                line-height: 1.35;
             }
 
             .controls-container {
@@ -247,12 +249,52 @@
             }
 
             .candidate-name {
-                font-size: 2rem;
+                font-size: 20pt; /* Adjusted for better proportion */
+                margin-bottom: 0.3rem;
             }
 
-            /* Prevent page breaks inside entries */
+            .contact-info {
+                font-size: 8.5pt !important;
+                margin-bottom: 0.8rem;
+            }
+
+            .resume-section {
+                margin-bottom: 1rem; /* Tighter margins to fit on 1 page */
+            }
+
+            .section-title-container {
+                margin-bottom: 0.5rem;
+            }
+
+            .section-title {
+                font-size: 11pt;
+            }
+
             .resume-entry {
+                margin-bottom: 0.6rem;
                 page-break-inside: avoid;
+            }
+
+            .entry-header {
+                font-size: 10pt;
+            }
+
+            .entry-subheader {
+                font-size: 9.5pt;
+                margin-bottom: 0.2rem;
+            }
+
+            .entry-bullets {
+                font-size: 9.2pt;
+            }
+
+            .entry-bullets li {
+                margin-bottom: 0.2rem;
+            }
+
+            .skills-entry {
+                font-size: 9.2pt;
+                margin-bottom: 0.3rem;
             }
         }
     </style>
