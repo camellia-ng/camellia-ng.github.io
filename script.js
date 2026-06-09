@@ -1,10 +1,10 @@
 // Project Data Store for dynamic modal injection
 const projectsData = {
     "1": {
-        title: "E-commerce Sales Performance Dashboard",
+        title: "Analytics Explorer (Dashboard)",
         category: "Power BI / Excel",
         image: "assets/project_ecommerce.png",
-        description: "This is an in-depth analytics project aimed at tracking the retail sales performance of an online chain store with over 50,000 transactions. The core objective is to identify key products, analyze sales trends over time, and evaluate the operational performance of different geographic regions.",
+        description: "An interactive sales and business performance dashboard analyzing 50,000+ online transactions to optimize store performance and identify regional growth trends.",
         stack: ["Power BI", "DAX", "Power Query", "Excel", "Data Modeling"],
         details: [
             "<strong>Data Modeling:</strong> Normalized and built a Snowflake schema combining Fact tables and multiple Dimension tables (Customer, Product, Branch, Time).",
@@ -16,10 +16,10 @@ const projectsData = {
         demo: "#"
     },
     "2": {
-        title: "Customer Segmentation & RFM Clustering",
+        title: "EcoStore App (Mobile Commerce)",
         category: "Python",
         image: "assets/project_customer.png",
-        description: "This project utilizes Python to perform RFM (Recency, Frequency, Monetary) analysis to segment an e-commerce customer database into distinct behavioral groups, allowing marketing teams to design targeted CRM campaigns.",
+        description: "Customer segmentation and RFM behavioral clustering on transactional data of EcoStore Mobile Commerce app to optimize targeted CRM campaigns.",
         stack: ["Python", "Pandas", "Scikit-learn", "K-Means", "Matplotlib", "Seaborn"],
         details: [
             "<strong>Data Wrangling:</strong> Handled a large e-commerce transaction dataset using Pandas, calculating RFM metrics for each unique customer.",
@@ -31,16 +31,16 @@ const projectsData = {
         demo: "#"
     },
     "3": {
-        title: "HR Analytics & Employee Turnover Investigation",
-        category: "SQL / Tableau",
+        title: "TaskAutomator CLI (Developer Tool)",
+        category: "Python / CLI",
         image: "assets/project_sql.png",
-        description: "This project uses SQL to query an HR database of a major technology firm to analyze employee turnover rates. The findings were subsequently visualized via an interactive Tableau Dashboard.",
-        stack: ["PostgreSQL", "Window Functions", "CTEs", "Tableau", "Database Design"],
+        description: "A Python-based command-line interface tool designed to automate repetitive data cleaning and file sorting tasks for analyst workflows.",
+        stack: ["Python", "CLI", "OS Library", "Pandas", "Automation"],
         details: [
-            "<strong>SQL Query Design:</strong> Wrote complex queries involving Joins, CTEs, and Window Functions to compute cumulative turnover rates by department.",
-            "<strong>Correlation Analysis:</strong> Explored relationships between employee overtime hours, previous performance reviews, compensation levels, and resignation decisions.",
-            "<strong>Key Findings:</strong> Employees working over 15 hours of overtime per week with below-average pay were 3x more likely to resign. Employees at their 2-year tenure had the highest turnover rate (24%).",
-            "<strong>Business Recommendations:</strong> Review compensation policies for employees reaching their 2-year anniversary, and set a hard cap on weekly overtime hours for software engineers."
+            "<strong>Automated Workflows:</strong> Built custom python functions to clean, format, and merge raw CSV/Excel sheets into normalized schemas.",
+            "<strong>Database Integrations:</strong> Leveraged SQLAlchemy and psycopg2 libraries to directly upload clean tables into PostgreSQL.",
+            "<strong>User Interface:</strong> Implemented interactive CLI prompts using Click and Colorama, making it easy to run data pipes locally.",
+            "<strong>Efficiency Gain:</strong> Reduced data preparation time for weekly business reports by 85%."
         ],
         github: "https://github.com/giang-ntt",
         demo: "#"
@@ -253,8 +253,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Open Certificate Modal
     const btnCertModal = document.getElementById("btnCertModal");
+    const certBadgeImg = document.getElementById("certBadgeImg");
     if (btnCertModal) {
         btnCertModal.addEventListener("click", () => openModal(certModal));
+    }
+    if (certBadgeImg) {
+        certBadgeImg.style.cursor = "pointer";
+        certBadgeImg.addEventListener("click", () => openModal(certModal));
     }
 
     // Close Certificate Modal

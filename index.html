@@ -35,7 +35,7 @@
     <header class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#" class="nav-logo" id="navLogo">
-                <span class="logo-accent">&lt;</span>Giang<span class="logo-accent">.Data /&gt;</span>
+                Nguyen Thi Thu Giang
             </a>
             
             <nav class="nav-menu" id="navMenu">
@@ -69,44 +69,52 @@
                 <div class="shape shape-2"></div>
             </div>
             
-            <div class="section-container hero-grid">
-                <div class="hero-content">
-                    <div class="hero-tag" id="heroTag">Hello, I am</div>
-                    <h1 class="hero-name" id="heroName">Nguyễn Thị Thu Giang</h1>
-                    <div class="hero-title-container">
-                        <span class="hero-title" id="heroTitle">Aspiring Data Analyst</span>
-                        <span class="typed-cursor">|</span>
+            <div class="section-container hero-flex-container">
+                <div class="hero-header-row">
+                    <div class="hero-avatar-wrapper">
+                        <div class="avatar-glow-ring"></div>
+                        <div class="avatar-frame">
+                            <img src="assets/avatar.png" alt="Nguyễn Thị Thu Giang" class="avatar-img" id="avatarImg">
+                        </div>
                     </div>
+                    <div class="hero-identity">
+                        <h1 class="hero-name" id="heroName">Hi, I'm Nguyen Thi Thu Giang</h1>
+                        <div class="hero-title-container">
+                            <span class="hero-title" id="heroTitle">Aspiring Data Analyst</span>
+                            <span class="typed-cursor">|</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-body-content">
                     <p class="hero-description" id="heroDesc">
                         A Foreign Trade University student passionate about uncovering hidden insights from data. I combine analytical thinking with SQL, Python, and Power BI to transform complex datasets into interactive dashboards and drive data-informed decisions.
                     </p>
                     <div class="hero-actions">
                         <a href="#projects" class="btn btn-primary" id="btnHeroProjects"><i class="fa-solid fa-arrow-right"></i> View Projects</a>
-                        <a href="resume/" class="btn btn-secondary" id="btnHeroCV"><i class="fa-regular fa-file-lines"></i> View CV</a>
-                        <a href="https://www.linkedin.com/in/giang-ntt/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="mailto:nguyenthithugiang3105@gmail.com" class="social-icon" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+                        <a href="resume/" class="btn btn-secondary" id="btnHeroCV"><i class="fa-regular fa-file-lines"></i> Download Resume</a>
+                        <div class="hero-social-links">
+                            <a href="https://www.linkedin.com/in/giang-ntt/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="mailto:nguyenthithugiang3105@gmail.com" class="social-icon" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+                        </div>
                     </div>
                     
                     <!-- Merged Career Objective Card -->
-                    <div class="hero-objective-card glass" style="margin-top: 2rem; padding: 2rem; border-radius: var(--border-radius-lg); display: grid; grid-template-columns: auto 1fr; gap: 1.5rem; align-items: center;">
-                        <div class="card-icon-container" style="margin-bottom: 0; width: 50px; height: 50px; border-radius: var(--border-radius-md); background: var(--accent-gradient); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.5rem; flex-shrink: 0;">
+                    <div class="hero-objective-card glass">
+                        <div class="card-icon-container">
                             <i class="fa-solid fa-bullseye"></i>
                         </div>
-                        <div>
-                            <h3 style="font-family: var(--font-heading); font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-primary);">Career Objective</h3>
-                            <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5; text-align: justify; margin-bottom: 0.5rem;">
-                                Driven by an analytical mindset cultivated at <strong>Foreign Trade University</strong>, my short-term goal is to secure a <strong>Data Analyst</strong> internship or entry-level position where I can apply SQL, Python, and Power BI to clean, model, and visualize business data.
-                            </p>
-                            <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5; text-align: justify; margin-bottom: 0;">
-                                In the long term, I aspire to grow into a <strong>Senior Business Analytics Specialist</strong> or <strong>Data Scientist</strong>, focusing on customer behavior analysis, market research, and operational optimization to help organizations build sustainable competitive advantages through data-driven strategies.
-                            </p>
+                        <div class="objective-card-text">
+                            <h3>Career Objective</h3>
+                            <div class="objective-paragraphs">
+                                <p>
+                                    Driven by an analytical mindset cultivated at <strong>Foreign Trade University</strong>, my short-term goal is to secure a <strong>Data Analyst</strong> internship or entry-level position where I can apply SQL, Python, and Power BI to clean, model, and visualize business data.
+                                </p>
+                                <p>
+                                    In the long term, I aspire to grow into a <strong>Senior Business Analytics Specialist</strong> or <strong>Data Scientist</strong>, focusing on customer behavior analysis, market research, and operational optimization to help organizations build sustainable competitive advantages through data-driven strategies.
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="hero-image-container">
-                    <div class="avatar-glow-ring"></div>
-                    <div class="avatar-frame">
-                        <img src="assets/avatar.png" alt="Nguyễn Thị Thu Giang" class="avatar-img" id="avatarImg">
                     </div>
                 </div>
             </div>
@@ -124,45 +132,37 @@
                 </div>
                 
                 <div class="edu-cert-grid">
-                    <!-- Education Column -->
-                    <div class="edu-column">
-                        <h3 class="column-title"><i class="fa-solid fa-graduation-cap"></i> Education</h3>
-                        <div class="timeline">
-                            <div class="timeline-item glass">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-date">2023 - 2027 (Expected)</div>
-                                <h4 class="timeline-title">Foreign Trade University</h4>
-                                <p class="timeline-subtitle">Major in International Economics</p>
-                                <div class="timeline-highlights">
-                                    <div class="highlight-badge"><i class="fa-solid fa-star"></i> GPA: <strong>3.63 / 4.00</strong></div>
-                                    <div class="highlight-badge"><i class="fa-solid fa-award"></i> Academic Scholarship</div>
-                                </div>
-                                <p class="timeline-desc">
-                                    The energetic environment at Foreign Trade University has sharpened my logical reasoning, business problem-solving skills, and ability to present and collaborate in teams. I actively choose coursework focused on Business Statistics, Econometrics, and Data Analysis.
-                                </p>
+                    <!-- Education Card -->
+                    <div class="edu-card glass" style="padding: 2.5rem; border-radius: var(--border-radius-lg); display: flex; flex-direction: column; gap: 1.5rem; height: 100%;">
+                        <h3 class="column-title" style="margin-bottom: 0.5rem;"><i class="fa-solid fa-graduation-cap"></i> Education</h3>
+                        <div class="edu-details" style="display: flex; flex-direction: column; gap: 1rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem;">
+                                <h4 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; color: var(--text-primary);">Foreign Trade University</h4>
+                                <span style="font-size: 0.9rem; color: var(--accent-primary); font-weight: 700;">2023 - 2027 (Expected)</span>
                             </div>
+                            <p style="font-style: italic; color: var(--text-muted); font-size: 1rem; margin-top: -0.5rem;">Bachelor of International Economics</p>
+                            <div class="timeline-highlights" style="margin-bottom: 0.5rem;">
+                                <div class="highlight-badge"><i class="fa-solid fa-star"></i> GPA: <strong>3.63 / 4.00</strong></div>
+                                <div class="highlight-badge"><i class="fa-solid fa-award"></i> Academic Scholarship</div>
+                            </div>
+                            <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; text-align: justify;">
+                                The energetic environment at Foreign Trade University has sharpened my logical reasoning, business problem-solving skills, and ability to present and collaborate in teams. I actively choose coursework focused on Business Statistics, Econometrics, and Data Analysis.
+                            </p>
                         </div>
                     </div>
                     
-                    <!-- Certifications Column -->
-                    <div class="cert-column">
-                        <h3 class="column-title"><i class="fa-solid fa-award"></i> Office Productivity Certifications</h3>
-                        <div class="cert-card glass">
-                            <div class="cert-badge-container">
-                                <img src="assets/mos_badges.png" alt="Microsoft Office Specialist Badges" class="cert-badge-img" id="certBadgeImg">
-                            </div>
-                            <div class="cert-details">
-                                <h4 class="cert-name">Microsoft Office Specialist (MOS)</h4>
-                                <p class="cert-issuer">Issued by: Microsoft</p>
-                                <ul class="cert-list">
-                                    <li><span class="check-icon"><i class="fa-solid fa-circle-check"></i></span> <strong>MOS Excel Associate</strong> - Proficient in advanced data processing, PivotTable, complex logical functions, and basic visualization.</li>
-                                    <li><span class="check-icon"><i class="fa-solid fa-circle-check"></i></span> <strong>MOS Word Associate</strong> - Creating and formatting professional, international-standard reports.</li>
-                                    <li><span class="check-icon"><i class="fa-solid fa-circle-check"></i></span> <strong>MOS PowerPoint Associate</strong> - Designing structured, persuasive presentation slides for stakeholders.</li>
-                                </ul>
-                                <button class="btn btn-sm btn-outline btn-cert-details" id="btnCertModal">
-                                    <i class="fa-solid fa-expand"></i> Expand Credentials
-                                </button>
-                            </div>
+                    <!-- Certifications Card -->
+                    <div class="cert-card glass" style="padding: 2.5rem; border-radius: var(--border-radius-lg); display: flex; flex-direction: column; gap: 1.5rem; height: 100%;">
+                        <h3 class="column-title" style="margin-bottom: 0.5rem;"><i class="fa-solid fa-award"></i> Certifications</h3>
+                        <div class="cert-badge-container" style="border-radius: var(--border-radius-md); overflow: hidden; border: 1px solid var(--glass-border); background: #000;">
+                            <img src="assets/mos_badges.png" alt="Microsoft Office Specialist Badges" class="cert-badge-img" id="certBadgeImg" style="width: 100%; height: auto; display: block; object-fit: cover; transition: var(--transition-smooth);">
+                        </div>
+                        <div class="cert-details" style="display: flex; flex-direction: column; gap: 1rem;">
+                            <h4 class="cert-name" style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700;">Microsoft Office Specialist (MOS)</h4>
+                            <p class="cert-issuer" style="font-size: 0.9rem; color: var(--text-muted); margin-top: -0.5rem;">Issued by: Microsoft</p>
+                            <button class="btn btn-sm btn-outline btn-cert-details" id="btnCertModal" style="align-self: flex-start; margin-top: 0.5rem;">
+                                <i class="fa-solid fa-expand"></i> Expand Credentials
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -182,50 +182,11 @@
                     <!-- Technical Skills -->
                     <div class="skills-category glass">
                         <h3 class="skills-cat-title"><i class="fa-solid fa-laptop-code"></i> Technical Skills (Data Stack)</h3>
-                        <div class="skills-list">
-                            <!-- Skill Item: SQL -->
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name"><i class="fa-solid fa-database"></i> SQL (PostgreSQL / MySQL)</span>
-                                </div>
-                                <div class="skill-bar-bg">
-                                    <div class="skill-bar-fill fill-sql"></div>
-                                </div>
-                                <p class="skill-desc">Advanced queries (Subqueries, Joins, Window Functions, CTEs) to extract and manipulate data.</p>
-                            </div>
-                            
-                            <!-- Skill Item: Python -->
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name"><i class="fa-brands fa-python"></i> Python (Pandas / Seaborn)</span>
-                                </div>
-                                <div class="skill-bar-bg">
-                                    <div class="skill-bar-fill fill-python"></div>
-                                </div>
-                                <p class="skill-desc">Data wrangling, descriptive statistical analysis, and data visualization.</p>
-                            </div>
-
-                            <!-- Skill Item: Power BI -->
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name"><i class="fa-solid fa-chart-line"></i> Power BI / Tableau</span>
-                                </div>
-                                <div class="skill-bar-bg">
-                                    <div class="skill-bar-fill fill-powerbi"></div>
-                                </div>
-                                <p class="skill-desc">Data modeling, interactive dashboard design, and writing DAX expressions.</p>
-                            </div>
-
-                            <!-- Skill Item: Excel -->
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name"><i class="fa-regular fa-file-excel"></i> Advanced Excel (MOS)</span>
-                                </div>
-                                <div class="skill-bar-bg">
-                                    <div class="skill-bar-fill fill-excel"></div>
-                                </div>
-                                <p class="skill-desc">PivotTables, PivotCharts, Power Query workflows, and automated reporting.</p>
-                            </div>
+                        <div class="skills-chips-container">
+                            <span class="skill-chip"><i class="fa-solid fa-database"></i> SQL (PostgreSQL / MySQL)</span>
+                            <span class="skill-chip"><i class="fa-brands fa-python"></i> Python (Pandas / Seaborn)</span>
+                            <span class="skill-chip"><i class="fa-solid fa-chart-line"></i> Power BI / Tableau</span>
+                            <span class="skill-chip"><i class="fa-regular fa-file-excel"></i> Advanced Excel (MOS)</span>
                         </div>
                     </div>
                     
@@ -284,13 +245,13 @@
                     <!-- Project 1: Power BI -->
                     <div class="project-card glass">
                         <div class="project-img-container">
-                            <img src="assets/project_ecommerce.png" alt="E-commerce Business Dashboard" class="project-img">
+                            <img src="assets/project_ecommerce.png" alt="Analytics Explorer (Dashboard)" class="project-img">
                             <div class="project-category-badge">Power BI / Excel</div>
                         </div>
                         <div class="project-info-content">
-                            <h3 class="project-card-title">E-commerce Sales Performance Dashboard</h3>
+                            <h3 class="project-card-title">Analytics Explorer (Dashboard)</h3>
                             <p class="project-card-desc">
-                                An interactive business dashboard analyzing 50,000+ sales transactions. Helps stakeholders optimize inventory levels and track regional revenue growth.
+                                Interactive business analytics dashboard tracking 50,000+ sales transactions to optimize store performance and analyze regional growth trends.
                             </p>
                             <div class="project-tech-stack">
                                 <span class="tech-badge">Power BI</span>
@@ -298,20 +259,20 @@
                                 <span class="tech-badge">Power Query</span>
                                 <span class="tech-badge">Excel</span>
                             </div>
-                            <button class="btn btn-sm btn-primary btn-view-project" data-project-id="1">View Details</button>
+                            <button class="btn btn-sm btn-primary btn-view-project" data-project-id="1">View Project</button>
                         </div>
                     </div>
                     
                     <!-- Project 2: Python -->
                     <div class="project-card glass">
                         <div class="project-img-container">
-                            <img src="assets/project_customer.png" alt="Customer Segmentation Analysis" class="project-img">
+                            <img src="assets/project_customer.png" alt="EcoStore App (Mobile Commerce)" class="project-img">
                             <div class="project-category-badge">Python</div>
                         </div>
                         <div class="project-info-content">
-                            <h3 class="project-card-title">Customer Segmentation & RFM Clustering</h3>
+                            <h3 class="project-card-title">EcoStore App (Mobile Commerce)</h3>
                             <p class="project-card-desc">
-                                Classifying e-commerce customers using Recency, Frequency, and Monetary metrics. Leveraged the K-Means clustering algorithm in Python to optimize CRM campaigns.
+                                Customer segmentation and RFM behavioral clustering on transactional data of EcoStore Mobile Commerce app to optimize targeted CRM.
                             </p>
                             <div class="project-tech-stack">
                                 <span class="tech-badge">Python</span>
@@ -319,28 +280,28 @@
                                 <span class="tech-badge">Scikit-learn</span>
                                 <span class="tech-badge">Matplotlib</span>
                             </div>
-                            <button class="btn btn-sm btn-primary btn-view-project" data-project-id="2">View Details</button>
+                            <button class="btn btn-sm btn-primary btn-view-project" data-project-id="2">View Project</button>
                         </div>
                     </div>
 
                     <!-- Project 3: SQL -->
                     <div class="project-card glass">
                         <div class="project-img-container">
-                            <img src="assets/project_sql.png" alt="HR Analytics SQL Querying" class="project-img">
-                            <div class="project-category-badge">SQL Query</div>
+                            <img src="assets/project_sql.png" alt="TaskAutomator CLI (Developer Tool)" class="project-img">
+                            <div class="project-category-badge">Python / CLI</div>
                         </div>
                         <div class="project-info-content">
-                            <h3 class="project-card-title">HR & Employee Turnover Investigation</h3>
+                            <h3 class="project-card-title">TaskAutomator CLI (Developer Tool)</h3>
                             <p class="project-card-desc">
-                                Designing a database schema and executing advanced SQL queries to analyze factors leading to sudden employee resignations, helping improve retention.
+                                A Python-based command-line interface tool designed to automate repetitive data cleaning and file sorting tasks for analyst workflows.
                             </p>
                             <div class="project-tech-stack">
-                                <span class="tech-badge">PostgreSQL</span>
-                                <span class="tech-badge">Window Functions</span>
-                                <span class="tech-badge">CTEs</span>
-                                <span class="tech-badge">Tableau</span>
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">CLI</span>
+                                <span class="tech-badge">OS Library</span>
+                                <span class="tech-badge">Pandas</span>
                             </div>
-                            <button class="btn btn-sm btn-primary btn-view-project" data-project-id="3">View Details</button>
+                            <button class="btn btn-sm btn-primary btn-view-project" data-project-id="3">View Project</button>
                         </div>
                     </div>
                 </div>
