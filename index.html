@@ -70,38 +70,50 @@
                 <div class="shape shape-2"></div>
             </div>
             
-            <div class="section-container hero-flex-container">
-                <div class="hero-header-row">
-                    <div class="hero-avatar-wrapper">
-                        <div class="avatar-glow-ring"></div>
-                        <div class="avatar-frame">
-                            <img src="assets/avatar.png" alt="Giang Nguyen" class="avatar-img" id="avatarImg">
+            <div class="section-container hero-layout-container">
+                <!-- Top Block: Left (Avatar), Right (Info) -->
+                <div class="hero-top-block">
+                    <div class="hero-left-col">
+                        <div class="hero-avatar-wrapper">
+                            <div class="avatar-glow-ring"></div>
+                            <div class="avatar-frame">
+                                <img src="assets/avatar.png" alt="Giang Nguyen" class="avatar-img" id="avatarImg">
+                            </div>
                         </div>
                     </div>
-                    <div class="hero-identity">
-                        <h1 class="hero-name" id="heroName">Hi, I'm Giang Nguyen</h1>
-                        <div class="hero-title-container">
-                            <span class="hero-title" id="heroTitle">Aspiring Data Analyst</span>
-                            <span class="typed-cursor">|</span>
+                    
+                    <div class="hero-right-col">
+                        <div class="hero-identity">
+                            <h1 class="hero-name" id="heroName">Hi, I'm Giang Nguyen</h1>
+                            <div class="hero-title-container">
+                                <span class="hero-title" id="heroTitle">Aspiring Data Analyst</span>
+                                <span class="typed-cursor">|</span>
+                            </div>
+                        </div>
+                        <p class="hero-description" id="heroDesc">
+                            A Foreign Trade University student passionate about uncovering hidden insights from data. I combine analytical thinking with SQL, Python, and Power BI to transform complex datasets into interactive dashboards and drive data-informed decisions.
+                        </p>
+                        <div class="hero-actions">
+                            <div class="hero-buttons-row">
+                                <a href="#projects" class="btn btn-primary" id="btnHeroProjects"><i class="fa-solid fa-arrow-right"></i> View Projects</a>
+                                <a href="resume/" class="btn btn-secondary" id="btnHeroCV"><i class="fa-regular fa-file-lines"></i> Download Resume</a>
+                            </div>
+                            <div class="hero-social-chips">
+                                <div class="social-chip" id="chipLinkedIn" data-url="https://www.linkedin.com/in/giang-ntt/">
+                                    <div class="social-chip-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+                                    <span class="social-chip-text">linkedin.com/in/giang-ntt</span>
+                                </div>
+                                <div class="social-chip" id="chipEmail" data-copy="nguyenthithugiang3105@gmail.com">
+                                    <div class="social-chip-icon"><i class="fa-regular fa-envelope"></i></div>
+                                    <span class="social-chip-text">nguyenthithugiang3105@gmail.com</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="hero-body-content">
-                    <p class="hero-description" id="heroDesc">
-                        A Foreign Trade University student passionate about uncovering hidden insights from data. I combine analytical thinking with SQL, Python, and Power BI to transform complex datasets into interactive dashboards and drive data-informed decisions.
-                    </p>
-                    <div class="hero-actions">
-                        <div class="hero-buttons-row">
-                            <a href="#projects" class="btn btn-primary" id="btnHeroProjects"><i class="fa-solid fa-arrow-right"></i> View Projects</a>
-                            <a href="resume/" class="btn btn-secondary" id="btnHeroCV"><i class="fa-regular fa-file-lines"></i> Download Resume</a>
-                        </div>
-                        <div class="hero-social-links">
-                            <a href="https://www.linkedin.com/in/giang-ntt/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                            <a href="mailto:nguyenthithugiang3105@gmail.com" class="social-icon" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
-                        </div>
-                    </div>
-                    
+                <!-- Bottom Block: Career Objective -->
+                <div class="hero-bottom-block">
                     <!-- Merged Career Objective Card -->
                     <div class="hero-objective-card glass">
                         <div class="card-icon-container">

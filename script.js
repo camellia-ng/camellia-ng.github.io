@@ -355,6 +355,55 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 400);
         }, 4000);
     }
+
+    // 9. Expandable Social Chips in Hero
+    const socialChips = document.querySelectorAll(".social-chip");
+    
+    socialChips.forEach(chip => {
+        chip.addEventListener("click", (e) => {
+            // Check if already expanded
+            if (chip.classList.contains("expanded")) {
+                // If it's a URL chip, open the link
+                const url = chip.getAttribute("data-url");
+                if (url) {
+                    window.open(url, "_blank", "noopener,noreferrer");
+                }
+                // If it's a copy chip, copy again and show message
+                const copyText = chip.getAttribute("data-copy");
+                if (copyText) {
+                    navigator.clipboard.writeText(copyText).then(() => {
+                        const textSpan = chip.querySelector(".social-chip-text");
+                        const originalText = textSpan.textContent;
+                        textSpan.textContent = "Copied!";
+                        setTimeout(() => {
+                            textSpan.textContent = originalText;
+                        }, 1500);
+                    });
+                }
+            } else {
+                // Collapse all other chips first
+                socialChips.forEach(other => other.classList.remove("expanded"));
+                
+                // Expand this one
+                chip.classList.add("expanded");
+                
+                // If it is copy-to-clipboard (e.g. Email), copy it on first click!
+                const copyText = chip.getAttribute("data-copy");
+                if (copyText) {
+                    navigator.clipboard.writeText(copyText).then(() => {
+                        showToast("Email address copied to clipboard!", "success");
+                    });
+                }
+                
+                e.stopPropagation(); // prevent immediate collapse from document click
+            }
+        });
+    });
+
+    // Collapse chips on document click
+    document.addEventListener("click", () => {
+        socialChips.forEach(chip => chip.classList.remove("expanded"));
+    });
 });
 
 // Inject basic fade-in keyframes style dynamically
