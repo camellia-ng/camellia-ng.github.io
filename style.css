@@ -815,6 +815,9 @@ ul {
         padding: 0;
         justify-content: center;
         border-radius: 19px;
+        background: var(--accent-gradient);
+        border: 1.5px solid var(--accent-primary);
+        color: #ffffff !important;
     }
     
     .capsule-btn-text {
