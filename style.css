@@ -529,7 +529,7 @@ ul {
 .hero-top-block {
     display: grid;
     grid-template-columns: 1fr auto;
-    gap: 5rem;
+    gap: 2.5rem;
     align-items: center;
     width: 100%;
 }
