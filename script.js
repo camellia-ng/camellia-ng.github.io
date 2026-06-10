@@ -218,8 +218,9 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // Open Project Modal
     document.addEventListener("click", (e) => {
-        if (e.target.classList.contains("btn-view-project")) {
-            const projectId = e.target.getAttribute("data-project-id");
+        const projectCard = e.target.closest(".project-card");
+        if (projectCard) {
+            const projectId = projectCard.getAttribute("data-project-id");
             const project = projectsData[projectId];
 
             if (project) {

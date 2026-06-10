@@ -1237,6 +1237,7 @@ ul {
     flex-direction: column;
     height: 100%;
     transition: var(--transition-smooth);
+    cursor: pointer;
 }
 
 .project-card:hover {

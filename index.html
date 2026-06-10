@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giang Nguyen | Data Analyst Portfolio</title>
-    <link rel="icon" type="image/png" href="assets/favicon.png">
     
     <!-- Meta tags for SEO -->
     <meta name="description" content="Professional portfolio of Giang Nguyen - Foreign Trade University student aspiring to be a Data Analyst. Explore SQL, Python, Excel, and Power BI projects.">
@@ -24,6 +23,9 @@
     
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css?v=2.0">
@@ -118,7 +120,7 @@
                             <h3>Career Objective</h3>
                             <div class="objective-paragraphs">
                                 <p>
-                                    With a strong academic foundation in International Economics from <strong>Foreign Trade University (GPA 3.63)</strong>, I have developed solid skills in data collection, econometric modeling, time-series forecasting, and data analysis using <strong>Stata, Eviews, Excel (MOS), SQL, and Python</strong>.
+                                    With a strong academic foundation in International Economics from <strong>Foreign Trade University</strong>, I have developed solid skills in data collection, econometric modeling, time-series forecasting, and data analysis using <strong>Stata, Eviews, Excel (MOS), SQL, and Python</strong>.
                                 </p>
                                 <p>
                                     Within the next 2-3 years, I aim to secure a professional role as a <strong>Data Analyst</strong>, <strong>Business Intelligence Analyst</strong>, or <strong>Research Analyst</strong>, where I can apply quantitative methods to solve complex business and economic problems. In the long term, I aspire to grow into a <strong>Senior Data Analyst</strong> or <strong>Quantitative Researcher</strong>, driving strategic growth and policy design through data-backed decisions.
@@ -212,8 +214,7 @@
                             <span class="skill-chip"><i class="fa-brands fa-python"></i> Python (Pandas / NumPy / Matplotlib)</span>
                             <span class="skill-chip"><i class="fa-solid fa-chart-line"></i> Power BI</span>
                             <span class="skill-chip"><i class="fa-regular fa-file-excel"></i> Advanced Excel (MOS)</span>
-                            <span class="skill-chip"><i class="fa-solid fa-calculator"></i> Stata</span>
-                            <span class="skill-chip"><i class="fa-solid fa-chart-simple"></i> EViews</span>
+                            <span class="skill-chip"><i class="fa-solid fa-square-poll-vertical"></i> Stata / EViews</span>
                         </div>
                     </div>
                     
@@ -270,7 +271,7 @@
                 <!-- Projects Grid -->
                 <div class="projects-grid" id="projectsGrid">
                     <!-- Project 1: ARIMA -->
-                    <div class="project-card glass">
+                    <div class="project-card glass" data-project-id="arima-forecasting">
                         <div class="project-img-container">
                             <img src="assets/arima_forecast.png" alt="Forecasting Vietnam's Forex Reserves" class="project-img">
                             <div class="project-category-badge">Time-Series Forecasting</div>
@@ -291,7 +292,7 @@
                     </div>
                     
                     <!-- Project 2: Labor Structure Published -->
-                    <div class="project-card glass">
+                    <div class="project-card glass" data-project-id="labor-structure">
                         <div class="project-img-container">
                             <img src="assets/vietnam_labor.png" alt="Vietnam Labor Structure Shift" class="project-img">
                             <div class="project-category-badge">Published Research</div>
@@ -310,9 +311,9 @@
                             <button class="btn btn-sm btn-primary btn-view-project" data-project-id="labor-structure">View Project</button>
                         </div>
                     </div>
-
+ 
                     <!-- Project 3: Gender Inequality -->
-                    <div class="project-card glass">
+                    <div class="project-card glass" data-project-id="gender-inequality">
                         <div class="project-img-container">
                             <img src="assets/gender_equality.png" alt="Gender Inequality & Economic Growth" class="project-img">
                             <div class="project-category-badge">Econometric Analysis</div>
@@ -331,9 +332,9 @@
                             <button class="btn btn-sm btn-primary btn-view-project" data-project-id="gender-inequality">View Project</button>
                         </div>
                     </div>
-
+ 
                     <!-- Project 4: Growth Drivers -->
-                    <div class="project-card glass">
+                    <div class="project-card glass" data-project-id="economic-growth-drivers">
                         <div class="project-img-container">
                             <img src="assets/growth_drivers.png" alt="Macroeconomic Drivers of Growth" class="project-img">
                             <div class="project-category-badge">Comparative Policy Study</div>
