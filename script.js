@@ -1,49 +1,64 @@
 // Project Data Store for dynamic modal injection
 const projectsData = {
-    "1": {
-        title: "Analytics Explorer (Dashboard)",
-        category: "Power BI / Excel",
-        image: "assets/project_ecommerce.png",
-        description: "An interactive sales and business performance dashboard analyzing 50,000+ online transactions to optimize store performance and identify regional growth trends.",
-        stack: ["Power BI", "DAX", "Power Query", "Excel", "Data Modeling"],
+    "arima-forecasting": {
+        title: "Forecasting Vietnam's Foreign Exchange Reserves in 2026 Using the ARIMA Model",
+        category: "Time-Series Forecasting",
+        role: "Co-author, Data Analyst",
+        image: "assets/arima_forecast.png",
+        description: "A time-series forecasting project to model and project Vietnam's foreign exchange reserves. Based on historical monthly IMF data (2016–2025), the study forecasts that Vietnam's reserves will continue an upward trend, reaching approximately $89,500 million (or $89.5 Billion) by December 2026.",
+        stack: ["Eviews", "Excel", "ARIMA Model", "Time-Series Forecasting", "IMF Data"],
         details: [
-            "<strong>Data Modeling:</strong> Normalized and built a Snowflake schema combining Fact tables and multiple Dimension tables (Customer, Product, Branch, Time).",
-            "<strong>Data Preparation:</strong> Utilized Power Query to clean null values, adjust date formats, and handle outliers. Created advanced DAX expressions (YTD, MTD, Rolling 12-Month Sales) for dynamic calculations.",
-            "<strong>Insights:</strong> Discovered an 18% YoY revenue growth driven by Q3 promotional campaigns; however, the Fashion category showed a high return rate (8.5%), which squeezed net margins.",
-            "<strong>Recommendations:</strong> Adjust inventory policy for the Fashion category and focus marketing budget on the Southern region, which contributes 42% of total sales."
+            "<strong>Literature Review:</strong> Researched and synthesized relevant academic literature on time-series forecasting and international reserves.",
+            "<strong>Data Processing:</strong> Collected, cleaned, and processed a monthly time-series dataset of 120 observations (January 2016 – December 2025) from the IMF database.",
+            "<strong>Model Construction:</strong> Built and estimated the ARIMA forecasting model to project reserve levels."
         ],
-        github: "https://github.com/giang-ntt",
-        demo: "#"
+        pdf: "projects/Dự báo trong kinh tế và kinh doanh/Dự báo dự trữ ngoại hối của Việt Nam năm 2026 bằng mô hình ARIMA.pdf",
+        data: "projects/Dự báo trong kinh tế và kinh doanh/Data_Dự báo dự trữ ngoại hối của Việt Nam năm 2026 bằng mô hình ARIMA.csv"
     },
-    "2": {
-        title: "EcoStore App (Mobile Commerce)",
-        category: "Python",
-        image: "assets/project_customer.png",
-        description: "Customer segmentation and RFM behavioral clustering on transactional data of EcoStore Mobile Commerce app to optimize targeted CRM campaigns.",
-        stack: ["Python", "Pandas", "Scikit-learn", "K-Means", "Matplotlib", "Seaborn"],
+    "labor-structure": {
+        title: "Labor Structure in Vietnam in the Context of the Fourth Industrial Revolution",
+        category: "Published Research",
+        role: "Co-author, Data Analyst",
+        image: "assets/vietnam_labor.png",
+        description: "An academic research paper published in the State Management Journal (No. 337, Feb 2026) analyzing the sectoral labor structure shifts in Vietnam. The paper highlights a major transition, including a decline in agricultural labor share from 44% in 2015 to 27.5% in 2024, and a rise in formal wage-earning employment to 50.5%.",
+        stack: ["Excel", "Pivot Tables", "Shift-Share Analysis", "Demographics", "GSO Data"],
         details: [
-            "<strong>Data Wrangling:</strong> Handled a large e-commerce transaction dataset using Pandas, calculating RFM metrics for each unique customer.",
-            "<strong>Clustering Algorithm:</strong> Applied the K-Means clustering algorithm. Utilized the Elbow Method and Silhouette Score to determine the optimal number of clusters (K = 4).",
-            "<strong>Customer Profiles:</strong> Segmented customers into VIPs (high frequency, high spend), Loyalists, New Customers, and At-Risk Customers.",
-            "<strong>Business Value:</strong> The VIP segment represents only 8% of the customer base but generates 35% of total revenue. Proposed automated email marketing campaigns for the At-Risk group, yielding a 5% increase in customer retention."
+            "<strong>Framework Synthesis:</strong> Conducted comprehensive research on industrial revolutions and labor market transitions in developing economies.",
+            "<strong>Data Acquisition:</strong> Collected, structured, and cleaned national demographic and employment statistics from the General Statistics Office (GSO) from 2015 to 2024.",
+            "<strong>Data Visualization:</strong> Performed sector-wise visualization and pivot table analysis to extract labor structure shift insights."
         ],
-        github: "https://github.com/giang-ntt",
-        demo: "#"
+        pdf: "projects/Báo/Cơ cấu lao động ở Việt Nam trong bối cảnh cuộc cách mạng công nghiệp lần thứ tư _ Tạp chí Quản lý nhà nước.pdf",
+        data: "projects/Báo/Dữ liệu thu thập.xlsx"
     },
-    "3": {
-        title: "TaskAutomator CLI (Developer Tool)",
-        category: "Python / CLI",
-        image: "assets/project_sql.png",
-        description: "A Python-based command-line interface tool designed to automate repetitive data cleaning and file sorting tasks for analyst workflows.",
-        stack: ["Python", "CLI", "OS Library", "Pandas", "Automation"],
+    "gender-inequality": {
+        title: "Impact of Gender Inequality in Labor and Employment on Economic Growth in Developing Countries (2015-2022)",
+        category: "Econometric Analysis",
+        role: "Co-author, Data Analyst",
+        image: "assets/gender_equality.png",
+        description: "An econometric panel study evaluating the impact of labor-market gender inequality on GDP per capita. Using a Feasible Generalized Least Squares (FGLS) estimator, the study finds that a 1% increase in female labor force participation raises GDP per capita by 0.385%, and gender equality in human development (GDI) has a positive impact coefficient of 0.542.",
+        stack: ["Stata", "Excel", "Panel Regression", "FGLS Estimator", "World Bank Data"],
         details: [
-            "<strong>Automated Workflows:</strong> Built custom python functions to clean, format, and merge raw CSV/Excel sheets into normalized schemas.",
-            "<strong>Database Integrations:</strong> Leveraged SQLAlchemy and psycopg2 libraries to directly upload clean tables into PostgreSQL.",
-            "<strong>User Interface:</strong> Implemented interactive CLI prompts using Click and Colorama, making it easy to run data pipes locally.",
-            "<strong>Efficiency Gain:</strong> Reduced data preparation time for weekly business reports by 85%."
+            "<strong>Literature Review:</strong> Researched and synthesized economic literature on gender economics and economic development theories.",
+            "<strong>Data Wrangling:</strong> Gathered, cleaned, and merged panel data across 45 developing nations over an 8-year timeframe, totaling 360 observations.",
+            "<strong>Econometric Estimation:</strong> Developed, estimated, and validated panel data regression models (OLS, Fixed Effects, FGLS) to analyze relationships."
         ],
-        github: "https://github.com/giang-ntt",
-        demo: "#"
+        pdf: "projects/Kinh tế phát triển/Tác động của bất bình đẳng giới trong lao động và việc làm đến tăng trưởng kinh tế tại các quốc gia đang phát triển giai đoạn 2015 - 2022.pdf",
+        data: "projects/Kinh tế phát triển/Data.xlsx"
+    },
+    "economic-growth-drivers": {
+        title: "Factors Affecting Economic Growth in Middle-Income and High-Income Country Groups (2005-2020)",
+        category: "Comparative Policy Study",
+        role: "Co-author, Data Analyst",
+        image: "assets/growth_drivers.png",
+        description: "A comparative panel analysis exploring the macroeconomic drivers of GDP growth in middle vs. high-income countries. The research shows that Human Capital (education) is the dominant driver in high-income countries (coefficient 0.425), whereas FDI (coefficient 0.245) and GFCF (coefficient 0.182) are highly significant in middle-income countries.",
+        stack: ["Stata", "Excel", "Comparative Analysis", "Panel Regression", "Endogeneity & Exogeneity"],
+        details: [
+            "<strong>Theory Synthesis:</strong> Synthesized classical and endogenous growth theories and compiled macro-indicators (FDI, trade openness, human capital).",
+            "<strong>Panel Processing:</strong> Collected, cleaned, and structured a macro panel dataset covering 70 countries (35 middle-income, 35 high-income) over 16 years, totaling 1,120 observations.",
+            "<strong>Regression Modeling:</strong> Programmed panel regression models in Stata to compare growth elasticities, modeling the endogeneity and reverse causality of FDI and Trade Openness using lag structures, while contrasting with exogenous demographic controls."
+        ],
+        pdf: "projects/Tăng trưởng và phát triển/Các nhân tố ảnh hưởng đến tăng trưởng kinh tế ở nhóm các quốc gia có thu nhập trung bình và thu nhập cao giai đoạn 2005 - 2020.pdf",
+        data: "projects/Tăng trưởng và phát triển/High income country data.xlsx"
     }
 };
 
@@ -79,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // 3. Simple typing effect for Hero Title
-    const words = ["Aspiring Data Analyst", "Data Analytics Enthusiast", "Foreign Trade University Student"];
+    const words = ["Aspiring Data Analyst", "Quantitative Economics Researcher", "Foreign Trade University Student"];
     let wordIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
@@ -213,34 +228,39 @@ document.addEventListener("DOMContentLoaded", () => {
                 let bulletPoints = project.details.map(d => `<li><i class="fa-solid fa-chevron-right"></i><div>${d}</div></li>`).join("");
 
                 modalBody.innerHTML = `
-                    <div class="project-modal-grid">
+                    <div class="project-modal-top-grid">
                         <div class="proj-modal-left">
                             <div class="proj-modal-img-container">
                                 <img src="${project.image}" alt="${project.title}" class="proj-modal-img">
                             </div>
                             <div class="proj-modal-actions">
-                                <a href="${project.github}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm"><i class="fa-brands fa-github"></i> GitHub Code</a>
-                                <a href="${project.demo}" class="btn btn-secondary btn-sm"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo Mockup</a>
+                                <a href="${project.pdf}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm"><i class="fa-regular fa-file-pdf"></i> Read Full Paper</a>
+                                <a href="${project.data}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm"><i class="fa-regular fa-file-excel"></i> Explore Dataset</a>
                             </div>
                         </div>
                         <div class="proj-modal-details">
                             <h3 class="proj-modal-title">${project.title}</h3>
-                            <span class="cert-tag cert-excel">${project.category}</span>
+                            <div class="proj-modal-meta" style="display: flex; gap: 0.8rem; align-items: center; margin-bottom: 0.8rem;">
+                                <span class="tech-badge" style="color: var(--accent-primary); border-color: rgba(0, 242, 254, 0.3);">${project.category}</span>
+                                <span class="tech-badge" style="color: #10b981; border-color: rgba(16, 185, 129, 0.3); font-weight: 600;"><i class="fa-regular fa-user"></i> Role: ${project.role}</span>
+                            </div>
                             <p class="proj-modal-desc">${project.description}</p>
-                            
-                            <div class="proj-modal-stack-section">
-                                <h4 class="proj-modal-section-title">Technology Stack</h4>
-                                <div class="project-tech-stack">
-                                    ${stackBadges}
-                                </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-modal-bottom-full">
+                        <div class="proj-modal-stack-section">
+                            <h4 class="proj-modal-section-title">Tags</h4>
+                            <div class="project-tech-stack">
+                                ${stackBadges}
                             </div>
-                            
-                            <div class="proj-modal-details-section">
-                                <h4 class="proj-modal-section-title">Technical Details & Findings</h4>
-                                <ul class="proj-modal-bullet-list">
-                                    ${bulletPoints}
-                                </ul>
-                            </div>
+                        </div>
+                        
+                        <div class="proj-modal-details-section">
+                            <h4 class="proj-modal-section-title">Metrics & Specific Tasks</h4>
+                            <ul class="proj-modal-bullet-list">
+                                ${bulletPoints}
+                            </ul>
                         </div>
                     </div>
                 `;

@@ -1,0 +1,7 @@
+Vai trò: Đồng tác giả, Phân tích dữ liệu
+Thời gian: Tháng 8/2025 - Tháng 11/2025
+Công việc cụ thể:
+	Nghiên cứu, tổng hợp tài liệu
+	Tìm kiếm, thu thập và xử lý data liên quan
+	Trực quan hóa, tìm kiếm insight từ data
+Công cụ sử dụng: Excel (Pivot table)

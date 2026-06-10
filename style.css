@@ -1581,17 +1581,31 @@ ul {
 }
 
 /* Project Modal Content Layout */
-.project-modal-grid {
+.project-modal-grid,
+.project-modal-top-grid {
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
     gap: 2.5rem;
 }
 
+.project-modal-top-grid {
+    margin-bottom: 2rem;
+}
+
 @media (max-width: 768px) {
-    .project-modal-grid {
+    .project-modal-grid,
+    .project-modal-top-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
+}
+
+.project-modal-bottom-full {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    border-top: 1px solid var(--glass-border);
+    padding-top: 2rem;
 }
 
 .proj-modal-img-container {

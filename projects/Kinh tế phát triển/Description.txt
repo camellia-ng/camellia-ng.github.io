@@ -1,0 +1,7 @@
+Vai trò: Đồng tác giả, Phân tích dữ liệu
+Thời gian: Tháng 5/2025 - Tháng 6/2025
+Công việc cụ thể:
+	Nghiên cứu, tổng hợp tài liệu
+	Tìm kiếm, thu thập và xử lý data liên quan
+	Xây dựng và ước lượng mô hình hồi quy, đưa ra insight từ mô hình
+Công cụ sử dụng: Excel, Stata

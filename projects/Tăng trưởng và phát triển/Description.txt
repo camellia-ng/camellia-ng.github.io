@@ -1,0 +1,8 @@
+Vai trò: Đồng tác giả, Phân tích dữ liệu
+Thời gian: Tháng 10/2024 - Tháng 11/2024
+Công việc cụ thể:
+	Nghiên cứu, tổng hợp tài liệu
+	Tìm kiếm, thu thập và xử lý data liên quan
+	Mô hình hóa dữ liệu và ước lượng
+	So sánh và rút ra các nhận xét
+Công cụ sử dụng: Excel, Stata
