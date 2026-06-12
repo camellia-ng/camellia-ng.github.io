@@ -272,8 +272,14 @@
                 <div class="projects-grid" id="projectsGrid">
                     <!-- Project 1: ARIMA -->
                     <div class="project-card glass" data-project-id="arima-forecasting">
-                        <div class="project-img-container">
-                            <img src="assets/arima_forecast.png" alt="Forecasting Vietnam's Forex Reserves" class="project-img">
+                        <div class="project-img-container card-dashboard">
+                            <div class="card-dashboard-meta">
+                                <span class="meta-label">Data: IMF Monthly (2016-2025)</span>
+                                <span class="meta-result">Result: 2026 Forecast ~$93.3B</span>
+                            </div>
+                            <div class="card-dashboard-chart">
+                                <canvas id="cardChart-arima-forecasting"></canvas>
+                            </div>
                             <div class="project-category-badge">Time-Series Forecasting</div>
                         </div>
                         <div class="project-info-content">
@@ -293,8 +299,14 @@
                     
                     <!-- Project 2: Labor Structure Published -->
                     <div class="project-card glass" data-project-id="labor-structure">
-                        <div class="project-img-container">
-                            <img src="assets/vietnam_labor.png" alt="Vietnam Labor Structure Shift" class="project-img">
+                        <div class="project-img-container card-dashboard">
+                            <div class="card-dashboard-meta">
+                                <span class="meta-label">Data: GSO National (2010-2023)</span>
+                                <span class="meta-result">Result: Agri. 44% ➔ 26.9%</span>
+                            </div>
+                            <div class="card-dashboard-chart">
+                                <canvas id="cardChart-labor-structure"></canvas>
+                            </div>
                             <div class="project-category-badge">Published Research</div>
                         </div>
                         <div class="project-info-content">
@@ -311,11 +323,17 @@
                             <button class="btn btn-sm btn-primary btn-view-project" data-project-id="labor-structure">View Project</button>
                         </div>
                     </div>
- 
+  
                     <!-- Project 3: Gender Inequality -->
                     <div class="project-card glass" data-project-id="gender-inequality">
-                        <div class="project-img-container">
-                            <img src="assets/gender_equality.png" alt="Gender Inequality & Economic Growth" class="project-img">
+                        <div class="project-img-container card-dashboard">
+                            <div class="card-dashboard-meta">
+                                <span class="meta-label">Data: WB 94 Countries Panel</span>
+                                <span class="meta-result">Result: GDI Coeff +5.438</span>
+                            </div>
+                            <div class="card-dashboard-chart">
+                                <canvas id="cardChart-gender-inequality"></canvas>
+                            </div>
                             <div class="project-category-badge">Econometric Analysis</div>
                         </div>
                         <div class="project-info-content">
@@ -332,11 +350,17 @@
                             <button class="btn btn-sm btn-primary btn-view-project" data-project-id="gender-inequality">View Project</button>
                         </div>
                     </div>
- 
+  
                     <!-- Project 4: Growth Drivers -->
                     <div class="project-card glass" data-project-id="economic-growth-drivers">
-                        <div class="project-img-container">
-                            <img src="assets/growth_drivers.png" alt="Macroeconomic Drivers of Growth" class="project-img">
+                        <div class="project-img-container card-dashboard">
+                            <div class="card-dashboard-meta">
+                                <span class="meta-label">Data: WB 54 Countries Panel</span>
+                                <span class="meta-result">Result: HDI Dominant (+3.48 / +3.81)</span>
+                            </div>
+                            <div class="card-dashboard-chart">
+                                <canvas id="cardChart-economic-growth-drivers"></canvas>
+                            </div>
                             <div class="project-category-badge">Comparative Policy Study</div>
                         </div>
                         <div class="project-info-content">
@@ -423,6 +447,8 @@
         </div>
     </div>
 
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Custom Script -->
     <script src="script.js"></script>
 </body>
