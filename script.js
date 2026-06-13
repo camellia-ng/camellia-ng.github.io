@@ -607,7 +607,8 @@ document.addEventListener("DOMContentLoaded", () => {
                             ],
                             backgroundColor: '#d946ef', // Neon magenta
                             pointRadius: 4,
-                            pointHoverRadius: 5.5
+                            pointHoverRadius: 5.5,
+                            pointStyle: 'circle'
                         },
                         {
                             type: 'line',
@@ -616,7 +617,8 @@ document.addEventListener("DOMContentLoaded", () => {
                             borderColor: '#00f2fe', // Neon cyan
                             borderWidth: 2,
                             pointRadius: 0,
-                            fill: false
+                            fill: false,
+                            pointStyle: 'line'
                         }
                     ]
                 },
@@ -630,8 +632,9 @@ document.addEventListener("DOMContentLoaded", () => {
                             labels: {
                                 color: textColor,
                                 font: { family: 'Inter', size: 9, weight: '600' },
-                                boxWidth: 10,
-                                padding: 6
+                                boxWidth: 15,
+                                padding: 6,
+                                usePointStyle: true
                             }
                         }, 
                         tooltip: { 
