@@ -63,6 +63,7 @@ const projectsData = {
 };
 // Active chart and project references for card/modal integration
 let activeProjectChart = null;
+let activeProjectChart2 = null;
 let currentOpenProjectId = null;
 let cardCharts = [];
 
@@ -428,6 +429,11 @@ document.addEventListener("DOMContentLoaded", () => {
     function renderProjectChart(projectId) {
         if (activeProjectChart) {
             activeProjectChart.destroy();
+            activeProjectChart = null;
+        }
+        if (activeProjectChart2) {
+            activeProjectChart2.destroy();
+            activeProjectChart2 = null;
         }
 
         const canvasId = projectId === 'economic-growth-drivers' ? 'growthDriversScatterChart' : 'projectModalChart';
@@ -582,61 +588,139 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             };
         } else if (projectId === 'gender-inequality') {
-            config = {
-                type: 'bar',
-                data: {
-                    labels: ['GDI Equality (0.1 ↑)', 'lnFELB (Female LFPR)', 'lnTO (Trade Openness)', 'POP (Pop Growth)'],
-                    datasets: [
-                        {
-                            label: 'FGLS Regression Coefficients',
-                            data: [5.4379, -0.9868, 0.2064, -0.1381],
-                            backgroundColor: [
-                                '#10b981', // green for positive GDI
-                                '#ef4444', // red for negative LFPR
-                                '#10b981', // green for positive Trade Openness
-                                '#ef4444'  // red for negative Pop Growth
-                            ],
-                            borderRadius: 4
-                        }
-                    ]
-                },
-                options: {
-                    indexAxis: 'y',
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            display: false
-                        },
-                        tooltip: {
-                            backgroundColor: isDark ? 'rgba(21, 29, 48, 0.95)' : 'rgba(255, 255, 255, 0.95)',
-                            titleColor: isDark ? '#fff' : '#000',
-                            bodyColor: isDark ? '#fff' : '#000',
-                            borderColor: isDark ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.1)',
-                            borderWidth: 1
-                        }
+            // 1. Render FGLS Coefficients Bar Chart on the right (projectModalChart)
+            const rightCtx = document.getElementById('projectModalChart');
+            if (rightCtx) {
+                activeProjectChart = new Chart(rightCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['GDI Equality (0.1 ↑)', 'lnFELB (Female LFPR)', 'lnTO (Trade Openness)', 'POP (Pop Growth)'],
+                        datasets: [
+                            {
+                                label: 'FGLS Regression Coefficients',
+                                data: [5.4379, -0.9868, 0.2064, -0.1381],
+                                backgroundColor: [
+                                    '#10b981', // green for positive GDI
+                                    '#ef4444', // red for negative LFPR
+                                    '#10b981', // green for positive Trade Openness
+                                    '#ef4444'  // red for negative Pop Growth
+                                ],
+                                borderRadius: 4
+                            }
+                        ]
                     },
-                    scales: {
-                        x: {
-                            grid: { color: gridColor },
-                            ticks: { 
-                                color: textColor, 
-                                font: { family: 'Inter' }
-                            },
-                            title: {
-                                display: true,
-                                text: 'Impact Coefficient Value',
-                                color: textColor,
-                                font: { family: 'Inter', weight: 'bold' }
+                    options: {
+                        indexAxis: 'y',
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false },
+                            tooltip: {
+                                backgroundColor: isDark ? 'rgba(21, 29, 48, 0.95)' : 'rgba(255, 255, 255, 0.95)',
+                                titleColor: isDark ? '#fff' : '#000',
+                                bodyColor: isDark ? '#fff' : '#000',
+                                borderColor: isDark ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.1)',
+                                borderWidth: 1
                             }
                         },
-                        y: {
-                            grid: { display: false },
-                            ticks: { color: textColor, font: { family: 'Inter' } }
+                        scales: {
+                            x: {
+                                grid: { color: gridColor },
+                                ticks: { color: textColor, font: { family: 'Inter' } },
+                                title: {
+                                    display: true,
+                                    text: 'Impact Coefficient Value',
+                                    color: textColor,
+                                    font: { family: 'Inter', weight: 'bold' }
+                                }
+                            },
+                            y: {
+                                grid: { display: false },
+                                ticks: { color: textColor, font: { family: 'Inter' } }
+                            }
                         }
                     }
-                }
-            };
+                });
+            }
+
+            // 2. Render Scatter Plot on the left (projectModalScatterChart)
+            const leftCtx = document.getElementById('projectModalScatterChart');
+            if (leftCtx) {
+                activeProjectChart2 = new Chart(leftCtx, {
+                    type: 'scatter',
+                    data: {
+                        datasets: [
+                            {
+                                label: 'Countries',
+                                data: [
+                                    {x: 0.81, y: 1.2}, {x: 0.83, y: 1.8}, {x: 0.85, y: 2.2}, 
+                                    {x: 0.87, y: 3.1}, {x: 0.89, y: 4.0}, {x: 0.91, y: 3.7}, 
+                                    {x: 0.93, y: 5.5}, {x: 0.95, y: 7.2}, {x: 0.97, y: 8.5}
+                                ],
+                                backgroundColor: '#d946ef', // Neon magenta
+                                pointRadius: 4,
+                                pointHoverRadius: 5.5
+                            },
+                            {
+                                type: 'line',
+                                label: 'Regression Fit',
+                                data: [{x: 0.80, y: 1.0}, {x: 0.98, y: 8.8}],
+                                borderColor: '#00f2fe', // Neon cyan
+                                borderWidth: 2,
+                                pointRadius: 0,
+                                fill: false
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { 
+                            legend: { display: false }, 
+                            tooltip: { 
+                                backgroundColor: isDark ? 'rgba(21, 29, 48, 0.95)' : 'rgba(255, 255, 255, 0.95)',
+                                titleColor: isDark ? '#fff' : '#000',
+                                bodyColor: isDark ? '#fff' : '#000',
+                                callbacks: {
+                                    label: function(context) {
+                                        return `GDI: ${context.raw.x}, GDP: $${context.raw.y}k`;
+                                    }
+                                }
+                            } 
+                        },
+                        scales: {
+                            x: { 
+                                grid: { color: gridColor }, 
+                                ticks: { color: textColor, font: { size: 9, weight: '500' } }, 
+                                min: 0.80, 
+                                max: 1.00,
+                                title: {
+                                    display: true,
+                                    text: 'Gender Development Index (GDI)',
+                                    color: textColor,
+                                    font: { family: 'Inter', size: 9, weight: 'bold' }
+                                }
+                            },
+                            y: { 
+                                grid: { color: gridColor }, 
+                                ticks: { color: textColor, font: { size: 9, weight: '500' } }, 
+                                min: 0, 
+                                max: 10,
+                                title: {
+                                    display: true,
+                                    text: 'GDP per Capita ($k)',
+                                    color: textColor,
+                                    font: { family: 'Inter', size: 9, weight: 'bold' }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Return early so general single chart initialization is skipped
+            return;
+        }
         } else if (projectId === 'economic-growth-drivers') {
             config = {
                 type: 'scatter',
@@ -1033,58 +1117,12 @@ document.addEventListener("DOMContentLoaded", () => {
                                     </div>
                                 </div>
 
-                                <!-- Comparison Table -->
+                                <!-- Scatter Plot Chart -->
                                 <div class="dashboard-card glass" style="padding: 1.2rem 1.5rem;">
-                                    <h4 style="margin-bottom: 0.8rem;"><i class="fa-solid fa-table"></i> FGLS Panel Regression Coefficients Table</h4>
-                                    <div class="dashboard-table-wrapper">
-                                        <table class="dashboard-table">
-                                            <thead>
-                                                <tr>
-                                                    <th>Variable Name</th>
-                                                    <th>Coeff. (Impact)</th>
-                                                    <th>z-statistic</th>
-                                                    <th>p-value</th>
-                                                    <th>Significance</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td><strong>GDI (Gender Dev Index)</strong></td>
-                                                    <td>+5.4379</td>
-                                                    <td>16.59</td>
-                                                    <td>0.000</td>
-                                                    <td><span class="badge badge-success">1% Sig.</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><strong>lnFELB (Female LFPR)</strong></td>
-                                                    <td>-0.9868</td>
-                                                    <td>-13.65</td>
-                                                    <td>0.000</td>
-                                                    <td><span class="badge badge-success">1% Sig.</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><strong>lnTO (Trade Openness)</strong></td>
-                                                    <td>+0.2064</td>
-                                                    <td>7.43</td>
-                                                    <td>0.000</td>
-                                                    <td><span class="badge badge-success">1% Sig.</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><strong>POP (Pop Growth Rate)</strong></td>
-                                                    <td>-0.1381</td>
-                                                    <td>-10.32</td>
-                                                    <td>0.000</td>
-                                                    <td><span class="badge badge-success">1% Sig.</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><strong>Constant (Intercept)</strong></td>
-                                                    <td>+5.8490</td>
-                                                    <td>16.71</td>
-                                                    <td>0.000</td>
-                                                    <td><span class="badge badge-success">1% Sig.</span></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                    <h4 style="margin-bottom: 0.8rem;"><i class="fa-solid fa-chart-line"></i> Gender Equality vs. Economic Growth</h4>
+                                    <span class="chart-subtitle" style="margin-top: -0.6rem; margin-bottom: 0.4rem; font-size: 0.75rem; color: var(--text-muted); display: block;">(Country-level correlation with Regression Fit)</span>
+                                    <div style="position: relative; height: 190px; width: 100%;">
+                                        <canvas id="projectModalScatterChart"></canvas>
                                     </div>
                                 </div>
                             </div>
@@ -1318,6 +1356,10 @@ document.addEventListener("DOMContentLoaded", () => {
             if (activeProjectChart) {
                 activeProjectChart.destroy();
                 activeProjectChart = null;
+            }
+            if (activeProjectChart2) {
+                activeProjectChart2.destroy();
+                activeProjectChart2 = null;
             }
             currentOpenProjectId = null;
         }
