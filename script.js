@@ -428,32 +428,30 @@ document.addEventListener("DOMContentLoaded", () => {
             config = {
                 type: 'line',
                 data: {
-                    labels: ['2016', '2018', '2020', '2022', '2024', '2025', 'Jan 26', 'Mar 26', 'Jun 26', 'Sep 26', 'Dec 26'],
+                    labels: ['16', '18', '20', '22', '24', '25', '26(F)'],
                     datasets: [
                         {
-                            label: 'Historical Reserves (IMF)',
-                            data: [36.7, 55.4, 94.2, 86.7, 79.0, 85.0, null, null, null, null, null],
-                            borderColor: '#3B82F6',
-                            backgroundColor: 'rgba(59, 130, 246, 0.08)',
-                            borderWidth: 3,
-                            fill: true,
-                            tension: 0.3,
-                            pointRadius: 4,
-                            pointHoverRadius: 6,
-                            pointBackgroundColor: '#3B82F6'
+                            label: 'Historical',
+                            data: [36.7, 55.4, 94.2, 86.7, 79.0, 85.0, null],
+                            borderColor: '#00f2fe', // Bright cyan
+                            borderWidth: 2.5,
+                            pointRadius: 2.5,
+                            pointHoverRadius: 4,
+                            pointBackgroundColor: '#00f2fe',
+                            fill: false,
+                            tension: 0.3
                         },
                         {
-                            label: 'Forecast Trend (ARIMA)',
-                            data: [null, null, null, null, null, 85.0, 86.9, 88.5, 90.2, 91.8, 93.3],
-                            borderColor: accentOrange,
-                            backgroundColor: 'rgba(255, 122, 0, 0.08)',
-                            borderWidth: 3,
-                            borderDash: [5, 5],
+                            label: 'Forecast',
+                            data: [null, null, null, null, null, 85.0, 93.3],
+                            borderColor: '#ff9f43', // Bright orange
+                            borderWidth: 2.5,
+                            borderDash: [4, 4],
+                            pointRadius: 3.5,
+                            pointHoverRadius: 5,
+                            pointBackgroundColor: '#ff9f43',
                             fill: false,
-                            tension: 0.3,
-                            pointRadius: 5,
-                            pointHoverRadius: 7,
-                            pointBackgroundColor: accentOrange
+                            tension: 0.3
                         }
                     ]
                 },
@@ -461,9 +459,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     responsive: true,
                     maintainAspectRatio: false,
                     plugins: {
-                        legend: {
-                            labels: { color: textColor, font: { family: 'Inter', size: 11, weight: '600' } }
-                        },
+                        legend: { display: false },
                         tooltip: {
                             backgroundColor: isDark ? 'rgba(21, 29, 48, 0.95)' : 'rgba(255, 255, 255, 0.95)',
                             titleColor: isDark ? '#fff' : '#000',
@@ -474,21 +470,21 @@ document.addEventListener("DOMContentLoaded", () => {
                     },
                     scales: {
                         x: {
-                            grid: { color: gridColor },
-                            ticks: { color: textColor, font: { family: 'Inter' } }
+                            grid: { display: false },
+                            ticks: { color: textColor, font: { family: 'Inter', size: 9, weight: '500' } }
                         },
                         y: {
                             grid: { color: gridColor },
                             ticks: { 
                                 color: textColor, 
-                                font: { family: 'Inter' },
+                                font: { family: 'Inter', size: 9, weight: '500' },
                                 callback: function(value) { return '$' + value + 'B'; }
                             },
                             title: {
                                 display: true,
                                 text: 'Billion USD',
                                 color: textColor,
-                                font: { family: 'Inter', weight: 'bold' }
+                                font: { family: 'Inter', size: 9, weight: 'bold' }
                             }
                         }
                     }
@@ -755,23 +751,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 if (projectId === 'arima-forecasting') {
                     modalBody.innerHTML = `
-                        <div class="growth-drivers-dashboard-header" data-project-id="arima-forecasting">
+                        <div class="growth-drivers-dashboard-header" data-project-id="arima-forecasting" style="margin-bottom: 0.6rem; padding-bottom: 0.4rem;">
                             <h3>FORECASTING VIETNAM'S FOREIGN EXCHANGE RESERVES</h3>
                             <p>ARIMA(1, 1, 0) Time-Series Forecasting Model (2016-2026)</p>
                         </div>
 
-                        <div class="growth-drivers-dashboard">
-                            <!-- Left Column: Thumbnail Chart & Model Diagnostics -->
+                        <div class="growth-drivers-dashboard" style="gap: 0.8rem; margin-top: 0.6rem;">
+                            <!-- Left Column: Chart Card & Model Diagnostics -->
                             <div style="display: flex; flex-direction: column; gap: 0.8rem;">
-                                <!-- Thumbnail Chart -->
-                                <div class="dashboard-card glass" style="padding: 0.5rem; overflow: hidden; display: flex; flex-direction: column; gap: 0.5rem;">
-                                    <h4 style="margin: 0.3rem 0.5rem 0.1rem 0.5rem;"><i class="fa-solid fa-chart-area"></i> Forecasting Model Visualization</h4>
-                                    <img src="assets/arima_forecast.png" alt="ARIMA Reserves Forecasting Dashboard" style="width: 100%; height: auto; border-radius: var(--border-radius-sm); border: 1px solid var(--glass-border); display: block; object-fit: cover;">
+                                <!-- Chart Card (looks exactly like the thumbnail one) -->
+                                <div class="dashboard-card glass" style="padding: 0.8rem 1rem; display: flex; flex-direction: column; gap: 0.4rem;">
+                                    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 0.2rem;">
+                                        <span style="background: rgba(255, 255, 255, 0.05); padding: 0.25rem 0.6rem; border-radius: 4px; border: 1px solid var(--glass-border); font-size: 0.75rem; font-weight: 600; color: var(--text-secondary);">Data: IMF Monthly (2016-2025)</span>
+                                        <span style="background: rgba(0, 242, 254, 0.1); color: #00f2fe; padding: 0.25rem 0.6rem; border-radius: 4px; border: 1px solid rgba(0, 242, 254, 0.2); font-size: 0.75rem; font-weight: 600;">Result: 2026 Forecast ~$93.3B</span>
+                                    </div>
+                                    <div style="position: relative; height: 160px; width: 100%;">
+                                        <canvas id="projectModalChart"></canvas>
+                                    </div>
+                                    <div style="text-align: center; font-size: 0.75rem; color: var(--accent-primary); font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; margin-top: 0.2rem;">
+                                        TIME-SERIES FORECASTING
+                                    </div>
                                 </div>
 
                                 <!-- Metrics -->
-                                <div class="dashboard-card glass">
-                                    <h4><i class="fa-solid fa-list-check"></i> Model Diagnostics & Fit</h4>
+                                <div class="dashboard-card glass" style="padding: 0.8rem 1rem;">
+                                    <h4 style="margin-bottom: 0.5rem;"><i class="fa-solid fa-list-check"></i> Model Diagnostics & Fit</h4>
                                     <div class="metrics-comparison-grid">
                                         <div class="metric-row-header">
                                             <div style="text-align: left;">Statistical Metric</div>
@@ -784,12 +788,12 @@ document.addEventListener("DOMContentLoaded", () => {
                                             <div class="metric-val middle-income-val" style="color: #10b981;">Significant</div>
                                         </div>
                                         <div class="metric-row">
-                                            <div class="metric-label"><i class="fa-solid fa-calculator"></i> Akaike Info Criterion (AIC)</div>
+                                            <div class="metric-label"><i class="fa-solid fa-calculator"></i> Akaike (AIC)</div>
                                             <div class="metric-val high-income-val">17.6598</div>
                                             <div class="metric-val middle-income-val" style="color: #10b981;">Minimised</div>
                                         </div>
                                         <div class="metric-row">
-                                            <div class="metric-label"><i class="fa-solid fa-code-branch"></i> Schwarz Criterion (SC)</div>
+                                            <div class="metric-label"><i class="fa-solid fa-code-branch"></i> Schwarz (SC)</div>
                                             <div class="metric-val high-income-val">17.7298</div>
                                             <div class="metric-val middle-income-val" style="color: #10b981;">Minimised</div>
                                         </div>
@@ -801,7 +805,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                         <div class="metric-row">
                                             <div class="metric-label"><i class="fa-solid fa-percent"></i> Forecast Error (MAPE)</div>
                                             <div class="metric-val high-income-val">5.13%</div>
-                                            <div class="metric-val middle-income-val" style="color: #10b981;">Excellent (&lt;10%)</div>
+                                            <div class="metric-val middle-income-val" style="color: #10b981;">Excellent</div>
                                         </div>
                                     </div>
                                 </div>
@@ -810,22 +814,22 @@ document.addEventListener("DOMContentLoaded", () => {
                             <!-- Right Column: Project Context & Tasks -->
                             <div style="display: flex; flex-direction: column; gap: 0.8rem;">
                                 <!-- Context & Actions -->
-                                <div class="dashboard-card glass">
-                                    <h4 style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                                <div class="dashboard-card glass" style="padding: 0.8rem 1rem;">
+                                    <h4 style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 0.5rem;">
                                         <span><i class="fa-solid fa-circle-info"></i> Project Context</span>
                                         <a href="${project.pdf}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-xs" style="margin: 0;"><i class="fa-regular fa-file-pdf"></i> Read Paper</a>
                                     </h4>
                                     <p style="font-size: 0.9rem; line-height: 1.5; color: var(--text-secondary); text-align: justify; margin-bottom: 0.5rem; margin-top: 0;">
                                         ${project.description}
                                     </p>
-                                    <div class="project-tech-stack" style="margin-bottom: 0.5rem;">
+                                    <div class="project-tech-stack" style="margin-bottom: 0.2rem;">
                                         ${stackBadges}
                                     </div>
                                 </div>
 
                                 <!-- Metrics & Specific Tasks moved inside Right Column -->
-                                <div class="dashboard-card glass">
-                                    <h4 style="margin-bottom: 0.8rem;"><i class="fa-solid fa-bars-progress"></i> Metrics & Specific Tasks</h4>
+                                <div class="dashboard-card glass" style="padding: 0.8rem 1rem;">
+                                    <h4 style="margin-bottom: 0.5rem;"><i class="fa-solid fa-bars-progress"></i> Metrics & Specific Tasks</h4>
                                     <ul class="proj-modal-bullet-list" style="margin: 0; padding: 0;">
                                         ${bulletPoints}
                                     </ul>
