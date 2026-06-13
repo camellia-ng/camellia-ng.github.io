@@ -720,7 +720,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Return early so general single chart initialization is skipped
             return;
-        }
         } else if (projectId === 'economic-growth-drivers') {
             config = {
                 type: 'scatter',
