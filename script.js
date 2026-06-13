@@ -468,9 +468,9 @@ document.addEventListener("DOMContentLoaded", () => {
                             label: 'Historical',
                             data: [36.7, 55.4, 94.2, 86.7, 79.0, 85.0, null],
                             borderColor: '#00f2fe', // Bright cyan
-                            borderWidth: 2.5,
-                            pointRadius: 2.5,
-                            pointHoverRadius: 4,
+                            borderWidth: 3.5,
+                            pointRadius: 4.5,
+                            pointHoverRadius: 6.5,
                             pointBackgroundColor: '#00f2fe',
                             fill: false,
                             tension: 0.3
@@ -479,10 +479,10 @@ document.addEventListener("DOMContentLoaded", () => {
                             label: 'Forecast',
                             data: [null, null, null, null, null, 85.0, 93.3],
                             borderColor: '#ff9f43', // Bright orange
-                            borderWidth: 2.5,
+                            borderWidth: 3.5,
                             borderDash: [4, 4],
-                            pointRadius: 3.5,
-                            pointHoverRadius: 5,
+                            pointRadius: 5.5,
+                            pointHoverRadius: 7.5,
                             pointBackgroundColor: '#ff9f43',
                             fill: false,
                             tension: 0.3
@@ -505,20 +505,20 @@ document.addEventListener("DOMContentLoaded", () => {
                     scales: {
                         x: {
                             grid: { display: false },
-                            ticks: { color: textColor, font: { family: 'Inter', size: 9, weight: '500' } }
+                            ticks: { color: textColor, font: { family: 'Inter', size: 11, weight: '500' } }
                         },
                         y: {
                             grid: { color: gridColor },
                             ticks: { 
                                 color: textColor, 
-                                font: { family: 'Inter', size: 9, weight: '500' },
+                                font: { family: 'Inter', size: 11, weight: '500' },
                                 callback: function(value) { return '$' + value + 'B'; }
                             },
                             title: {
                                 display: true,
                                 text: 'Billion USD',
                                 color: textColor,
-                                font: { family: 'Inter', size: 9, weight: 'bold' }
+                                font: { family: 'Inter', size: 11, weight: 'bold' }
                             }
                         }
                     }
@@ -535,7 +535,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             data: [48.7, 21.7, 29.6, 33.8],
                             backgroundColor: 'rgba(94, 234, 212, 0.15)',
                             borderColor: 'rgba(94, 234, 212, 0.3)',
-                            borderWidth: 1,
+                            borderWidth: 1.5,
                             borderRadius: 4
                         },
                         {
@@ -543,7 +543,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             data: [44.0, 22.8, 33.2, 39.3],
                             backgroundColor: 'rgba(59, 130, 246, 0.4)',
                             borderColor: '#3B82F6',
-                            borderWidth: 1,
+                            borderWidth: 1.5,
                             borderRadius: 4
                         },
                         {
@@ -551,7 +551,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             data: [26.9, 33.5, 39.6, 53.9],
                             backgroundColor: '#00f5d4', // Bright neon teal
                             borderColor: '#00f5d4',
-                            borderWidth: 1,
+                            borderWidth: 1.5,
                             borderRadius: 4
                         }
                     ]
@@ -561,7 +561,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     maintainAspectRatio: false,
                     plugins: {
                         legend: {
-                            labels: { color: textColor, font: { family: 'Inter', size: 11, weight: '600' } }
+                            labels: { color: textColor, font: { family: 'Inter', size: 12, weight: '600' }, boxWidth: 20, padding: 10 }
                         },
                         tooltip: {
                             backgroundColor: isDark ? 'rgba(21, 29, 48, 0.95)' : 'rgba(255, 255, 255, 0.95)',
@@ -574,20 +574,20 @@ document.addEventListener("DOMContentLoaded", () => {
                     scales: {
                         x: {
                             grid: { color: gridColor },
-                            ticks: { color: textColor, font: { family: 'Inter' } }
+                            ticks: { color: textColor, font: { family: 'Inter', size: 11, weight: '500' } }
                         },
                         y: {
                             grid: { color: gridColor },
                             ticks: { 
                                 color: textColor, 
-                                font: { family: 'Inter' },
+                                font: { family: 'Inter', size: 11, weight: '500' },
                                 callback: function(value) { return value + '%'; }
                             },
                             title: {
                                 display: true,
                                 text: 'Employment Share (%)',
                                 color: textColor,
-                                font: { family: 'Inter', weight: 'bold' }
+                                font: { family: 'Inter', size: 12, weight: 'bold' }
                             }
                         }
                     }
@@ -606,8 +606,8 @@ document.addEventListener("DOMContentLoaded", () => {
                                 {x: 0.93, y: 5.5}, {x: 0.95, y: 7.2}, {x: 0.97, y: 8.5}
                             ],
                             backgroundColor: '#d946ef', // Neon magenta
-                            pointRadius: 4,
-                            pointHoverRadius: 5.5,
+                            pointRadius: 7,
+                            pointHoverRadius: 9.5,
                             pointStyle: 'circle'
                         },
                         {
@@ -615,7 +615,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             label: 'Regression Fit',
                             data: [{x: 0.80, y: 1.0}, {x: 0.98, y: 8.8}],
                             borderColor: '#00f2fe', // Neon cyan
-                            borderWidth: 2,
+                            borderWidth: 3.5,
                             pointRadius: 0,
                             fill: false,
                             pointStyle: 'line'
@@ -631,9 +631,9 @@ document.addEventListener("DOMContentLoaded", () => {
                             position: 'top',
                             labels: {
                                 color: textColor,
-                                font: { family: 'Inter', size: 9, weight: '600' },
-                                boxWidth: 15,
-                                padding: 6,
+                                font: { family: 'Inter', size: 12, weight: '600' },
+                                boxWidth: 25,
+                                padding: 10,
                                 usePointStyle: true
                             }
                         }, 
@@ -651,26 +651,26 @@ document.addEventListener("DOMContentLoaded", () => {
                     scales: {
                         x: { 
                             grid: { color: gridColor }, 
-                            ticks: { color: textColor, font: { size: 9, weight: '500' } }, 
+                            ticks: { color: textColor, font: { size: 11, weight: '500' } }, 
                             min: 0.80, 
                             max: 1.00,
                             title: {
                                 display: true,
                                 text: 'Gender Development Index (GDI)',
                                 color: textColor,
-                                font: { family: 'Inter', size: 9, weight: 'bold' }
+                                font: { family: 'Inter', size: 12, weight: 'bold' }
                             }
                         },
                         y: { 
                             grid: { color: gridColor }, 
-                            ticks: { color: textColor, font: { size: 9, weight: '500' } }, 
+                            ticks: { color: textColor, font: { size: 11, weight: '500' } }, 
                             min: 0, 
                             max: 10,
                             title: {
                                 display: true,
                                 text: 'GDP per Capita ($k)',
                                 color: textColor,
-                                font: { family: 'Inter', size: 9, weight: 'bold' }
+                                font: { family: 'Inter', size: 12, weight: 'bold' }
                             }
                         }
                     }
@@ -696,8 +696,9 @@ document.addEventListener("DOMContentLoaded", () => {
                             backgroundColor: accentBlue,
                             borderColor: isDark ? 'rgba(255, 255, 255, 0.3)' : 'rgba(0, 0, 0, 0.2)',
                             borderWidth: 1,
-                            pointRadius: 6,
-                            pointHoverRadius: 8
+                            pointRadius: 7.5,
+                            pointHoverRadius: 10,
+                            pointStyle: 'circle'
                         },
                         {
                             label: 'Middle-Income Countries (302 obs / 27 countries)',
@@ -714,8 +715,9 @@ document.addEventListener("DOMContentLoaded", () => {
                             backgroundColor: accentOrange,
                             borderColor: isDark ? 'rgba(255, 255, 255, 0.3)' : 'rgba(0, 0, 0, 0.2)',
                             borderWidth: 1,
-                            pointRadius: 6,
-                            pointHoverRadius: 8
+                            pointRadius: 7.5,
+                            pointHoverRadius: 10,
+                            pointStyle: 'circle'
                         },
                         {
                             label: '2SLS Regression Line',
@@ -725,11 +727,12 @@ document.addEventListener("DOMContentLoaded", () => {
                                 {x: 0.9, y: 6.0}
                             ],
                             borderColor: isDark ? 'rgba(255, 255, 255, 0.45)' : 'rgba(0, 0, 0, 0.45)',
-                            borderWidth: 2,
+                            borderWidth: 3.5,
                             borderDash: [5, 5],
                             fill: false,
                             pointRadius: 0,
-                            pointHoverRadius: 0
+                            pointHoverRadius: 0,
+                            pointStyle: 'line'
                         }
                     ]
                 },
@@ -738,7 +741,15 @@ document.addEventListener("DOMContentLoaded", () => {
                     maintainAspectRatio: false,
                     plugins: {
                         legend: {
-                            labels: { color: textColor, font: { family: 'Inter', size: 10, weight: '600' } }
+                            display: true,
+                            position: 'top',
+                            labels: {
+                                color: textColor,
+                                font: { family: 'Inter', size: 11, weight: '600' },
+                                boxWidth: 25,
+                                padding: 10,
+                                usePointStyle: true
+                            }
                         },
                         tooltip: {
                             backgroundColor: isDark ? 'rgba(21, 29, 48, 0.95)' : 'rgba(255, 255, 255, 0.95)',
@@ -756,12 +767,12 @@ document.addEventListener("DOMContentLoaded", () => {
                     scales: {
                         x: {
                             grid: { color: gridColor },
-                            ticks: { color: textColor, font: { family: 'Inter' } },
+                            ticks: { color: textColor, font: { family: 'Inter', size: 11, weight: '500' } },
                             title: {
                                 display: true,
                                 text: 'FDI + TRADE OPENNESS + HUMAN CAPITAL',
                                 color: textColor,
-                                font: { family: 'Inter', weight: 'bold', size: 10 }
+                                font: { family: 'Inter', weight: 'bold', size: 12 }
                             },
                             min: 0,
                             max: 1.0
@@ -770,14 +781,14 @@ document.addEventListener("DOMContentLoaded", () => {
                             grid: { color: gridColor },
                             ticks: { 
                                 color: textColor, 
-                                font: { family: 'Inter' },
+                                font: { family: 'Inter', size: 11, weight: '500' },
                                 callback: function(value) { return value + '%'; }
                             },
                             title: {
                                 display: true,
                                 text: 'AVG. REAL GDP GROWTH (%)',
                                 color: textColor,
-                                font: { family: 'Inter', weight: 'bold', size: 10 }
+                                font: { family: 'Inter', weight: 'bold', size: 12 }
                             },
                             min: 0,
                             max: 8.0
@@ -826,7 +837,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                         <span style="background: rgba(255, 255, 255, 0.05); padding: 0.25rem 0.6rem; border-radius: 4px; border: 1px solid var(--glass-border); font-size: 0.75rem; font-weight: 600; color: var(--text-secondary);">Data: IMF Monthly (2016-2025)</span>
                                         <span style="background: rgba(0, 242, 254, 0.1); color: #00f2fe; padding: 0.25rem 0.6rem; border-radius: 4px; border: 1px solid rgba(0, 242, 254, 0.2); font-size: 0.75rem; font-weight: 600;">Result: 2026 Forecast ~$93.3B</span>
                                     </div>
-                                    <div style="position: relative; height: 200px; width: 100%;">
+                                    <div style="position: relative; height: 250px; width: 100%;">
                                         <canvas id="projectModalChart"></canvas>
                                     </div>
                                     <div style="text-align: center; font-size: 0.75rem; color: var(--accent-primary); font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; margin-top: 0.3rem;">
@@ -995,7 +1006,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 <div class="dashboard-card glass">
                                     <h4><i class="fa-solid fa-chart-column"></i> Sectoral Employment Shift (2010 vs 2023)</h4>
                                     <span class="chart-subtitle">(Agriculture vs Industry vs Services Share)</span>
-                                    <div style="position: relative; height: 190px; width: 100%;">
+                                    <div style="position: relative; height: 240px; width: 100%;">
                                         <canvas id="projectModalChart"></canvas>
                                     </div>
                                 </div>
@@ -1075,7 +1086,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 <!-- Scatter Plot Chart -->
                                 <div class="dashboard-card glass" style="padding: 1.2rem 1.5rem;">
                                     <h4 style="margin-bottom: 0.8rem;"><i class="fa-solid fa-chart-line"></i> Gender Equality vs. Economic Growth</h4>
-                                    <div style="position: relative; height: 190px; width: 100%;">
+                                    <div style="position: relative; height: 240px; width: 100%;">
                                         <canvas id="projectModalScatterChart"></canvas>
                                     </div>
                                 </div>
@@ -1216,7 +1227,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 <div class="dashboard-card glass">
                                     <h4><i class="fa-solid fa-chart-scatter"></i> Scatter Plot of Growth Drivers</h4>
                                     <span class="chart-subtitle">(2005-2020 Macro Panel Data)</span>
-                                    <div style="position: relative; height: 190px; width: 100%;">
+                                    <div style="position: relative; height: 240px; width: 100%;">
                                         <canvas id="growthDriversScatterChart"></canvas>
                                     </div>
                                 </div>
