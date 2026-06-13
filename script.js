@@ -315,29 +315,93 @@ document.addEventListener("DOMContentLoaded", () => {
             cardCharts.push(chart);
         }
 
-        // 3. Gender Inequality Card Chart
-        const genderCtx = document.getElementById('cardChart-gender-inequality');
-        if (genderCtx) {
-            const chart = new Chart(genderCtx, {
-                type: 'bar',
+        // 3. Gender Inequality Card Charts (Scatter and Bubble)
+        const genderScatterCtx = document.getElementById('cardChart-gender-inequality-scatter');
+        if (genderScatterCtx) {
+            const chart = new Chart(genderScatterCtx, {
+                type: 'scatter',
                 data: {
-                    labels: ['GDI', 'lnFELB', 'lnTO', 'POP'],
                     datasets: [
                         {
-                            data: [5.4379, -0.9868, 0.2064, -0.1381],
-                            backgroundColor: ['#10b981', '#ef4444', '#10b981', '#ef4444'], // Green for positive, red for negative
-                            borderRadius: 3
+                            label: 'Countries',
+                            data: [
+                                {x: 0.81, y: 1.2}, {x: 0.83, y: 1.8}, {x: 0.85, y: 2.2}, 
+                                {x: 0.87, y: 3.1}, {x: 0.89, y: 4.0}, {x: 0.91, y: 3.7}, 
+                                {x: 0.93, y: 5.5}, {x: 0.95, y: 7.2}, {x: 0.97, y: 8.5}
+                            ],
+                            backgroundColor: '#d946ef', // Neon magenta
+                            pointRadius: 3,
+                            pointHoverRadius: 4.5
+                        },
+                        {
+                            type: 'line',
+                            label: 'Regression Fit',
+                            data: [{x: 0.80, y: 1.0}, {x: 0.98, y: 8.8}],
+                            borderColor: '#00f2fe', // Neon cyan
+                            borderWidth: 1.5,
+                            pointRadius: 0,
+                            fill: false
                         }
                     ]
                 },
                 options: {
-                    indexAxis: 'y',
                     responsive: true,
                     maintainAspectRatio: false,
-                    plugins: { legend: { display: false }, tooltip: { enabled: true } },
+                    plugins: { 
+                        legend: { display: false }, 
+                        tooltip: { 
+                            callbacks: {
+                                label: function(context) {
+                                    return `GDI: ${context.raw.x}, GDP: $${context.raw.y}k`;
+                                }
+                            }
+                        } 
+                    },
                     scales: {
-                        x: { grid: { color: gridColor }, ticks: { color: textColor, font: { size: 9, weight: '500' } } },
-                        y: { grid: { display: false }, ticks: { color: textColor, font: { size: 9, weight: '500' } } }
+                        x: { grid: { color: gridColor }, ticks: { color: textColor, font: { size: 7 } }, min: 0.80, max: 1.00 },
+                        y: { grid: { color: gridColor }, ticks: { color: textColor, font: { size: 7 } }, min: 0, max: 10 }
+                    }
+                }
+            });
+            cardCharts.push(chart);
+        }
+
+        const genderBubbleCtx = document.getElementById('cardChart-gender-inequality-bubble');
+        if (genderBubbleCtx) {
+            const chart = new Chart(genderBubbleCtx, {
+                type: 'bubble',
+                data: {
+                    datasets: [
+                        {
+                            label: 'Developing Nations',
+                            data: [
+                                {x: 0.81, y: 1.2, r: 3}, {x: 0.84, y: 2.0, r: 4.5}, 
+                                {x: 0.86, y: 1.8, r: 4}, {x: 0.88, y: 3.5, r: 5.5}, 
+                                {x: 0.90, y: 4.5, r: 6.5}, {x: 0.93, y: 5.2, r: 7}, 
+                                {x: 0.96, y: 8.0, r: 8.5}
+                            ],
+                            backgroundColor: 'rgba(0, 245, 212, 0.4)', // Translucent neon teal
+                            borderColor: '#00f5d4',
+                            borderWidth: 1
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { 
+                        legend: { display: false }, 
+                        tooltip: { 
+                            callbacks: {
+                                label: function(context) {
+                                    return `GDI: ${context.raw.x}, GDP: $${context.raw.y}k, LFPR: ${context.raw.r*5}%`;
+                                }
+                            }
+                        } 
+                    },
+                    scales: {
+                        x: { grid: { color: gridColor }, ticks: { color: textColor, font: { size: 7 } }, min: 0.80, max: 1.00 },
+                        y: { grid: { color: gridColor }, ticks: { color: textColor, font: { size: 7 } }, min: 0, max: 10 }
                     }
                 }
             });
