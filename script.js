@@ -966,17 +966,17 @@ document.addEventListener("DOMContentLoaded", () => {
                     `;
                 } else if (projectId === 'gender-inequality') {
                     modalBody.innerHTML = `
-                        <div class="growth-drivers-dashboard-header" data-project-id="gender-inequality">
+                        <div class="growth-drivers-dashboard-header" data-project-id="gender-inequality" style="margin-bottom: 1rem; padding-bottom: 0.6rem;">
                             <h3>IMPACT OF GENDER INEQUALITY ON ECONOMIC GROWTH</h3>
                             <p>Panel Regression across 94 Developing Countries (2015-2022)</p>
                         </div>
 
-                        <div class="growth-drivers-dashboard">
+                        <div class="growth-drivers-dashboard" style="gap: 1.2rem; margin-top: 1rem;">
                             <!-- Left Column: Metrics & Table -->
-                            <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+                            <div style="display: flex; flex-direction: column; gap: 1.2rem;">
                                 <!-- Metrics -->
-                                <div class="dashboard-card glass">
-                                    <h4><i class="fa-solid fa-list-check"></i> Econometric Model & Diagnostics</h4>
+                                <div class="dashboard-card glass" style="padding: 1.2rem 1.5rem;">
+                                    <h4 style="margin-bottom: 0.8rem;"><i class="fa-solid fa-list-check"></i> Econometric Model & Diagnostics</h4>
                                     <div class="metrics-comparison-grid">
                                         <div class="metric-row-header">
                                             <div style="text-align: left;">Diagnostic Check</div>
@@ -1012,8 +1012,8 @@ document.addEventListener("DOMContentLoaded", () => {
                                 </div>
 
                                 <!-- Comparison Table -->
-                                <div class="dashboard-card glass">
-                                    <h4><i class="fa-solid fa-table"></i> FGLS Panel Regression Coefficients Table</h4>
+                                <div class="dashboard-card glass" style="padding: 1.2rem 1.5rem;">
+                                    <h4 style="margin-bottom: 0.8rem;"><i class="fa-solid fa-table"></i> FGLS Panel Regression Coefficients Table</h4>
                                     <div class="dashboard-table-wrapper">
                                         <table class="dashboard-table">
                                             <thead>
@@ -1031,35 +1031,35 @@ document.addEventListener("DOMContentLoaded", () => {
                                                     <td>+5.4379</td>
                                                     <td>16.59</td>
                                                     <td>0.000</td>
-                                                    <td><span class="badge badge-success">1% Significance</span></td>
+                                                    <td><span class="badge badge-success">1% Sig.</span></td>
                                                 </tr>
                                                 <tr>
                                                     <td><strong>lnFELB (Female LFPR)</strong></td>
                                                     <td>-0.9868</td>
                                                     <td>-13.65</td>
                                                     <td>0.000</td>
-                                                    <td><span class="badge badge-success">1% Significance</span></td>
+                                                    <td><span class="badge badge-success">1% Sig.</span></td>
                                                 </tr>
                                                 <tr>
                                                     <td><strong>lnTO (Trade Openness)</strong></td>
                                                     <td>+0.2064</td>
                                                     <td>7.43</td>
                                                     <td>0.000</td>
-                                                    <td><span class="badge badge-success">1% Significance</span></td>
+                                                    <td><span class="badge badge-success">1% Sig.</span></td>
                                                 </tr>
                                                 <tr>
                                                     <td><strong>POP (Pop Growth Rate)</strong></td>
                                                     <td>-0.1381</td>
                                                     <td>-10.32</td>
                                                     <td>0.000</td>
-                                                    <td><span class="badge badge-success">1% Significance</span></td>
+                                                    <td><span class="badge badge-success">1% Sig.</span></td>
                                                 </tr>
                                                 <tr>
                                                     <td><strong>Constant (Intercept)</strong></td>
                                                     <td>+5.8490</td>
                                                     <td>16.71</td>
                                                     <td>0.000</td>
-                                                    <td><span class="badge badge-success">1% Significance</span></td>
+                                                    <td><span class="badge badge-success">1% Sig.</span></td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -1067,39 +1067,29 @@ document.addEventListener("DOMContentLoaded", () => {
                                 </div>
                             </div>
 
-                            <!-- Right Column: Horizontal Bar Chart & Details -->
-                            <div style="display: flex; flex-direction: column; gap: 0.8rem;">
-                                <!-- Bar Chart -->
-                                <div class="dashboard-card glass">
-                                    <h4><i class="fa-solid fa-chart-column"></i> FGLS Estimator Coefficients</h4>
-                                    <span class="chart-subtitle">(Direct impact on Log of GDP per Capita)</span>
-                                    <div style="position: relative; height: 190px; width: 100%;">
-                                        <canvas id="projectModalChart"></canvas>
-                                    </div>
-                                </div>
-
+                            <!-- Right Column: Project Context & Tasks -->
+                            <div style="display: flex; flex-direction: column; gap: 1.2rem;">
                                 <!-- Context & Actions -->
-                                <div class="dashboard-card glass">
-                                    <h4 style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                                <div class="dashboard-card glass" style="padding: 1.2rem 1.5rem;">
+                                    <h4 style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 0.8rem;">
                                         <span><i class="fa-solid fa-circle-info"></i> Project Context</span>
                                         <a href="${project.pdf}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-xs" style="margin: 0;"><i class="fa-regular fa-file-pdf"></i> Read Paper</a>
                                     </h4>
-                                    <p style="font-size: 0.9rem; line-height: 1.5; color: var(--text-secondary); text-align: justify; margin-bottom: 0.5rem; margin-top: 0;">
+                                    <p style="font-size: 0.9rem; line-height: 1.5; color: var(--text-secondary); text-align: justify; margin-bottom: 0.8rem; margin-top: 0;">
                                         ${project.description}
                                     </p>
-                                    <div class="project-tech-stack" style="margin-bottom: 0.5rem;">
+                                    <div class="project-tech-stack" style="margin-bottom: 0.2rem;">
                                         ${stackBadges}
                                     </div>
                                 </div>
-                            </div>
-                        </div>
 
-                        <div class="project-modal-bottom-full" style="margin-top: 1rem;">
-                            <div class="proj-modal-details-section">
-                                <h4 class="proj-modal-section-title">Metrics & Specific Tasks</h4>
-                                <ul class="proj-modal-bullet-list">
-                                    ${bulletPoints}
-                                </ul>
+                                <!-- Metrics & Specific Tasks moved inside Right Column -->
+                                <div class="dashboard-card glass" style="padding: 1.2rem 1.5rem;">
+                                    <h4 style="margin-bottom: 0.8rem;"><i class="fa-solid fa-bars-progress"></i> Metrics & Specific Tasks</h4>
+                                    <ul class="proj-modal-bullet-list" style="margin: 0; padding: 0;">
+                                        ${bulletPoints}
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     `;
