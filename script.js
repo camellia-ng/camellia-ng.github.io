@@ -751,31 +751,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 if (projectId === 'arima-forecasting') {
                     modalBody.innerHTML = `
-                        <div class="growth-drivers-dashboard-header" data-project-id="arima-forecasting" style="margin-bottom: 0.6rem; padding-bottom: 0.4rem;">
+                        <div class="growth-drivers-dashboard-header" data-project-id="arima-forecasting" style="margin-bottom: 1rem; padding-bottom: 0.6rem;">
                             <h3>FORECASTING VIETNAM'S FOREIGN EXCHANGE RESERVES</h3>
                             <p>ARIMA(1, 1, 0) Time-Series Forecasting Model (2016-2026)</p>
                         </div>
 
-                        <div class="growth-drivers-dashboard" style="gap: 0.8rem; margin-top: 0.6rem;">
+                        <div class="growth-drivers-dashboard" style="gap: 1.2rem; margin-top: 1rem;">
                             <!-- Left Column: Chart Card & Model Diagnostics -->
-                            <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+                            <div style="display: flex; flex-direction: column; gap: 1.2rem;">
                                 <!-- Chart Card (looks exactly like the thumbnail one) -->
-                                <div class="dashboard-card glass" style="padding: 0.8rem 1rem; display: flex; flex-direction: column; gap: 0.4rem;">
-                                    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 0.2rem;">
+                                <div class="dashboard-card glass" style="padding: 1.2rem 1.5rem; display: flex; flex-direction: column; gap: 0.6rem;">
+                                    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 0.3rem;">
                                         <span style="background: rgba(255, 255, 255, 0.05); padding: 0.25rem 0.6rem; border-radius: 4px; border: 1px solid var(--glass-border); font-size: 0.75rem; font-weight: 600; color: var(--text-secondary);">Data: IMF Monthly (2016-2025)</span>
                                         <span style="background: rgba(0, 242, 254, 0.1); color: #00f2fe; padding: 0.25rem 0.6rem; border-radius: 4px; border: 1px solid rgba(0, 242, 254, 0.2); font-size: 0.75rem; font-weight: 600;">Result: 2026 Forecast ~$93.3B</span>
                                     </div>
-                                    <div style="position: relative; height: 160px; width: 100%;">
+                                    <div style="position: relative; height: 200px; width: 100%;">
                                         <canvas id="projectModalChart"></canvas>
                                     </div>
-                                    <div style="text-align: center; font-size: 0.75rem; color: var(--accent-primary); font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; margin-top: 0.2rem;">
+                                    <div style="text-align: center; font-size: 0.75rem; color: var(--accent-primary); font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; margin-top: 0.3rem;">
                                         TIME-SERIES FORECASTING
                                     </div>
                                 </div>
 
                                 <!-- Metrics -->
-                                <div class="dashboard-card glass" style="padding: 0.8rem 1rem;">
-                                    <h4 style="margin-bottom: 0.5rem;"><i class="fa-solid fa-list-check"></i> Model Diagnostics & Fit</h4>
+                                <div class="dashboard-card glass" style="padding: 1.2rem 1.5rem;">
+                                    <h4 style="margin-bottom: 0.8rem;"><i class="fa-solid fa-list-check"></i> Model Diagnostics & Fit</h4>
                                     <div class="metrics-comparison-grid">
                                         <div class="metric-row-header">
                                             <div style="text-align: left;">Statistical Metric</div>
@@ -812,14 +812,14 @@ document.addEventListener("DOMContentLoaded", () => {
                             </div>
 
                             <!-- Right Column: Project Context & Tasks -->
-                            <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+                            <div style="display: flex; flex-direction: column; gap: 1.2rem;">
                                 <!-- Context & Actions -->
-                                <div class="dashboard-card glass" style="padding: 0.8rem 1rem;">
-                                    <h4 style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 0.5rem;">
+                                <div class="dashboard-card glass" style="padding: 1.2rem 1.5rem;">
+                                    <h4 style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 0.8rem;">
                                         <span><i class="fa-solid fa-circle-info"></i> Project Context</span>
                                         <a href="${project.pdf}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-xs" style="margin: 0;"><i class="fa-regular fa-file-pdf"></i> Read Paper</a>
                                     </h4>
-                                    <p style="font-size: 0.9rem; line-height: 1.5; color: var(--text-secondary); text-align: justify; margin-bottom: 0.5rem; margin-top: 0;">
+                                    <p style="font-size: 0.9rem; line-height: 1.5; color: var(--text-secondary); text-align: justify; margin-bottom: 0.8rem; margin-top: 0;">
                                         ${project.description}
                                     </p>
                                     <div class="project-tech-stack" style="margin-bottom: 0.2rem;">
@@ -828,8 +828,8 @@ document.addEventListener("DOMContentLoaded", () => {
                                 </div>
 
                                 <!-- Metrics & Specific Tasks moved inside Right Column -->
-                                <div class="dashboard-card glass" style="padding: 0.8rem 1rem;">
-                                    <h4 style="margin-bottom: 0.5rem;"><i class="fa-solid fa-bars-progress"></i> Metrics & Specific Tasks</h4>
+                                <div class="dashboard-card glass" style="padding: 1.2rem 1.5rem;">
+                                    <h4 style="margin-bottom: 0.8rem;"><i class="fa-solid fa-bars-progress"></i> Metrics & Specific Tasks</h4>
                                     <ul class="proj-modal-bullet-list" style="margin: 0; padding: 0;">
                                         ${bulletPoints}
                                     </ul>
