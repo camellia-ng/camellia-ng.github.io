@@ -436,7 +436,13 @@ document.addEventListener("DOMContentLoaded", () => {
             activeProjectChart2 = null;
         }
 
-        const canvasId = projectId === 'economic-growth-drivers' ? 'growthDriversScatterChart' : 'projectModalChart';
+        let canvasId = 'projectModalChart';
+        if (projectId === 'economic-growth-drivers') {
+            canvasId = 'growthDriversScatterChart';
+        } else if (projectId === 'gender-inequality') {
+            canvasId = 'projectModalScatterChart';
+        }
+        
         const ctx = document.getElementById(canvasId);
         if (!ctx) return;
 
@@ -588,138 +594,76 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             };
         } else if (projectId === 'gender-inequality') {
-            // 1. Render FGLS Coefficients Bar Chart on the right (projectModalChart)
-            const rightCtx = document.getElementById('projectModalChart');
-            if (rightCtx) {
-                activeProjectChart = new Chart(rightCtx, {
-                    type: 'bar',
-                    data: {
-                        labels: ['GDI Equality (0.1 ↑)', 'lnFELB (Female LFPR)', 'lnTO (Trade Openness)', 'POP (Pop Growth)'],
-                        datasets: [
-                            {
-                                label: 'FGLS Regression Coefficients',
-                                data: [5.4379, -0.9868, 0.2064, -0.1381],
-                                backgroundColor: [
-                                    '#10b981', // green for positive GDI
-                                    '#ef4444', // red for negative LFPR
-                                    '#10b981', // green for positive Trade Openness
-                                    '#ef4444'  // red for negative Pop Growth
-                                ],
-                                borderRadius: 4
+            config = {
+                type: 'scatter',
+                data: {
+                    datasets: [
+                        {
+                            label: 'Countries',
+                            data: [
+                                {x: 0.81, y: 1.2}, {x: 0.83, y: 1.8}, {x: 0.85, y: 2.2}, 
+                                {x: 0.87, y: 3.1}, {x: 0.89, y: 4.0}, {x: 0.91, y: 3.7}, 
+                                {x: 0.93, y: 5.5}, {x: 0.95, y: 7.2}, {x: 0.97, y: 8.5}
+                            ],
+                            backgroundColor: '#d946ef', // Neon magenta
+                            pointRadius: 4,
+                            pointHoverRadius: 5.5
+                        },
+                        {
+                            type: 'line',
+                            label: 'Regression Fit',
+                            data: [{x: 0.80, y: 1.0}, {x: 0.98, y: 8.8}],
+                            borderColor: '#00f2fe', // Neon cyan
+                            borderWidth: 2,
+                            pointRadius: 0,
+                            fill: false
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { 
+                        legend: { display: false }, 
+                        tooltip: { 
+                            backgroundColor: isDark ? 'rgba(21, 29, 48, 0.95)' : 'rgba(255, 255, 255, 0.95)',
+                            titleColor: isDark ? '#fff' : '#000',
+                            bodyColor: isDark ? '#fff' : '#000',
+                            callbacks: {
+                                label: function(context) {
+                                    return `GDI: ${context.raw.x}, GDP: $${context.raw.y}k`;
+                                }
                             }
-                        ]
+                        } 
                     },
-                    options: {
-                        indexAxis: 'y',
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: {
-                            legend: { display: false },
-                            tooltip: {
-                                backgroundColor: isDark ? 'rgba(21, 29, 48, 0.95)' : 'rgba(255, 255, 255, 0.95)',
-                                titleColor: isDark ? '#fff' : '#000',
-                                bodyColor: isDark ? '#fff' : '#000',
-                                borderColor: isDark ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.1)',
-                                borderWidth: 1
+                    scales: {
+                        x: { 
+                            grid: { color: gridColor }, 
+                            ticks: { color: textColor, font: { size: 9, weight: '500' } }, 
+                            min: 0.80, 
+                            max: 1.00,
+                            title: {
+                                display: true,
+                                text: 'Gender Development Index (GDI)',
+                                color: textColor,
+                                font: { family: 'Inter', size: 9, weight: 'bold' }
                             }
                         },
-                        scales: {
-                            x: {
-                                grid: { color: gridColor },
-                                ticks: { color: textColor, font: { family: 'Inter' } },
-                                title: {
-                                    display: true,
-                                    text: 'Impact Coefficient Value',
-                                    color: textColor,
-                                    font: { family: 'Inter', weight: 'bold' }
-                                }
-                            },
-                            y: {
-                                grid: { display: false },
-                                ticks: { color: textColor, font: { family: 'Inter' } }
+                        y: { 
+                            grid: { color: gridColor }, 
+                            ticks: { color: textColor, font: { size: 9, weight: '500' } }, 
+                            min: 0, 
+                            max: 10,
+                            title: {
+                                display: true,
+                                text: 'GDP per Capita ($k)',
+                                color: textColor,
+                                font: { family: 'Inter', size: 9, weight: 'bold' }
                             }
                         }
                     }
-                });
-            }
-
-            // 2. Render Scatter Plot on the left (projectModalScatterChart)
-            const leftCtx = document.getElementById('projectModalScatterChart');
-            if (leftCtx) {
-                activeProjectChart2 = new Chart(leftCtx, {
-                    type: 'scatter',
-                    data: {
-                        datasets: [
-                            {
-                                label: 'Countries',
-                                data: [
-                                    {x: 0.81, y: 1.2}, {x: 0.83, y: 1.8}, {x: 0.85, y: 2.2}, 
-                                    {x: 0.87, y: 3.1}, {x: 0.89, y: 4.0}, {x: 0.91, y: 3.7}, 
-                                    {x: 0.93, y: 5.5}, {x: 0.95, y: 7.2}, {x: 0.97, y: 8.5}
-                                ],
-                                backgroundColor: '#d946ef', // Neon magenta
-                                pointRadius: 4,
-                                pointHoverRadius: 5.5
-                            },
-                            {
-                                type: 'line',
-                                label: 'Regression Fit',
-                                data: [{x: 0.80, y: 1.0}, {x: 0.98, y: 8.8}],
-                                borderColor: '#00f2fe', // Neon cyan
-                                borderWidth: 2,
-                                pointRadius: 0,
-                                fill: false
-                            }
-                        ]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: { 
-                            legend: { display: false }, 
-                            tooltip: { 
-                                backgroundColor: isDark ? 'rgba(21, 29, 48, 0.95)' : 'rgba(255, 255, 255, 0.95)',
-                                titleColor: isDark ? '#fff' : '#000',
-                                bodyColor: isDark ? '#fff' : '#000',
-                                callbacks: {
-                                    label: function(context) {
-                                        return `GDI: ${context.raw.x}, GDP: $${context.raw.y}k`;
-                                    }
-                                }
-                            } 
-                        },
-                        scales: {
-                            x: { 
-                                grid: { color: gridColor }, 
-                                ticks: { color: textColor, font: { size: 9, weight: '500' } }, 
-                                min: 0.80, 
-                                max: 1.00,
-                                title: {
-                                    display: true,
-                                    text: 'Gender Development Index (GDI)',
-                                    color: textColor,
-                                    font: { family: 'Inter', size: 9, weight: 'bold' }
-                                }
-                            },
-                            y: { 
-                                grid: { color: gridColor }, 
-                                ticks: { color: textColor, font: { size: 9, weight: '500' } }, 
-                                min: 0, 
-                                max: 10,
-                                title: {
-                                    display: true,
-                                    text: 'GDP per Capita ($k)',
-                                    color: textColor,
-                                    font: { family: 'Inter', size: 9, weight: 'bold' }
-                                }
-                            }
-                        }
-                    }
-                });
-            }
-
-            // Return early so general single chart initialization is skipped
-            return;
+                }
+            };
         } else if (projectId === 'economic-growth-drivers') {
             config = {
                 type: 'scatter',
