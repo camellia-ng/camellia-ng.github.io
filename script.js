@@ -761,8 +761,14 @@ document.addEventListener("DOMContentLoaded", () => {
                         </div>
 
                         <div class="growth-drivers-dashboard">
-                            <!-- Left Column: Metrics & Table -->
+                            <!-- Left Column: Thumbnail Chart & Model Diagnostics -->
                             <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+                                <!-- Thumbnail Chart -->
+                                <div class="dashboard-card glass" style="padding: 0.5rem; overflow: hidden; display: flex; flex-direction: column; gap: 0.5rem;">
+                                    <h4 style="margin: 0.3rem 0.5rem 0.1rem 0.5rem;"><i class="fa-solid fa-chart-area"></i> Forecasting Model Visualization</h4>
+                                    <img src="assets/arima_forecast.png" alt="ARIMA Reserves Forecasting Dashboard" style="width: 100%; height: auto; border-radius: var(--border-radius-sm); border: 1px solid var(--glass-border); display: block; object-fit: cover;">
+                                </div>
+
                                 <!-- Metrics -->
                                 <div class="dashboard-card glass">
                                     <h4><i class="fa-solid fa-list-check"></i> Model Diagnostics & Fit</h4>
@@ -799,68 +805,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                         </div>
                                     </div>
                                 </div>
-
-                                <!-- Comparison Table -->
-                                <div class="dashboard-card glass">
-                                    <h4><i class="fa-solid fa-table"></i> 2026 Monthly Reserves Forecast Table</h4>
-                                    <div class="dashboard-table-wrapper">
-                                        <table class="dashboard-table">
-                                            <thead>
-                                                <tr>
-                                                    <th>Month (2026)</th>
-                                                    <th>Forecasted Reserves</th>
-                                                    <th>MoM Change</th>
-                                                    <th>Status</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td><strong>Tháng 1 / 2026</strong></td>
-                                                    <td>$86,924.14 M</td>
-                                                    <td>+0.92%</td>
-                                                    <td><span class="badge badge-success">Growing</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><strong>Tháng 3 / 2026</strong></td>
-                                                    <td>$88,538.73 M</td>
-                                                    <td>+1.32%</td>
-                                                    <td><span class="badge badge-success">Growing</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><strong>Tháng 6 / 2026</strong></td>
-                                                    <td>$90,224.74 M</td>
-                                                    <td>+0.59%</td>
-                                                    <td><span class="badge badge-success">Growing</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><strong>Tháng 9 / 2026</strong></td>
-                                                    <td>$91,767.58 M</td>
-                                                    <td>+0.56%</td>
-                                                    <td><span class="badge badge-success">Growing</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><strong>Tháng 12 / 2026</strong></td>
-                                                    <td>$93,294.31 M</td>
-                                                    <td>+0.55%</td>
-                                                    <td><span class="badge badge-success">Target Reached</span></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
                             </div>
 
-                            <!-- Right Column: Line Chart & Details -->
+                            <!-- Right Column: Project Context & Tasks -->
                             <div style="display: flex; flex-direction: column; gap: 0.8rem;">
-                                <!-- Line Chart -->
-                                <div class="dashboard-card glass">
-                                    <h4><i class="fa-solid fa-chart-line"></i> ARIMA(1, 1, 0) Forecast Trend (2026)</h4>
-                                    <span class="chart-subtitle">(Historical 2016-2025 + Forecast 2026)</span>
-                                    <div style="position: relative; height: 190px; width: 100%;">
-                                        <canvas id="projectModalChart"></canvas>
-                                    </div>
-                                </div>
-
                                 <!-- Context & Actions -->
                                 <div class="dashboard-card glass">
                                     <h4 style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
@@ -874,15 +822,14 @@ document.addEventListener("DOMContentLoaded", () => {
                                         ${stackBadges}
                                     </div>
                                 </div>
-                            </div>
-                        </div>
 
-                        <div class="project-modal-bottom-full" style="margin-top: 1rem;">
-                            <div class="proj-modal-details-section">
-                                <h4 class="proj-modal-section-title">Metrics & Specific Tasks</h4>
-                                <ul class="proj-modal-bullet-list">
-                                    ${bulletPoints}
-                                </ul>
+                                <!-- Metrics & Specific Tasks moved inside Right Column -->
+                                <div class="dashboard-card glass">
+                                    <h4 style="margin-bottom: 0.8rem;"><i class="fa-solid fa-bars-progress"></i> Metrics & Specific Tasks</h4>
+                                    <ul class="proj-modal-bullet-list" style="margin: 0; padding: 0;">
+                                        ${bulletPoints}
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     `;
