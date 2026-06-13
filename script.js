@@ -624,7 +624,16 @@ document.addEventListener("DOMContentLoaded", () => {
                     responsive: true,
                     maintainAspectRatio: false,
                     plugins: { 
-                        legend: { display: false }, 
+                        legend: { 
+                            display: true,
+                            position: 'top',
+                            labels: {
+                                color: textColor,
+                                font: { family: 'Inter', size: 9, weight: '600' },
+                                boxWidth: 10,
+                                padding: 6
+                            }
+                        }, 
                         tooltip: { 
                             backgroundColor: isDark ? 'rgba(21, 29, 48, 0.95)' : 'rgba(255, 255, 255, 0.95)',
                             titleColor: isDark ? '#fff' : '#000',
@@ -1063,7 +1072,6 @@ document.addEventListener("DOMContentLoaded", () => {
                                 <!-- Scatter Plot Chart -->
                                 <div class="dashboard-card glass" style="padding: 1.2rem 1.5rem;">
                                     <h4 style="margin-bottom: 0.8rem;"><i class="fa-solid fa-chart-line"></i> Gender Equality vs. Economic Growth</h4>
-                                    <span class="chart-subtitle" style="margin-top: -0.6rem; margin-bottom: 0.4rem; font-size: 0.75rem; color: var(--text-muted); display: block;">(Country-level correlation with Regression Fit)</span>
                                     <div style="position: relative; height: 190px; width: 100%;">
                                         <canvas id="projectModalScatterChart"></canvas>
                                     </div>
