@@ -408,6 +408,30 @@ ul {
     color: #eab308;
 }
 
+/* Language Toggle Button */
+.lang-toggle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--glass-border);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: var(--font-primary);
+    transition: var(--transition-smooth);
+}
+
+.lang-toggle:hover {
+    background: var(--glass-border);
+    transform: scale(1.05);
+}
+
+
 /* Mobile Menu Button */
 .mobile-menu-btn {
     display: none;

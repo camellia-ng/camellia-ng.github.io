@@ -169,7 +169,7 @@
             display: flex;
             justify-content: space-between;
             font-weight: bold;
-            font-size: 1rem;
+            font-size: 0.98rem;
             margin-bottom: 0.2rem;
         }
 
@@ -177,7 +177,7 @@
             display: flex;
             justify-content: space-between;
             font-style: italic;
-            font-size: 0.95rem;
+            font-size: 0.98rem;
             color: var(--secondary-color);
             margin-bottom: 0.4rem;
         }
@@ -193,20 +193,37 @@
         .entry-date, .entry-location {
             font-weight: normal;
             font-style: normal;
-            font-size: 0.95rem;
         }
 
         /* Bullet Points description */
         .entry-bullets {
             list-style-type: disc;
+            margin-top: 0.15rem;
+            margin-bottom: 0.15rem;
             margin-left: 1.25rem;
+            padding-left: 0;
             font-size: 0.95rem;
             color: var(--primary-color);
         }
 
         .entry-bullets li {
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.25rem;
             text-align: justify;
+        }
+
+        .project-overview {
+            margin-top: 0.2rem;
+            margin-bottom: 0.2rem;
+            text-align: justify;
+            font-size: 0.95rem;
+            color: var(--primary-color);
+        }
+
+        .project-metrics-title {
+            margin-bottom: 0.2rem;
+            font-weight: bold;
+            font-size: 0.95rem;
+            color: var(--primary-color);
         }
 
         /* Skills Layout */
@@ -224,17 +241,17 @@
            ========================================================================== */
         @media print {
             @page {
-                margin-top: 56px; /* 3.5rem equivalent, matching web top padding */
-                margin-bottom: 56px; /* 3.5rem equivalent, matching web bottom padding */
-                margin-left: 48px; /* 3rem equivalent, matching web left padding */
-                margin-right: 48px; /* 3rem equivalent, matching web right padding */
+                margin-top: 30px; /* Increased top margin for better top-edge breathing room */
+                margin-bottom: 12px; /* Kept tight to ensure single-page print fit */
+                margin-left: 48px;
+                margin-right: 48px;
             }
 
             body {
                 background-color: #ffffff;
                 padding: 0;
                 color: #000000;
-                font-size: 10.5pt; /* Slightly smaller base font size for 100% scale fit */
+                font-size: 10.7pt; /* Maximized base size for print */
                 line-height: 1.35;
             }
 
@@ -251,53 +268,118 @@
                 width: 100% !important;
             }
 
+            .resume-header {
+                margin-bottom: 0.4rem !important; /* Tighter header margins */
+            }
+
             .candidate-name {
-                font-size: 20pt; /* Adjusted for better proportion */
-                margin-bottom: 0.3rem;
+                font-size: 18pt; /* Slightly smaller name for better vertical flow */
+                margin-bottom: 0.2rem;
             }
 
             .contact-info {
                 font-size: 8.5pt !important;
-                margin-bottom: 0.8rem;
+                margin-bottom: 0.4rem !important;
             }
 
             .resume-section {
-                margin-bottom: 1rem; /* Tighter margins to fit on 1 page */
+                margin-bottom: 0.85rem; /* Expanded section margins */
             }
 
             .section-title-container {
-                margin-bottom: 0.5rem;
+                margin-bottom: 0.35rem;
             }
 
             .section-title {
-                font-size: 11pt;
+                font-size: 11.3pt;
             }
 
             .resume-entry {
-                margin-bottom: 0.6rem;
+                margin-bottom: 0.5rem; /* Expanded entry margins */
                 page-break-inside: avoid;
             }
 
-            .entry-header {
-                font-size: 10pt;
+            /* Entry Headers & Subheaders (Equal Rank) */
+            .entry-header,
+            .entry-subheader,
+            .entry-org,
+            .entry-title,
+            .entry-date,
+            .entry-location {
+                font-size: 10.7pt !important;
             }
 
             .entry-subheader {
-                font-size: 9.5pt;
-                margin-bottom: 0.2rem;
+                margin-bottom: 0.1rem;
+            }
+
+            /* Entry Bullets & Skills Details & Project Overviews (Equal Rank) */
+            .entry-bullets,
+            .entry-bullets li,
+            .project-overview,
+            .project-metrics-title,
+            .skills-entry {
+                font-size: 10.3pt !important;
             }
 
             .entry-bullets {
-                font-size: 9.2pt;
+                margin-top: 0.05rem !important;
+                margin-bottom: 0.05rem !important;
             }
 
             .entry-bullets li {
-                margin-bottom: 0.2rem;
+                margin-bottom: 0.12rem;
             }
 
             .skills-entry {
-                font-size: 9.2pt;
-                margin-bottom: 0.3rem;
+                margin-bottom: 0.2rem;
+            }
+
+            /* Specific adjustments for Vietnamese translation text length expansion */
+            html[lang="vi"] body {
+                font-size: 9.8pt !important;
+                line-height: 1.20 !important;
+            }
+            html[lang="vi"] .candidate-name {
+                font-size: 14pt !important;
+                margin-bottom: 0.10rem !important;
+            }
+            html[lang="vi"] .contact-info {
+                font-size: 7.8pt !important;
+                margin-bottom: 0.20rem !important;
+            }
+            html[lang="vi"] .resume-section {
+                margin-bottom: 0.32rem !important;
+            }
+            html[lang="vi"] .section-title-container {
+                margin-bottom: 0.15rem !important;
+            }
+            html[lang="vi"] .section-title {
+                font-size: 10.2pt !important;
+            }
+            html[lang="vi"] .resume-entry {
+                margin-bottom: 0.18rem !important;
+            }
+            html[lang="vi"] .entry-header,
+            html[lang="vi"] .entry-subheader,
+            html[lang="vi"] .entry-org,
+            html[lang="vi"] .entry-title,
+            html[lang="vi"] .entry-date,
+            html[lang="vi"] .entry-location {
+                font-size: 9.8pt !important;
+            }
+            html[lang="vi"] .entry-bullets,
+            html[lang="vi"] .entry-bullets li,
+            html[lang="vi"] .project-overview,
+            html[lang="vi"] .project-metrics-title,
+            html[lang="vi"] .skills-entry {
+                font-size: 9.4pt !important;
+            }
+            html[lang="vi"] .entry-bullets li {
+                margin-bottom: 0.02rem !important;
+            }
+            html[lang="vi"] .skills-entry {
+                margin-bottom: 0.04rem !important;
             }
         }
     </style>
@@ -306,15 +388,18 @@
 
     <!-- Web Interface Controls -->
     <div class="controls-container">
-        <a href="../" class="btn-control"><i class="fa-solid fa-arrow-left"></i> Back to Portfolio</a>
-        <button class="btn-control btn-primary-control" onclick="window.print()"><i class="fa-solid fa-print"></i> Save Resume</button>
+        <a href="../" class="btn-control"><i class="fa-solid fa-arrow-left"></i> <span data-i18n="backToPortfolio">Back to Portfolio</span></a>
+        <div style="display: flex; gap: 0.5rem;">
+            <button class="btn-control" id="langToggle" aria-label="Toggle language"><i class="fa-solid fa-globe"></i> <span class="lang-text">EN</span></button>
+            <button class="btn-control btn-primary-control" onclick="window.print()"><i class="fa-solid fa-print"></i> <span data-i18n="saveResume">Save Resume</span></button>
+        </div>
     </div>
 
     <!-- Harvard Resume Page -->
     <div class="resume-page">
         <!-- Header -->
         <header class="resume-header">
-            <h1 class="candidate-name">Nguyen Thi Thu Giang</h1>
+            <h1 class="candidate-name" data-i18n="name">Nguyen Thi Thu Giang</h1>
             <div class="contact-info">
                 <span><i class="fa-solid fa-envelope"></i> <a href="mailto:nguyenthithugiang3105@gmail.com">nguyenthithugiang3105@gmail.com</a></span>
                 <span>|</span>
@@ -327,35 +412,35 @@
         <!-- Education Section -->
         <section class="resume-section">
             <div class="section-title-container">
-                <h2 class="section-title">Education</h2>
+                <h2 class="section-title" data-i18n="secEdu">Education</h2>
             </div>
             
             <div class="resume-entry">
                 <div class="entry-header">
-                    <span class="entry-org">FOREIGN TRADE UNIVERSITY</span>
-                    <span class="entry-location">Hanoi, Vietnam</span>
+                    <span class="entry-org" data-i18n="ftuName">FOREIGN TRADE UNIVERSITY</span>
+                    <span class="entry-location" data-i18n="ftuLoc">Hanoi, Vietnam</span>
                 </div>
                 <div class="entry-subheader">
-                    <span class="entry-title">Undergraduate in International Economics (Expected Graduation: 2027)</span>
-                    <span class="entry-date">2023 – Present</span>
+                    <span class="entry-title" data-i18n="ftuTitle">Undergraduate in International Economics (Expected Graduation: 2027)</span>
+                    <span class="entry-date" data-i18n="ftuDate">2023 – Present</span>
                 </div>
                 <ul class="entry-bullets">
-                    <li>Cumulative Grade Point Average (GPA): <strong>3.63 / 4.00</strong></li>
-                    <li><strong>Relevant Coursework:</strong> Econometrics, Economics and Business Forecasting, Research methodology for economics and business, Applied Informatics.</li>
+                    <li data-i18n="ftuGpa">Cumulative Grade Point Average (GPA): <strong>3.63 / 4.00</strong></li>
+                    <li data-i18n="ftuCourses"><strong>Relevant Coursework:</strong> Econometrics, Economics and Business Forecasting, Research methodology for economics and business, Applied Informatics.</li>
                 </ul>
             </div>
 
             <div class="resume-entry">
                 <div class="entry-header">
-                    <span class="entry-org">VINH PHUC HIGH SCHOOL FOR THE GIFTED</span>
-                    <span class="entry-location">Vinh Phuc, Vietnam</span>
+                    <span class="entry-org" data-i18n="vphsName">VINH PHUC HIGH SCHOOL FOR THE GIFTED</span>
+                    <span class="entry-location" data-i18n="vphsLoc">Vinh Phuc, Vietnam</span>
                 </div>
                 <div class="entry-subheader">
-                    <span class="entry-title">Mathematics Specialization</span>
-                    <span class="entry-date">2020 – 2023</span>
+                    <span class="entry-title" data-i18n="vphsTitle">Mathematics Specialization</span>
+                    <span class="entry-date" data-i18n="vphsDate">2020 – 2023</span>
                 </div>
                 <ul class="entry-bullets">
-                    <li>Awarded <strong>Second Prize</strong> in the Provincial Mathematics Competition for Excellent Students.</li>
+                    <li data-i18n="vphsAward">Awarded <strong>Second Prize</strong> in the Provincial Mathematics Competition for Excellent Students.</li>
                 </ul>
             </div>
         </section>
@@ -363,95 +448,95 @@
         <!-- Projects Section -->
         <section class="resume-section">
             <div class="section-title-container">
-                <h2 class="section-title">Analytics & Econometric Projects</h2>
+                <h2 class="section-title" data-i18n="secProj">Analytics & Econometric Projects</h2>
             </div>
             
             <!-- Project 1 -->
             <div class="resume-entry">
                 <div class="entry-header">
-                    <span class="entry-org">FORECASTING VIETNAM'S FOREIGN EXCHANGE RESERVES IN 2026 USING THE ARIMA MODEL</span>
+                    <span class="entry-org" data-i18n="p1Title">FORECASTING VIETNAM'S FOREIGN EXCHANGE RESERVES IN 2026 USING THE ARIMA MODEL</span>
                     <span class="entry-location">Eviews & Excel</span>
                 </div>
                 <div class="entry-subheader">
-                    <span class="entry-title">Co-author, Data Analyst</span>
-                    <span class="entry-date">May 2026 – Jun 2026</span>
+                    <span class="entry-title" data-i18n="p1Role">Co-author, Data Analyst</span>
+                    <span class="entry-date" data-i18n="p1Date">May 2026 – Jun 2026</span>
                 </div>
-                <p style="margin-top: 0.2rem; margin-bottom: 0.2rem; text-align: justify; font-size: 0.95rem;">
+                <p class="project-overview" data-i18n="p1Overview">
                     <strong>Overview:</strong> Conducted quantitative forecasting research predicting Vietnam's reserves to reach approximately $93.3 Billion by December 2026.
                 </p>
-                <p style="margin-bottom: 0.2rem; font-weight: bold; font-size: 0.95rem;">
+                <p class="project-metrics-title" data-i18n="p1MetricsTitle">
                     Metrics & Tasks:
                 </p>
                 <ul class="entry-bullets">
-                    <li>Collected, cleaned, and processed a monthly time-series dataset of 120 observations (2016–2025) from the IMF database, applying stationarity and differencing diagnostics.</li>
-                    <li>Constructed and validated a time-series forecasting model to predict reserves and support reserve adequacy planning.</li>
+                    <li data-i18n="p1Task1">Collected, cleaned, and processed a monthly time-series dataset of 120 observations (2016–2025) from the IMF database, applying stationarity and differencing diagnostics.</li>
+                    <li data-i18n="p1Task2">Constructed and validated a time-series forecasting model to predict reserves and support reserve adequacy planning.</li>
                 </ul>
             </div>
             
             <!-- Project 2 -->
             <div class="resume-entry">
                 <div class="entry-header">
-                    <span class="entry-org">LABOR STRUCTURE IN VIETNAM IN THE CONTEXT OF THE FOURTH INDUSTRIAL REVOLUTION</span>
+                    <span class="entry-org" data-i18n="p2Title">LABOR STRUCTURE IN VIETNAM IN THE CONTEXT OF THE FOURTH INDUSTRIAL REVOLUTION</span>
                     <span class="entry-location">Excel</span>
                 </div>
                 <div class="entry-subheader">
-                    <span class="entry-title">Co-author, Data Analyst</span>
-                    <span class="entry-date">Aug 2025 – Nov 2025</span>
+                    <span class="entry-title" data-i18n="p2Role">Co-author, Data Analyst</span>
+                    <span class="entry-date" data-i18n="p2Date">Aug 2025 – Nov 2025</span>
                 </div>
-                <p style="margin-top: 0.2rem; margin-bottom: 0.2rem; text-align: justify; font-size: 0.95rem;">
+                <p class="project-overview" data-i18n="p2Overview">
                     <strong>Overview:</strong> Conducted research published in the <em>State Management Journal</em> (No. 337, Feb 2026) on employment structure changes under Industry 4.0.
                 </p>
-                <p style="margin-bottom: 0.2rem; font-weight: bold; font-size: 0.95rem;">
+                <p class="project-metrics-title" data-i18n="p1MetricsTitle">
                     Metrics & Tasks:
                 </p>
                 <ul class="entry-bullets">
-                    <li>Aggregated and engineered a national demographic and employment dataset (2010–2023) from the General Statistics Office (GSO), resolving data anomalies and formatting gaps.</li>
-                    <li>Executed exploratory data analysis (EDA) using advanced Excel and Pivot Tables to model and visualize employment structure shifts.</li>
+                    <li data-i18n="p2Task1">Aggregated and engineered a national demographic and employment dataset (2010–2023) from the General Statistics Office (GSO), resolving data anomalies and formatting gaps.</li>
+                    <li data-i18n="p2Task2">Executed exploratory data analysis (EDA) using advanced Excel and Pivot Tables to model and visualize employment structure shifts.</li>
                 </ul>
             </div>
-  
+   
             <!-- Project 3 -->
             <div class="resume-entry">
                 <div class="entry-header">
-                    <span class="entry-org">IMPACT OF GENDER INEQUALITY IN LABOR AND EMPLOYMENT ON ECONOMIC GROWTH IN DEVELOPING COUNTRIES (2015-2022)</span>
+                    <span class="entry-org" data-i18n="p3Title">IMPACT OF GENDER INEQUALITY IN LABOR AND EMPLOYMENT ON ECONOMIC GROWTH IN DEVELOPING COUNTRIES (2015-2022)</span>
                     <span class="entry-location">Stata & Excel</span>
                 </div>
                 <div class="entry-subheader">
-                    <span class="entry-title">Co-author, Data Analyst</span>
-                    <span class="entry-date">May 2025 – Jun 2025</span>
+                    <span class="entry-title" data-i18n="p3Role">Co-author, Data Analyst</span>
+                    <span class="entry-date" data-i18n="p3Date">May 2025 – Jun 2025</span>
                 </div>
-                <p style="margin-top: 0.2rem; margin-bottom: 0.2rem; text-align: justify; font-size: 0.95rem;">
+                <p class="project-overview" data-i18n="p3Overview">
                     <strong>Overview:</strong> Conducted panel study evaluating GDP growth determinants, showing that a 1-unit increase in the Gender Development Index (GDI) has a positive growth coefficient of +5.438 across developing nations.
                 </p>
-                <p style="margin-bottom: 0.2rem; font-weight: bold; font-size: 0.95rem;">
+                <p class="project-metrics-title" data-i18n="p1MetricsTitle">
                     Metrics & Tasks:
                 </p>
                 <ul class="entry-bullets">
-                    <li>Consolidated and cleansed World Bank macroeconomic panel indicators across 94 developing countries over an 8-year timeframe (751 total observations).</li>
-                    <li>Formulated and estimated panel data regression models (OLS, Fixed Effects, FGLS) in Stata, successfully correcting for heteroscedasticity, autocorrelation, and cross-sectional dependence.</li>
+                    <li data-i18n="p3Task1">Consolidated and cleansed World Bank macroeconomic panel indicators across 94 developing countries over an 8-year timeframe (751 total observations).</li>
+                    <li data-i18n="p3Task2">Formulated and estimated panel data regression models (OLS, Fixed Effects, FGLS) in Stata, successfully correcting for heteroscedasticity, autocorrelation, and cross-sectional dependence.</li>
                 </ul>
             </div>
- 
+  
             <!-- Project 4 -->
             <div class="resume-entry">
                 <div class="entry-header">
-                    <span class="entry-org">FACTORS AFFECTING ECONOMIC GROWTH IN MIDDLE-INCOME AND HIGH-INCOME COUNTRY GROUPS (2005-2020)</span>
+                    <span class="entry-org" data-i18n="p4Title">FACTORS AFFECTING ECONOMIC GROWTH IN MIDDLE-INCOME AND HIGH-INCOME COUNTRY GROUPS (2005-2020)</span>
                     <span class="entry-location">Stata & Excel</span>
                 </div>
                 <div class="entry-subheader">
-                    <span class="entry-title">Co-author, Data Analyst</span>
-                    <span class="entry-date">Oct 2024 – Nov 2024</span>
+                    <span class="entry-title" data-i18n="p4Role">Co-author, Data Analyst</span>
+                    <span class="entry-date" data-i18n="p4Date">Oct 2024 – Nov 2024</span>
                 </div>
-                <p style="margin-top: 0.2rem; margin-bottom: 0.2rem; text-align: justify; font-size: 0.95rem;">
+                <p class="project-overview" data-i18n="p4Overview">
                     <strong>Overview:</strong> Comparative panel analysis examining macroeconomic growth drivers (HDI, capital, labor, technology) in middle vs. high-income countries (2005–2020).
                 </p>
-                <p style="margin-bottom: 0.2rem; font-weight: bold; font-size: 0.95rem;">
+                <p class="project-metrics-title" data-i18n="p1MetricsTitle">
                     Metrics & Tasks:
                 </p>
                 <ul class="entry-bullets">
-                    <li>Extracted and structured macroeconomic panel indicators (HDI, capital, labor, technology, corruption) for 54 nations over a 15-year timeframe (707 total observations).</li>
-                    <li>Modeled endogeneity and reverse causality of technology and corruption variables using a Two-Stage Least Squares (2SLS) panel estimator in Stata.</li>
-                    <li>Conducted comparative statistical analysis of growth elasticities to evaluate the varying impacts of HDI and technology drivers between income groups.</li>
+                    <li data-i18n="p4Task1">Extracted and structured macroeconomic panel indicators (HDI, capital, labor, technology, corruption) for 54 nations over a 15-year timeframe (707 total observations).</li>
+                    <li data-i18n="p4Task2">Modeled endogeneity and reverse causality of technology and corruption variables using a Two-Stage Least Squares (2SLS) panel estimator in Stata.</li>
+                    <li data-i18n="p4Task3">Conducted comparative statistical analysis of growth elasticities to evaluate the varying impacts of HDI and technology drivers between income groups.</li>
                 </ul>
             </div>
         </section>
@@ -459,18 +544,163 @@
         <!-- Technical Skills Section -->
         <section class="resume-section">
             <div class="section-title-container">
-                <h2 class="section-title">Skills & Credentials</h2>
+                <h2 class="section-title" data-i18n="secSkills">Skills & Credentials</h2>
             </div>
             
             <div class="skills-entry">
-                <span class="skills-category">Technical Stack:</span> SQL (MySQL), Python (Pandas, NumPy, Matplotlib), Power BI, Stata, EViews, Advanced MS Excel.
+                <span class="skills-category" data-i18n="skillsCat">Technical Stack:</span> <span data-i18n="skillsVal">SQL (MySQL), Python (Pandas, NumPy, Matplotlib), Power BI, Stata, EViews, Advanced MS Excel.</span>
             </div>
             
             <div class="skills-entry">
-                <span class="skills-category">Certifications:</span> Microsoft Office Specialist (MOS) Excel Associate, MOS Word Associate, MOS PowerPoint Associate.
+                <span class="skills-category" data-i18n="certsCat">Certifications:</span> <span data-i18n="certsVal">Microsoft Office Specialist (MOS) Excel Associate, MOS Word Associate, MOS PowerPoint Associate.</span>
             </div>
         </section>
     </div>
 
+    <script>
+        let currentLang = localStorage.getItem("lang") || "en";
+        
+        const translations = {
+            en: {
+                backToPortfolio: "Back to Portfolio",
+                saveResume: "Save Resume",
+                name: "Nguyen Thi Thu Giang",
+                secEdu: "Education",
+                secProj: "Analytics & Econometric Projects",
+                secSkills: "Skills & Credentials",
+                ftuName: "FOREIGN TRADE UNIVERSITY",
+                ftuLoc: "Hanoi, Vietnam",
+                ftuTitle: "Undergraduate in International Economics (Expected Graduation: 2027)",
+                ftuDate: "2023 – Present",
+                ftuGpa: "Cumulative Grade Point Average (GPA): <strong>3.63 / 4.00</strong>",
+                ftuCourses: "<strong>Relevant Coursework:</strong> Econometrics, Economics and Business Forecasting, Research methodology for economics and business, Applied Informatics.",
+                vphsName: "VINH PHUC HIGH SCHOOL FOR THE GIFTED",
+                vphsLoc: "Vinh Phuc, Vietnam",
+                vphsTitle: "Mathematics Specialization",
+                vphsDate: "2020 – 2023",
+                vphsAward: "Awarded <strong>Second Prize</strong> in the Provincial Mathematics Competition for Excellent Students.",
+                
+                p1Title: "FORECASTING VIETNAM'S FOREIGN EXCHANGE RESERVES IN 2026 USING THE ARIMA MODEL",
+                p1Role: "Co-author, Data Analyst",
+                p1Date: "May 2026 – Jun 2026",
+                p1Overview: "<strong>Overview:</strong> Conducted quantitative forecasting research predicting Vietnam's reserves to reach approximately $93.3 Billion by December 2026.",
+                p1MetricsTitle: "Metrics & Tasks:",
+                p1Task1: "Collected, cleaned, and processed a monthly time-series dataset of 120 observations (2016–2025) from the IMF database, applying stationarity and differencing diagnostics.",
+                p1Task2: "Constructed and validated a time-series forecasting model to predict reserves and support reserve adequacy planning.",
+                
+                p2Title: "LABOR STRUCTURE IN VIETNAM IN THE CONTEXT OF THE FOURTH INDUSTRIAL REVOLUTION",
+                p2Role: "Co-author, Data Analyst",
+                p2Date: "Aug 2025 – Nov 2025",
+                p2Overview: "<strong>Overview:</strong> Conducted research published in the <em>State Management Journal</em> (No. 337, Feb 2026) on employment structure changes under Industry 4.0.",
+                p2Task1: "Aggregated and engineered a national demographic and employment dataset (2010–2023) from the General Statistics Office (GSO), resolving data anomalies and formatting gaps.",
+                p2Task2: "Executed exploratory data analysis (EDA) using advanced Excel and Pivot Tables to model and visualize employment structure shifts.",
+                
+                p3Title: "IMPACT OF GENDER INEQUALITY IN LABOR AND EMPLOYMENT ON ECONOMIC GROWTH IN DEVELOPING COUNTRIES (2015-2022)",
+                p3Role: "Co-author, Data Analyst",
+                p3Date: "May 2025 – Jun 2025",
+                p3Overview: "<strong>Overview:</strong> Conducted panel study evaluating GDP growth determinants, showing that a 1-unit increase in the Gender Development Index (GDI) has a positive growth coefficient of +5.438 across developing nations.",
+                p3Task1: "Consolidated and cleansed World Bank macroeconomic panel indicators across 94 developing countries over an 8-year timeframe (751 total observations).",
+                p3Task2: "Formulated and estimated panel data regression models (OLS, Fixed Effects, FGLS) in Stata, successfully correcting for heteroscedasticity, autocorrelation, and cross-sectional dependence.",
+                
+                p4Title: "FACTORS AFFECTING ECONOMIC GROWTH IN MIDDLE-INCOME AND HIGH-INCOME COUNTRY GROUPS (2005-2020)",
+                p4Role: "Co-author, Data Analyst",
+                p4Date: "Oct 2024 – Nov 2024",
+                p4Overview: "<strong>Overview:</strong> Comparative panel analysis examining macroeconomic growth drivers (HDI, capital, labor, technology, corruption) in middle vs. high-income countries (2005–2020).",
+                p4Task1: "Extracted and structured macroeconomic panel indicators (HDI, capital, labor, technology, corruption) for 54 nations over a 15-year timeframe (707 total observations).",
+                p4Task2: "Modeled endogeneity and reverse causality of technology and corruption variables using a Two-Stage Least Squares (2SLS) panel estimator in Stata.",
+                p4Task3: "Conducted comparative statistical analysis of growth elasticities to evaluate the varying impacts of HDI and technology drivers between income groups.",
+                
+                skillsCat: "Technical Stack:",
+                skillsVal: "SQL (MySQL), Python (Pandas, NumPy, Matplotlib), Power BI, Stata, EViews, Advanced MS Excel.",
+                certsCat: "Certifications:",
+                certsVal: "Microsoft Office Specialist (MOS) Excel Associate, MOS Word Associate, MOS PowerPoint Associate."
+            },
+            vi: {
+                backToPortfolio: "Quay lại Portfolio",
+                saveResume: "Lưu CV / Tải PDF",
+                name: "Nguyễn Thị Thu Giang",
+                secEdu: "Học vấn",
+                secProj: "Dự án Phân tích & Kinh tế lượng",
+                secSkills: "Kỹ năng & Chứng chỉ",
+                ftuName: "TRƯỜNG ĐẠI HỌC NGOẠI THƯƠNG",
+                ftuLoc: "Hà Nội, Việt Nam",
+                ftuTitle: "Cử nhân ngành Kinh tế quốc tế (Tốt nghiệp dự kiến: 2027)",
+                ftuDate: "2023 – Hiện tại",
+                ftuGpa: "Điểm trung bình tích lũy (GPA): <strong>3.63 / 4.00</strong>",
+                ftuCourses: "<strong>Môn học liên quan:</strong> Kinh tế lượng, Dự báo trong kinh tế và kinh doanh, Phương pháp nghiên cứu trong kinh tế và kinh doanh, Tin học ứng dụng.",
+                vphsName: "TRƯỜNG THPT CHUYÊN VĨNH PHÚC",
+                vphsLoc: "Vĩnh Phúc, Việt Nam",
+                vphsTitle: "Chuyên Toán",
+                vphsDate: "2020 – 2023",
+                vphsAward: "Đạt <strong>Giải Nhì</strong> trong Kỳ thi học sinh giỏi Toán cấp tỉnh.",
+                
+                p1Title: "DỰ BÁO DỰ TRỮ NGOẠI HỐI CỦA VIỆT NAM NĂM 2026 BẰNG MÔ HÌNH ARIMA",
+                p1Role: "Đồng tác giả, Chuyên viên phân tích dữ liệu",
+                p1Date: "05/2026 – 06/2026",
+                p1Overview: "<strong>Tổng quan:</strong> Thực hiện nghiên cứu dự báo định lượng dự kiến mức dự trữ ngoại hối của Việt Nam đạt khoảng 93.3 tỷ USD vào tháng 12 năm 2026.",
+                p1MetricsTitle: "Các chỉ số & Nhiệm vụ:",
+                p1Task1: "Thu thập, làm sạch và xử lý tập dữ liệu chuỗi thời gian theo tháng gồm 120 quan sát (2016–2025) từ cơ sở dữ liệu IMF, thực hiện kiểm định tính dừng và lấy sai phân.",
+                p1Task2: "Xây dựng và kiểm định mô hình dự báo chuỗi thời gian để dự báo mức dự trữ và hỗ trợ lập kế hoạch về tính đầy đủ của dự trữ ngoại hối.",
+                
+                p2Title: "CƠ CẤU LAO ĐỘNG Ở VIỆT NAM TRONG BỐI CẢNH CUỘC CÁCH MẠNG CÔNG NGHIỆP LẦN THỨ TƯ",
+                p2Role: "Đồng tác giả, Chuyên viên phân tích dữ liệu",
+                p2Date: "08/2025 – 11/2025",
+                p2Overview: "<strong>Tổng quan:</strong> Thực hiện nghiên cứu được đăng trên <em>Tạp chí Quản lý nhà nước</em> (Số 337, tháng 2 năm 2026) về thay đổi cơ cấu việc làm dưới CMCN 4.0.",
+                p2Task1: "Tổng hợp và thiết lập tập dữ liệu nhân khẩu học và việc làm quốc gia (2010–2023) từ Tổng cục Thống kê (GSO), xử lý dữ liệu dị biệt và khoảng trống định dạng.",
+                p2Task2: "Thực hiện phân tích khám phá dữ liệu (EDA) sử dụng các bảng xoay Pivot Tables và Excel nâng cao để mô hình hóa và trực quan hóa dịch chuyển cơ cấu việc làm.",
+                
+                p3Title: "TÁC ĐỘNG CỦA BẤT BÌNH ĐẲNG GIỚI TRONG LAO ĐỘNG VÀ VIỆC LÀM ĐẾN TĂNG TRƯỞNG KINH TẾ TẠI CÁC QUỐC GIA ĐANG PHÁT TRIỂN GIAI ĐOẠN 2015 - 2022",
+                p3Role: "Đồng tác giả, Chuyên viên phân tích dữ liệu",
+                p3Date: "05/2025 – 06/2025",
+                p3Overview: "<strong>Tổng quan:</strong> Thực hiện nghiên cứu dữ liệu bảng đánh giá các yếu tố quyết định tăng trưởng GDP, chỉ ra rằng mức tăng 1 đơn vị trong Chỉ số phát triển giới (GDI) có hệ số tăng trưởng dương là +5.438 ở các nước đang phát triển.",
+                p3Task1: "Tổng hợp và làm sạch các chỉ số bảng vĩ mô của Ngân hàng Thế giới tại 94 quốc gia đang phát triển trong 8 năm (tổng cộng 751 quan sát).",
+                p3Task2: "Thiết lập và ước lượng các mô hình hồi quy dữ liệu bảng (OLS, Tác động cố định, FGLS) trong Stata, khắc phục các vấn đề phương sai sai số thay đổi, tự tương quan và phụ thuộc chéo.",
+                
+                p4Title: "CÁC NHÂN TỐ ẢNH HƯỞNG ĐẾN TĂNG TRƯỞNG KINH TẾ Ở NHÓM CÁC QUỐC GIA CÓ THU NHẬP TRUNG BÌNH VÀ THU NHẬP CAO GIAI ĐOẠN 2005 - 2020",
+                p4Role: "Đồng tác giả, Chuyên viên phân tích dữ liệu",
+                p4Date: "10/2024 – 11/2024",
+                p4Overview: "<strong>Tổng quan:</strong> Phân tích bảng so sánh kiểm tra các yếu tố thúc đẩy tăng trưởng (HDI, vốn, lao động, công nghệ, tham nhũng) ở các quốc gia thu nhập trung bình so với thu nhập cao (2005–2020).",
+                p4Task1: "Trích xuất và cấu trúc các chỉ số kinh tế vĩ mô (HDI, vốn, lao động, công nghệ, tham nhũng) cho 54 quốc gia trong 15 năm (tổng cộng 707 quan sát).",
+                p4Task2: "Mô hình hóa tính nội sinh và quan hệ nhân quả ngược của biến công nghệ và tham nhũng sử dụng ước lượng bình phương tối thiểu hai giai đoạn (2SLS) trên Stata.",
+                p4Task3: "Thực hiện phân tích thống kê so sánh độ co giãn tăng trưởng để đánh giá tác động khác biệt của HDI và công nghệ giữa hai nhóm quốc gia.",
+                
+                skillsCat: "Kỹ năng chuyên môn:",
+                skillsVal: "SQL (MySQL), Python (Pandas, NumPy, Matplotlib), Power BI, Stata, EViews, MS Excel nâng cao.",
+                certsCat: "Chứng chỉ:",
+                certsVal: "Microsoft Office Specialist (MOS) Excel Associate (Cộng tác viên), MOS Word Associate, MOS PowerPoint Associate."
+            }
+        };
+
+        const langToggle = document.getElementById("langToggle");
+        
+        function updateLangUI() {
+            if (langToggle) {
+                langToggle.querySelector(".lang-text").textContent = currentLang.toUpperCase();
+            }
+            
+            // Loop through i18n
+            document.querySelectorAll("[data-i18n]").forEach(el => {
+                const key = el.getAttribute("data-i18n");
+                const translated = translations[currentLang][key];
+                if (translated) {
+                    el.innerHTML = translated;
+                }
+            });
+            
+            // Update Lang attribute in document element
+            document.documentElement.lang = currentLang;
+        }
+
+        if (langToggle) {
+            langToggle.addEventListener("click", () => {
+                currentLang = currentLang === "en" ? "vi" : "en";
+                localStorage.setItem("lang", currentLang);
+                updateLangUI();
+            });
+        }
+
+        // Run initially
+        updateLangUI();
+    </script>
 </body>
 </html>

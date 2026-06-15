@@ -43,14 +43,15 @@
             
             <nav class="nav-menu" id="navMenu">
                 <button class="menu-close-btn" id="menuCloseBtn" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
-                <a href="#hero" class="nav-link active" id="navLinkAbout"><i class="fa-regular fa-user"></i> About</a>
-                <a href="#education" class="nav-link" id="navLinkEducation"><i class="fa-solid fa-graduation-cap"></i> Education</a>
-                <a href="#skills" class="nav-link" id="navLinkSkills"><i class="fa-solid fa-code"></i> Skills</a>
-                <a href="#projects" class="nav-link" id="navLinkProjects"><i class="fa-solid fa-chart-pie"></i> Projects</a>
-                <a href="resume/" class="nav-link" id="navLinkResume"><i class="fa-regular fa-file-lines"></i> Resume</a>
+                <a href="#hero" class="nav-link active" id="navLinkAbout"><i class="fa-regular fa-user"></i> <span data-i18n="navAbout">About</span></a>
+                <a href="#education" class="nav-link" id="navLinkEducation"><i class="fa-solid fa-graduation-cap"></i> <span data-i18n="navEducation">Education</span></a>
+                <a href="#skills" class="nav-link" id="navLinkSkills"><i class="fa-solid fa-code"></i> <span data-i18n="navSkills">Skills</span></a>
+                <a href="#projects" class="nav-link" id="navLinkProjects"><i class="fa-solid fa-chart-pie"></i> <span data-i18n="navProjects">Projects</span></a>
+                <a href="resume/" class="nav-link" id="navLinkResume"><i class="fa-regular fa-file-lines"></i> <span data-i18n="navResume">Resume</span></a>
             </nav>
 
             <div class="nav-actions">
+                <button class="lang-toggle" id="langToggle" aria-label="Toggle language">EN</button>
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
                     <i class="fa-solid fa-moon moon-icon"></i>
                     <i class="fa-solid fa-sun sun-icon"></i>
@@ -78,13 +79,13 @@
                 <div class="hero-top-block">
                     <div class="hero-text-block">
                         <div class="hero-identity">
-                            <h1 class="hero-name" id="heroName">Hi, I'm Giang Nguyen</h1>
+                            <h1 class="hero-name" id="heroName" data-i18n="heroName">Hi, I'm Giang Nguyen</h1>
                             <div class="hero-title-container">
                                 <span class="hero-title" id="heroTitle">Aspiring Data Analyst</span>
                                 <span class="typed-cursor">|</span>
                             </div>
                         </div>
-                        <p class="hero-description" id="heroDesc">
+                        <p class="hero-description" id="heroDesc" data-i18n="heroDesc">
                             An International Economics student at Foreign Trade University with a strong passion for quantitative research. I specialize in data collection, econometric modeling, and time-series forecasting using Excel, Stata, Eviews, SQL, and Python to solve analytical problems and derive actionable insights.
                         </p>
                     </div>
@@ -92,11 +93,11 @@
                     <div class="hero-actions">
                         <a href="#projects" class="capsule-btn btn-primary-capsule" id="btnHeroProjects">
                             <div class="capsule-btn-icon"><i class="fa-solid fa-folder-open"></i></div>
-                            <span class="capsule-btn-text">View Projects</span>
+                            <span class="capsule-btn-text" data-i18n="btnViewProjects">View Projects</span>
                         </a>
                         <a href="resume/" class="capsule-btn btn-secondary-capsule" id="btnHeroCV">
                             <div class="capsule-btn-icon"><i class="fa-regular fa-file-lines"></i></div>
-                            <span class="capsule-btn-text">View Resume</span>
+                            <span class="capsule-btn-text" data-i18n="btnViewResume">View Resume</span>
                         </a>
                         <a href="https://www.linkedin.com/in/giang-ntt/" target="_blank" rel="noopener noreferrer" class="capsule-btn btn-social-capsule" id="btnHeroLinkedIn" aria-label="LinkedIn">
                             <div class="capsule-btn-icon"><i class="fa-brands fa-linkedin-in"></i></div>
@@ -117,12 +118,12 @@
                             <i class="fa-solid fa-bullseye"></i>
                         </div>
                         <div class="objective-card-text">
-                            <h3>Career Objective</h3>
+                            <h3 data-i18n="objectiveTitle">Career Objective</h3>
                             <div class="objective-paragraphs">
-                                <p>
+                                <p data-i18n="objectiveP1">
                                     With a strong academic foundation in International Economics from <strong>Foreign Trade University</strong>, I have developed solid skills in data collection, econometric modeling, time-series forecasting, and data analysis using <strong>Stata, Eviews, Excel (MOS), SQL, and Python</strong>.
                                 </p>
-                                <p>
+                                <p data-i18n="objectiveP2">
                                     Within the next 2-3 years, I aim to secure a professional role as a <strong>Data Analyst</strong>, <strong>Business Intelligence Analyst</strong>, or <strong>Research Analyst</strong>, where I can apply quantitative methods to solve complex business and economic problems. In the long term, I aspire to grow into a <strong>Senior Data Analyst</strong> or <strong>Quantitative Researcher</strong>, driving strategic growth and policy design through data-backed decisions.
                                 </p>
                             </div>
@@ -138,29 +139,29 @@
         <section class="edu-cert-section section-padding" id="education">
             <div class="section-container">
                 <div class="section-header">
-                    <span class="section-subtitle">Background</span>
-                    <h2 class="section-title">Education & Certifications</h2>
+                    <span class="section-subtitle" data-i18n="eduSubtitle">Background</span>
+                    <h2 class="section-title" data-i18n="eduTitle">Education & Certifications</h2>
                     <div class="title-underline"></div>
                 </div>
                 
                 <div class="edu-cert-grid">
                     <!-- Education Card -->
                     <div class="edu-card glass" style="padding: 2.5rem; border-radius: var(--border-radius-lg); display: flex; flex-direction: column; gap: 1.5rem; height: 100%;">
-                        <h3 class="column-title" style="margin-bottom: 0.5rem;"><i class="fa-solid fa-graduation-cap"></i> Education</h3>
+                        <h3 class="column-title" style="margin-bottom: 0.5rem;"><i class="fa-solid fa-graduation-cap"></i> <span data-i18n="eduHeader">Education</span></h3>
                         <div class="edu-details" style="display: flex; flex-direction: column; gap: 1rem;">
                             <!-- Foreign Trade University -->
                             <div>
-                                <h4 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; color: var(--text-primary); line-height: 1.2;">Foreign Trade University</h4>
-                                <div style="font-size: 0.9rem; color: var(--accent-primary); font-weight: 700; margin-top: 0.3rem;">2023 - 2027 (Expected)</div>
+                                <h4 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; color: var(--text-primary); line-height: 1.2;" data-i18n="eduFtuName">Foreign Trade University</h4>
+                                <div style="font-size: 0.9rem; color: var(--accent-primary); font-weight: 700; margin-top: 0.3rem;" data-i18n="eduFtuYears">2023 - 2027 (Expected)</div>
                             </div>
-                            <p style="font-style: italic; color: var(--text-muted); font-size: 1rem; margin-top: -0.3rem;">Undergraduate in International Economics</p>
+                            <p style="font-style: italic; color: var(--text-muted); font-size: 1rem; margin-top: -0.3rem;" data-i18n="eduFtuMajor">Undergraduate in International Economics</p>
                             <div class="timeline-highlights" style="margin-bottom: 0.5rem;">
-                                <div class="highlight-badge"><i class="fa-solid fa-star"></i> GPA: <strong>3.63 / 4.00</strong></div>
+                                <div class="highlight-badge"><i class="fa-solid fa-star"></i> <span data-i18n="eduFtuGpa">GPA: <strong>3.63 / 4.00</strong></span></div>
                             </div>
-                            <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; text-align: justify; margin-bottom: 0.5rem;">
+                            <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; text-align: justify; margin-bottom: 0.5rem;" data-i18n="eduFtuDesc">
                                 The energetic environment at Foreign Trade University has sharpened my logical reasoning, business problem-solving skills, and ability to present and collaborate in teams.
                             </p>
-                            <div style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; margin-top: 0.5rem;">
+                            <div style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; margin-top: 0.5rem;" data-i18n="eduFtuCoursework">
                                 <strong>Relevant Coursework:</strong> Econometrics, Economics and Business Forecasting, Research methodology for economics and business, Applied Informatics.
                             </div>
 
@@ -168,14 +169,14 @@
 
                             <!-- Vinh Phuc High School for the Gifted -->
                             <div>
-                                <h4 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; color: var(--text-primary); line-height: 1.2;">Vinh Phuc High School for the Gifted</h4>
-                                <div style="font-size: 0.9rem; color: var(--accent-primary); font-weight: 700; margin-top: 0.3rem;">2020 - 2023</div>
+                                <h4 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; color: var(--text-primary); line-height: 1.2;" data-i18n="eduVphsName">Vinh Phuc High School for the Gifted</h4>
+                                <div style="font-size: 0.9rem; color: var(--accent-primary); font-weight: 700; margin-top: 0.3rem;" data-i18n="eduVphsYears">2020 - 2023</div>
                             </div>
-                            <p style="font-style: italic; color: var(--text-muted); font-size: 1rem; margin-top: -0.3rem;">Mathematics Specialization</p>
+                            <p style="font-style: italic; color: var(--text-muted); font-size: 1rem; margin-top: -0.3rem;" data-i18n="eduVphsMajor">Mathematics Specialization</p>
                             <div class="timeline-highlights" style="margin-bottom: 0.5rem;">
-                                <div class="highlight-badge"><i class="fa-solid fa-award"></i> 2nd Prize - Provincial Math Olympiad</div>
+                                <div class="highlight-badge"><i class="fa-solid fa-award"></i> <span data-i18n="eduVphsAward">2nd Prize - Provincial Math Olympiad</span></div>
                             </div>
-                            <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; text-align: justify;">
+                            <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; text-align: justify;" data-i18n="eduVphsDesc">
                                 Rigorous training in analytical problem solving and mathematical analysis. Awarded the Second Prize in the Provincial Mathematics Competition for Excellent Students.
                             </p>
                         </div>
@@ -183,15 +184,15 @@
                     
                     <!-- Certifications Card -->
                     <div class="cert-card glass" style="padding: 2.5rem; border-radius: var(--border-radius-lg); display: flex; flex-direction: column; gap: 1.5rem; height: 100%;">
-                        <h3 class="column-title" style="margin-bottom: 0.5rem;"><i class="fa-solid fa-award"></i> Certifications</h3>
+                        <h3 class="column-title" style="margin-bottom: 0.5rem;"><i class="fa-solid fa-award"></i> <span data-i18n="certHeader">Certifications</span></h3>
                         <div class="cert-badge-container" style="border-radius: var(--border-radius-md); overflow: hidden; border: 1px solid var(--glass-border); background: #000;">
                             <img src="assets/mos_badges.png" alt="Microsoft Office Specialist Badges" class="cert-badge-img" id="certBadgeImg" style="width: 100%; height: auto; display: block; object-fit: cover; transition: var(--transition-smooth);">
                         </div>
                         <div class="cert-details" style="display: flex; flex-direction: column; gap: 1rem;">
-                            <h4 class="cert-name" style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700;">Microsoft Office Specialist (MOS)</h4>
-                            <p class="cert-issuer" style="font-size: 0.9rem; color: var(--text-muted); margin-top: -0.5rem;">Issued by: Microsoft</p>
+                            <h4 class="cert-name" style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700;" data-i18n="certMosName">Microsoft Office Specialist (MOS)</h4>
+                            <p class="cert-issuer" style="font-size: 0.9rem; color: var(--text-muted); margin-top: -0.5rem;" data-i18n="certMosIssuer">Issued by: Microsoft</p>
                             <button class="btn btn-sm btn-outline btn-cert-details" id="btnCertModal" style="align-self: flex-start; margin-top: 0.5rem;">
-                                <i class="fa-solid fa-expand"></i> Expand Credentials
+                                <i class="fa-solid fa-expand"></i> <span data-i18n="btnExpandCredentials">Expand Credentials</span>
                             </button>
                         </div>
                     </div>
@@ -203,15 +204,15 @@
         <section class="skills-section section-padding" id="skills">
             <div class="section-container">
                 <div class="section-header">
-                    <span class="section-subtitle">Competence</span>
-                    <h2 class="section-title">Technical & Soft Skills</h2>
+                    <span class="section-subtitle" data-i18n="skillsSubtitle">Competence</span>
+                    <h2 class="section-title" data-i18n="skillsTitle">Technical & Soft Skills</h2>
                     <div class="title-underline"></div>
                 </div>
                 
                 <div class="skills-grid">
                     <!-- Technical Skills -->
                     <div class="skills-category glass">
-                        <h3 class="skills-cat-title"><i class="fa-solid fa-laptop-code"></i> Technical Skills (Data Stack)</h3>
+                        <h3 class="skills-cat-title"><i class="fa-solid fa-laptop-code"></i> <span data-i18n="skillsTechTitle">Technical Skills (Data Stack)</span></h3>
                         <div class="skills-chips-container">
                             <span class="skill-chip"><i class="fa-solid fa-database"></i> SQL (MySQL)</span>
                             <span class="skill-chip"><i class="fa-brands fa-python"></i> Python (Pandas / NumPy / Matplotlib)</span>
@@ -223,37 +224,37 @@
                     
                     <!-- Soft & Business Skills -->
                     <div class="skills-category glass">
-                        <h3 class="skills-cat-title"><i class="fa-solid fa-brain"></i> Analytical Mindset & Soft Skills</h3>
+                        <h3 class="skills-cat-title"><i class="fa-solid fa-brain"></i> <span data-i18n="skillsSoftTitle">Analytical Mindset & Soft Skills</span></h3>
                         <div class="skills-tag-container">
                             <div class="skill-tag">
                                 <div class="tag-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
                                 <div>
-                                    <h4>Analytical Thinking</h4>
-                                    <p>Translating business problems into structured technical questions and data solutions.</p>
+                                    <h4 data-i18n="skillATTitle">Analytical Thinking</h4>
+                                    <p data-i18n="skillATDesc">Translating business problems into structured technical questions and data solutions.</p>
                                 </div>
                             </div>
                             
                             <div class="skill-tag">
                                 <div class="tag-icon"><i class="fa-solid fa-comments"></i></div>
                                 <div>
-                                    <h4>Data Storytelling</h4>
-                                    <p>Explaining complex technical numbers into easily understood business insights for stakeholders.</p>
+                                    <h4 data-i18n="skillDSTitle">Data Storytelling</h4>
+                                    <p data-i18n="skillDSDesc">Explaining complex technical numbers into easily understood business insights for stakeholders.</p>
+                                </div>
+                            </div>
+
+                            <div class="skill-tag">
+                                <div class="tag-icon"><i class="fa-solid fa-robot"></i></div>
+                                <div>
+                                    <h4 data-i18n="skillPSTitle">AI Tool Integration</h4>
+                                    <p data-i18n="skillPSDesc">Leveraging generative AI models and prompt engineering to optimize research and data processing workflows.</p>
                                 </div>
                             </div>
 
                             <div class="skill-tag">
                                 <div class="tag-icon"><i class="fa-solid fa-users"></i></div>
                                 <div>
-                                    <h4>Teamwork & Collaboration</h4>
-                                    <p>Effective cross-functional communication and project coordination in team assignments.</p>
-                                </div>
-                            </div>
-
-                            <div class="skill-tag">
-                                <div class="tag-icon"><i class="fa-solid fa-lightbulb"></i></div>
-                                <div>
-                                    <h4>Problem Solving</h4>
-                                    <p>Identifying root causes of operational challenges and proposing data-backed resolutions.</p>
+                                    <h4 data-i18n="skillTWTitle">Teamwork & Collaboration</h4>
+                                    <p data-i18n="skillTWDesc">Effective cross-functional communication and project coordination in team assignments.</p>
                                 </div>
                             </div>
                         </div>
@@ -266,8 +267,8 @@
         <section class="projects-section section-padding" id="projects">
             <div class="section-container">
                 <div class="section-header">
-                    <span class="section-subtitle">Showcase</span>
-                    <h2 class="section-title">Analytics Projects</h2>
+                    <span class="section-subtitle" data-i18n="projSubtitle">Showcase</span>
+                    <h2 class="section-title" data-i18n="projTitle">Analytics Projects</h2>
                     <div class="title-underline"></div>
                 </div>
                 
@@ -277,17 +278,17 @@
                     <div class="project-card glass" data-project-id="arima-forecasting">
                         <div class="project-img-container card-dashboard">
                             <div class="card-dashboard-meta">
-                                <span class="meta-label">Data: IMF Monthly (2016-2025)</span>
-                                <span class="meta-result">Result: 2026 Forecast ~$93.3B</span>
+                                <span class="meta-label" data-i18n="projArimaMetaLabel">Data: IMF Monthly (2016-2025)</span>
+                                <span class="meta-result" data-i18n="projArimaMetaResult">Result: 2026 Forecast ~$93.3B</span>
                             </div>
                             <div class="card-dashboard-chart">
                                 <canvas id="cardChart-arima-forecasting"></canvas>
                             </div>
-                            <div class="project-category-badge">Time-Series Forecasting</div>
+                            <div class="project-category-badge" data-i18n="projArimaCategory">Time-Series Forecasting</div>
                         </div>
                         <div class="project-info-content">
-                            <h3 class="project-card-title">Forecasting Vietnam's Foreign Exchange Reserves in 2026 Using the ARIMA Model</h3>
-                                                    <p class="project-card-desc">
+                            <h3 class="project-card-title" data-i18n="projArimaTitle">Forecasting Vietnam's Foreign Exchange Reserves in 2026 Using the ARIMA Model</h3>
+                            <p class="project-card-desc" data-i18n="projArimaDesc">
                                 Quantitative research forecasting Vietnam's foreign exchange reserves using an ARIMA model, projecting reserves up to 2026.
                             </p>
                             <div class="project-tech-stack">
@@ -297,7 +298,7 @@
                                 <span class="tech-badge">Time-Series Forecasting</span>
                                 <span class="tech-badge">IMF Data</span>
                             </div>
-                            <button class="btn btn-sm btn-primary btn-view-project" data-project-id="arima-forecasting">View Project</button>
+                            <button class="btn btn-sm btn-primary btn-view-project" data-project-id="arima-forecasting" data-i18n="btnViewProject">View Project</button>
                         </div>
                     </div>
                     
@@ -305,17 +306,17 @@
                     <div class="project-card glass" data-project-id="labor-structure">
                         <div class="project-img-container card-dashboard">
                             <div class="card-dashboard-meta">
-                                <span class="meta-label">Data: GSO National (2010-2023)</span>
-                                <span class="meta-result">Result: Agri. 44% ➔ 26.9%</span>
+                                <span class="meta-label" data-i18n="projLaborMetaLabel">Data: GSO National (2010-2023)</span>
+                                <span class="meta-result" data-i18n="projLaborMetaResult">Result: Agri. 44% ➔ 26.9%</span>
                             </div>
                             <div class="card-dashboard-chart">
                                 <canvas id="cardChart-labor-structure"></canvas>
                             </div>
-                            <div class="project-category-badge">Published Research</div>
+                            <div class="project-category-badge" data-i18n="projLaborCategory">Published Research</div>
                         </div>
                         <div class="project-info-content">
-                            <h3 class="project-card-title">Labor Structure in Vietnam in the Context of the Fourth Industrial Revolution</h3>
-                            <p class="project-card-desc">
+                            <h3 class="project-card-title" data-i18n="projLaborTitle">Labor Structure in Vietnam in the Context of the Fourth Industrial Revolution</h3>
+                            <p class="project-card-desc" data-i18n="projLaborDesc">
                                 Research paper published in the State Management Journal analyzing sectoral labor transitions and employment dynamics in Vietnam.
                             </p>
                             <div class="project-tech-stack">
@@ -326,7 +327,7 @@
                                 <span class="tech-badge">GSO Data</span>
                                 <span class="tech-badge">State Journal Publication</span>
                             </div>
-                            <button class="btn btn-sm btn-primary btn-view-project" data-project-id="labor-structure">View Project</button>
+                            <button class="btn btn-sm btn-primary btn-view-project" data-project-id="labor-structure" data-i18n="btnViewProject">View Project</button>
                         </div>
                     </div>
   
@@ -334,17 +335,17 @@
                     <div class="project-card glass" data-project-id="gender-inequality">
                         <div class="project-img-container card-dashboard">
                             <div class="card-dashboard-meta">
-                                <span class="meta-label">Data: WB 94 Countries Panel</span>
-                                <span class="meta-result">Result: GDI Coeff +5.438</span>
+                                <span class="meta-label" data-i18n="projGenderMetaLabel">Data: WB 94 Countries Panel</span>
+                                <span class="meta-result" data-i18n="projGenderMetaResult">Result: GDI Coeff +5.438</span>
                             </div>
                             <div class="card-dashboard-chart">
                                 <canvas id="cardChart-gender-inequality"></canvas>
                             </div>
-                            <div class="project-category-badge">Econometric Analysis</div>
+                            <div class="project-category-badge" data-i18n="projGenderCategory">Econometric Analysis</div>
                         </div>
                         <div class="project-info-content">
-                            <h3 class="project-card-title">Impact of Gender Inequality in Labor and Employment on Economic Growth in Developing Countries (2015-2022)</h3>
-                            <p class="project-card-desc">
+                            <h3 class="project-card-title" data-i18n="projGenderTitle">Impact of Gender Inequality in Labor and Employment on Economic Growth in Developing Countries (2015-2022)</h3>
+                            <p class="project-card-desc" data-i18n="projGenderDesc">
                                 Panel data regression analyzing the impact of labor-market gender inequality on economic growth across developing nations (2015–2022).
                             </p>
                             <div class="project-tech-stack">
@@ -354,7 +355,7 @@
                                 <span class="tech-badge">FGLS Estimator</span>
                                 <span class="tech-badge">World Bank Data</span>
                             </div>
-                            <button class="btn btn-sm btn-primary btn-view-project" data-project-id="gender-inequality">View Project</button>
+                            <button class="btn btn-sm btn-primary btn-view-project" data-project-id="gender-inequality" data-i18n="btnViewProject">View Project</button>
                         </div>
                     </div>
   
@@ -362,17 +363,17 @@
                     <div class="project-card glass" data-project-id="economic-growth-drivers">
                         <div class="project-img-container card-dashboard">
                             <div class="card-dashboard-meta">
-                                <span class="meta-label">Data: WB 54 Countries Panel</span>
-                                <span class="meta-result">Result: HDI Dominant (+3.48 / +3.81)</span>
+                                <span class="meta-label" data-i18n="projGrowthMetaLabel">Data: WB 54 Countries Panel</span>
+                                <span class="meta-result" data-i18n="projGrowthMetaResult">Result: HDI Dominant (+3.48 / +3.81)</span>
                             </div>
                             <div class="card-dashboard-chart">
                                 <canvas id="cardChart-economic-growth-drivers"></canvas>
                             </div>
-                            <div class="project-category-badge">Comparative Policy Study</div>
+                            <div class="project-category-badge" data-i18n="projGrowthCategory">Comparative Policy Study</div>
                         </div>
                         <div class="project-info-content">
-                            <h3 class="project-card-title">Factors Affecting Economic Growth in Middle-Income and High-Income Country Groups (2005-2020)</h3>
-                            <p class="project-card-desc">
+                            <h3 class="project-card-title" data-i18n="projGrowthTitle">Factors Affecting Economic Growth in Middle-Income and High-Income Country Groups (2005-2020)</h3>
+                            <p class="project-card-desc" data-i18n="projGrowthDesc">
                                 Comparative econometric analysis of growth determinants (FDI, trade openness, human capital) in middle vs. high-income countries.
                             </p>
                             <div class="project-tech-stack">
@@ -382,28 +383,26 @@
                                 <span class="tech-badge">Comparative Analysis</span>
                                 <span class="tech-badge">Endogeneity</span>
                             </div>
-                            <button class="btn btn-sm btn-primary btn-view-project" data-project-id="economic-growth-drivers">View Project</button>
+                            <button class="btn btn-sm btn-primary btn-view-project" data-project-id="economic-growth-drivers" data-i18n="btnViewProject">View Project</button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
-
     </main>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="section-container footer-content">
             <div class="footer-left">
-                <p>&copy; 2026 Giang Nguyen. All rights reserved.</p>
-                <p class="footer-tech-tag">Built with HTML, CSS, JavaScript • Hosted on GitHub Pages</p>
+                <p data-i18n="footerCopyright">&copy; 2026 Giang Nguyen. All rights reserved.</p>
+                <p class="footer-tech-tag" data-i18n="footerTech">Built with HTML, CSS, JavaScript • Hosted on GitHub Pages</p>
             </div>
             <div class="footer-right">
-                <a href="#hero">About</a>
-                <a href="#education">Education</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
+                <a href="#hero" data-i18n="footerAbout">About</a>
+                <a href="#education" data-i18n="footerEducation">Education</a>
+                <a href="#skills" data-i18n="footerSkills">Skills</a>
+                <a href="#projects" data-i18n="footerProjects">Projects</a>
             </div>
         </div>
     </footer>
@@ -429,25 +428,25 @@
         <div class="modal-content cert-modal-content glass">
             <button class="modal-close" id="certModalCloseBtn" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
             <div class="modal-body cert-modal-body">
-                <h3>MOS Credentials - Microsoft Office Specialist</h3>
-                <p class="cert-modal-intro">Expanded view of credentials issued by Microsoft, certifying international-standard office productivity skills.</p>
+                <h3 data-i18n="modalCertTitle">MOS Credentials - Microsoft Office Specialist</h3>
+                <p class="cert-modal-intro" data-i18n="modalCertIntro">Expanded view of credentials issued by Microsoft, certifying international-standard office productivity skills.</p>
                 <div class="cert-modal-img-container">
                     <img src="assets/mos_badges.png" alt="MOS Certificate Badges Large" class="cert-large-img">
                 </div>
                 <div class="cert-modal-description">
-                    <p>My MOS certification bundle includes rigorous exams covering the following tools:</p>
+                    <p data-i18n="modalCertBundle">My MOS certification bundle includes rigorous exams covering the following tools:</p>
                     <div class="cert-details-grid">
                         <div class="cert-detail-item">
                             <span class="cert-tag cert-excel">Excel</span>
-                            <p>Associate level. Covers managing worksheets, dynamic formulas, tables, charts, Power Query, and basic interactive reporting dashboards.</p>
+                            <p data-i18n="modalCertExcelDesc">Associate level. Covers managing worksheets, dynamic formulas, tables, charts, Power Query, and basic interactive reporting dashboards.</p>
                         </div>
                         <div class="cert-detail-item">
                             <span class="cert-tag cert-word">Word</span>
-                            <p>Associate level. Covers custom document setups, dynamic tables of contents, document references, references management, and professional formatting guidelines.</p>
+                            <p data-i18n="modalCertWordDesc">Associate level. Covers custom document setups, dynamic tables of contents, document references, references management, and professional formatting guidelines.</p>
                         </div>
                         <div class="cert-detail-item">
                             <span class="cert-tag cert-ppt">PowerPoint</span>
-                            <p>Associate level. Covers structured presentation design, dynamic transitions and animations, custom charts, and optimal slideshow delivery configurations.</p>
+                            <p data-i18n="modalCertPptDesc">Associate level. Covers structured presentation design, dynamic transitions and animations, custom charts, and optimal slideshow delivery configurations.</p>
                         </div>
                     </div>
                 </div>
