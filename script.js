@@ -281,29 +281,44 @@ document.addEventListener("DOMContentLoaded", () => {
             cardCharts.push(chart);
         }
 
-        // 2. Labor Structure Card Chart (Radar)
+        // 2. Labor Structure Card Chart (Stacked Area)
         const laborCtx = document.getElementById('cardChart-labor-structure');
         if (laborCtx) {
             const chart = new Chart(laborCtx, {
-                type: 'radar',
+                type: 'line',
                 data: {
-                    labels: ['Agriculture', 'Industry', 'Services', 'Formal Empl'],
+                    labels: ['2010', '2015', '2023'],
                     datasets: [
                         {
-                            label: '2015',
-                            data: [44.0, 22.8, 33.2, 39.3],
-                            backgroundColor: 'rgba(59, 130, 246, 0.12)',
-                            borderColor: '#3b82f6',
+                            label: 'Agriculture',
+                            data: [48.7, 44.0, 26.9],
+                            backgroundColor: 'rgba(244, 63, 94, 0.15)', // Coral/Rose
+                            borderColor: '#f43f5e',
                             borderWidth: 1.8,
+                            fill: true,
+                            tension: 0.25,
                             pointRadius: 2,
-                            pointBackgroundColor: '#3b82f6'
+                            pointBackgroundColor: '#f43f5e'
                         },
                         {
-                            label: '2023',
-                            data: [26.9, 33.5, 39.6, 53.9],
-                            backgroundColor: 'rgba(0, 245, 212, 0.12)',
+                            label: 'Industry & Construction',
+                            data: [21.7, 22.8, 33.5],
+                            backgroundColor: 'rgba(255, 122, 0, 0.15)', // Orange
+                            borderColor: '#ff7a00',
+                            borderWidth: 1.8,
+                            fill: true,
+                            tension: 0.25,
+                            pointRadius: 2,
+                            pointBackgroundColor: '#ff7a00'
+                        },
+                        {
+                            label: 'Services',
+                            data: [29.6, 33.2, 39.6],
+                            backgroundColor: 'rgba(0, 245, 212, 0.15)', // Teal
                             borderColor: '#00f5d4',
                             borderWidth: 1.8,
+                            fill: true,
+                            tension: 0.25,
                             pointRadius: 2,
                             pointBackgroundColor: '#00f5d4'
                         }
@@ -318,22 +333,26 @@ document.addEventListener("DOMContentLoaded", () => {
                             enabled: true,
                             callbacks: {
                                 label: function(context) {
-                                    return context.dataset.label + ': ' + context.raw + '%';
+                                    return context.dataset.label + ': ' + context.parsed.y + '%';
                                 }
                             }
                         } 
                     },
                     scales: {
-                        r: {
-                            grid: { color: isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.06)' },
-                            angleLines: { color: isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.06)' },
-                            ticks: { display: false },
-                            pointLabels: { 
+                        x: { 
+                            grid: { display: false }, 
+                            ticks: { color: textColor, font: { family: 'Inter', size: 9, weight: '500' } } 
+                        },
+                        y: { 
+                            stacked: true,
+                            grid: { color: gridColor },
+                            ticks: { 
                                 color: textColor, 
-                                font: { family: 'Inter', size: 8, weight: '600' }
+                                font: { family: 'Inter', size: 8 },
+                                callback: function(value) { return value + '%'; }
                             },
-                            suggestedMin: 0,
-                            suggestedMax: 60
+                            min: 0,
+                            max: 100
                         }
                     }
                 }
