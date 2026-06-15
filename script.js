@@ -281,35 +281,60 @@ document.addEventListener("DOMContentLoaded", () => {
             cardCharts.push(chart);
         }
 
-        // 2. Labor Structure Card Chart
+        // 2. Labor Structure Card Chart (Radar)
         const laborCtx = document.getElementById('cardChart-labor-structure');
         if (laborCtx) {
             const chart = new Chart(laborCtx, {
-                type: 'bar',
+                type: 'radar',
                 data: {
-                    labels: ['Agri', 'Ind', 'Serv', 'Formal'],
+                    labels: ['Agriculture', 'Industry', 'Services', 'Formal Empl'],
                     datasets: [
                         {
                             label: '2015',
                             data: [44.0, 22.8, 33.2, 39.3],
-                            backgroundColor: isDark ? 'rgba(255, 255, 255, 0.15)' : 'rgba(0, 0, 0, 0.15)',
-                            borderRadius: 3
+                            backgroundColor: 'rgba(59, 130, 246, 0.12)',
+                            borderColor: '#3b82f6',
+                            borderWidth: 1.8,
+                            pointRadius: 2,
+                            pointBackgroundColor: '#3b82f6'
                         },
                         {
                             label: '2023',
                             data: [26.9, 33.5, 39.6, 53.9],
-                            backgroundColor: '#00f5d4', // Bright neon teal
-                            borderRadius: 3
+                            backgroundColor: 'rgba(0, 245, 212, 0.12)',
+                            borderColor: '#00f5d4',
+                            borderWidth: 1.8,
+                            pointRadius: 2,
+                            pointBackgroundColor: '#00f5d4'
                         }
                     ]
                 },
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
-                    plugins: { legend: { display: false }, tooltip: { enabled: true } },
+                    plugins: { 
+                        legend: { display: false }, 
+                        tooltip: { 
+                            enabled: true,
+                            callbacks: {
+                                label: function(context) {
+                                    return context.dataset.label + ': ' + context.raw + '%';
+                                }
+                            }
+                        } 
+                    },
                     scales: {
-                        x: { grid: { display: false }, ticks: { color: textColor, font: { size: 9, weight: '500' } } },
-                        y: { grid: { color: gridColor }, ticks: { color: textColor, font: { size: 9, weight: '500' } } }
+                        r: {
+                            grid: { color: isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.06)' },
+                            angleLines: { color: isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.06)' },
+                            ticks: { display: false },
+                            pointLabels: { 
+                                color: textColor, 
+                                font: { family: 'Inter', size: 8, weight: '600' }
+                            },
+                            suggestedMin: 0,
+                            suggestedMax: 60
+                        }
                     }
                 }
             });
