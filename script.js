@@ -456,7 +456,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         let canvasId = 'projectModalChart';
         if (projectId === 'economic-growth-drivers') {
-            canvasId = 'growthDriversScatterChart';
+            canvasId = 'growthDriversModalBarChart';
         } else if (projectId === 'gender-inequality') {
             canvasId = 'projectModalScatterChart';
         }
@@ -696,65 +696,30 @@ document.addEventListener("DOMContentLoaded", () => {
             };
         } else if (projectId === 'economic-growth-drivers') {
             config = {
-                type: 'scatter',
+                type: 'bar',
                 data: {
+                    labels: ['GDP Growth', 'R&D Spent', 'Human Capital', 'Trade Openness', 'Urban Pop'],
                     datasets: [
                         {
-                            label: 'High-Income Countries (405 obs / 27 countries)',
-                            data: [
-                                {x: 0.22, y: 5.8}, {x: 0.25, y: 6.7}, {x: 0.28, y: 6.7}, {x: 0.29, y: 6.0}, 
-                                {x: 0.31, y: 5.5}, {x: 0.32, y: 5.9}, {x: 0.34, y: 6.2}, {x: 0.28, y: 5.9}, 
-                                {x: 0.26, y: 5.3}, {x: 0.30, y: 5.7}, {x: 0.33, y: 5.6}, {x: 0.35, y: 5.0}, 
-                                {x: 0.29, y: 6.1}, {x: 0.38, y: 6.0}, {x: 0.27, y: 6.3},
-                                {x: 0.55, y: 4.8}, {x: 0.58, y: 5.1}, {x: 0.60, y: 5.4}, {x: 0.63, y: 5.6}, 
-                                {x: 0.65, y: 5.3}, {x: 0.68, y: 5.0}, {x: 0.70, y: 5.6}, {x: 0.72, y: 5.2}, 
-                                {x: 0.75, y: 4.8}, {x: 0.78, y: 5.1}, {x: 0.80, y: 5.3}, {x: 0.83, y: 5.2}, 
-                                {x: 0.85, y: 6.1}, {x: 0.88, y: 6.5}, {x: 0.90, y: 5.7}
-                            ],
-                            backgroundColor: accentBlue,
-                            borderColor: isDark ? 'rgba(255, 255, 255, 0.3)' : 'rgba(0, 0, 0, 0.2)',
+                            label: 'High-Income (HICs)',
+                            data: [2.1, 2.8, 8.5, 7.5, 8.1], // Normalized values (0-10 scale)
+                            backgroundColor: '#00f2fe',
+                            borderColor: '#00f2fe',
                             borderWidth: 1,
-                            pointRadius: 7.5,
-                            pointHoverRadius: 10,
-                            pointStyle: 'circle'
+                            borderRadius: 3
                         },
                         {
-                            label: 'Middle-Income Countries (302 obs / 27 countries)',
-                            data: [
-                                {x: 0.12, y: 1.1}, {x: 0.15, y: 0.9}, {x: 0.18, y: 1.5}, {x: 0.14, y: 2.1}, 
-                                {x: 0.22, y: 2.4}, {x: 0.25, y: 2.9}, {x: 0.28, y: 2.8}, {x: 0.30, y: 2.3}, 
-                                {x: 0.32, y: 2.0}, {x: 0.35, y: 2.5}, {x: 0.38, y: 3.1}, {x: 0.40, y: 3.4}, 
-                                {x: 0.42, y: 2.9}, {x: 0.45, y: 2.7}, {x: 0.48, y: 2.3}, {x: 0.50, y: 2.5}, 
-                                {x: 0.52, y: 3.3}, {x: 0.55, y: 3.5}, {x: 0.58, y: 2.4}, {x: 0.21, y: 4.1}, 
-                                {x: 0.38, y: 4.2}, {x: 0.11, y: 1.3}, {x: 0.16, y: 1.8}, {x: 0.24, y: 2.0}, 
-                                {x: 0.29, y: 3.5}, {x: 0.33, y: 3.7}, {x: 0.41, y: 1.9}, {x: 0.47, y: 2.1}, 
-                                {x: 0.26, y: 3.2}, {x: 0.34, y: 3.0}
-                            ],
-                            backgroundColor: accentOrange,
-                            borderColor: isDark ? 'rgba(255, 255, 255, 0.3)' : 'rgba(0, 0, 0, 0.2)',
+                            label: 'Middle-Income (MICs)',
+                            data: [4.5, 1.1, 6.2, 5.8, 5.5], // Normalized values (0-10 scale)
+                            backgroundColor: '#ff7a00',
+                            borderColor: '#ff7a00',
                             borderWidth: 1,
-                            pointRadius: 7.5,
-                            pointHoverRadius: 10,
-                            pointStyle: 'circle'
-                        },
-                        {
-                            label: '2SLS Regression Line',
-                            type: 'line',
-                            data: [
-                                {x: 0.1, y: 1.5},
-                                {x: 0.9, y: 6.0}
-                            ],
-                            borderColor: isDark ? 'rgba(255, 255, 255, 0.45)' : 'rgba(0, 0, 0, 0.45)',
-                            borderWidth: 3.5,
-                            borderDash: [5, 5],
-                            fill: false,
-                            pointRadius: 0,
-                            pointHoverRadius: 0,
-                            pointStyle: 'line'
+                            borderRadius: 3
                         }
                     ]
                 },
                 options: {
+                    indexAxis: 'y', // Makes it horizontal
                     responsive: true,
                     maintainAspectRatio: false,
                     plugins: {
@@ -764,9 +729,8 @@ document.addEventListener("DOMContentLoaded", () => {
                             labels: {
                                 color: textColor,
                                 font: { family: 'Inter', size: 11, weight: '600' },
-                                boxWidth: 25,
-                                padding: 10,
-                                usePointStyle: true
+                                boxWidth: 15,
+                                padding: 10
                             }
                         },
                         tooltip: {
@@ -777,7 +741,13 @@ document.addEventListener("DOMContentLoaded", () => {
                             borderWidth: 1,
                             callbacks: {
                                 label: function(context) {
-                                    return context.dataset.label + ': (X: ' + context.parsed.x.toFixed(2) + ', Y: ' + context.parsed.y.toFixed(1) + '%)';
+                                    const datasetIndex = context.datasetIndex;
+                                    const index = context.dataIndex;
+                                    const isHic = datasetIndex === 0;
+                                    const realValues = isHic ? 
+                                        ['2.1% (Avg.)', '2.8% of GDP', '0.85 Index', '75% of GDP', '81% Share'] : 
+                                        ['4.5% (Avg.)', '1.1% of GDP', '0.62 Index', '58% of GDP', '55% Share'];
+                                    return context.dataset.label + ': ' + realValues[index];
                                 }
                             }
                         }
@@ -785,31 +755,16 @@ document.addEventListener("DOMContentLoaded", () => {
                     scales: {
                         x: {
                             grid: { color: gridColor },
-                            ticks: { color: textColor, font: { family: 'Inter', size: 11, weight: '500' } },
-                            title: {
-                                display: true,
-                                text: 'FDI + TRADE OPENNESS + HUMAN CAPITAL',
-                                color: textColor,
-                                font: { family: 'Inter', weight: 'bold', size: 12 }
-                            },
+                            ticks: { display: false }, // Hide scale since units differ
                             min: 0,
-                            max: 1.0
+                            max: 10
                         },
                         y: {
-                            grid: { color: gridColor },
-                            ticks: { 
-                                color: textColor, 
-                                font: { family: 'Inter', size: 11, weight: '500' },
-                                callback: function(value) { return value + '%'; }
-                            },
-                            title: {
-                                display: true,
-                                text: 'AVG. REAL GDP GROWTH (%)',
+                            grid: { display: false },
+                            ticks: {
                                 color: textColor,
-                                font: { family: 'Inter', weight: 'bold', size: 12 }
-                            },
-                            min: 0,
-                            max: 8.0
+                                font: { family: 'Inter', size: 11, weight: '600' }
+                            }
                         }
                     }
                 }
@@ -1062,8 +1017,16 @@ document.addEventListener("DOMContentLoaded", () => {
                         </div>
 
                         <div class="growth-drivers-dashboard" style="gap: 1.2rem; margin-top: 1rem;">
-                            <!-- Left Column: Metrics & Table -->
+                            <!-- Left Column: Chart & Diagnostics Table -->
                             <div style="display: flex; flex-direction: column; gap: 1.2rem;">
+                                <!-- Scatter Plot Chart -->
+                                <div class="dashboard-card glass" style="padding: 1.2rem 1.5rem;">
+                                    <h4 style="margin-bottom: 0.8rem;"><i class="fa-solid fa-chart-line"></i> Gender Equality vs. Economic Growth</h4>
+                                    <div style="position: relative; height: 250px; width: 100%;">
+                                        <canvas id="projectModalScatterChart"></canvas>
+                                    </div>
+                                </div>
+
                                 <!-- Metrics -->
                                 <div class="dashboard-card glass" style="padding: 1.2rem 1.5rem;">
                                     <h4 style="margin-bottom: 0.8rem;"><i class="fa-solid fa-list-check"></i> Econometric Model & Diagnostics</h4>
@@ -1100,14 +1063,6 @@ document.addEventListener("DOMContentLoaded", () => {
                                         </div>
                                     </div>
                                 </div>
-
-                                <!-- Scatter Plot Chart -->
-                                <div class="dashboard-card glass" style="padding: 1.2rem 1.5rem;">
-                                    <h4 style="margin-bottom: 0.8rem;"><i class="fa-solid fa-chart-line"></i> Gender Equality vs. Economic Growth</h4>
-                                    <div style="position: relative; height: 240px; width: 100%;">
-                                        <canvas id="projectModalScatterChart"></canvas>
-                                    </div>
-                                </div>
                             </div>
 
                             <!-- Right Column: Project Context & Tasks -->
@@ -1138,17 +1093,17 @@ document.addEventListener("DOMContentLoaded", () => {
                     `;
                 } else if (projectId === 'economic-growth-drivers') {
                     modalBody.innerHTML = `
-                        <div class="growth-drivers-dashboard-header" data-project-id="economic-growth-drivers">
+                        <div class="growth-drivers-dashboard-header" data-project-id="economic-growth-drivers" style="margin-bottom: 1rem; padding-bottom: 0.6rem;">
                             <h3>MACROECONOMIC GROWTH DRIVERS COMPARISON</h3>
                             <p>High-Income vs Middle-Income Countries (2005-2020)</p>
                         </div>
 
-                        <div class="growth-drivers-dashboard">
-                            <!-- Left Column: Metrics & Table -->
-                            <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+                        <div class="growth-drivers-dashboard" style="gap: 1.2rem; margin-top: 1rem;">
+                            <!-- Left Column: Metrics & Chart -->
+                            <div style="display: flex; flex-direction: column; gap: 1.2rem;">
                                 <!-- Metrics -->
-                                <div class="dashboard-card glass">
-                                    <h4><i class="fa-solid fa-list-check"></i> Key Performance Metrics</h4>
+                                <div class="dashboard-card glass" style="padding: 1.2rem 1.5rem;">
+                                    <h4 style="margin-bottom: 0.8rem;"><i class="fa-solid fa-list-check"></i> Key Performance Metrics</h4>
                                     <div class="metrics-comparison-grid">
                                         <div class="metric-row-header">
                                             <div style="text-align: left;">Metric</div>
@@ -1183,95 +1138,38 @@ document.addEventListener("DOMContentLoaded", () => {
                                     </div>
                                 </div>
 
-                                <!-- Comparison Table -->
-                                <div class="dashboard-card glass">
-                                    <h4><i class="fa-solid fa-table"></i> 2SLS Panel Regression Growth Drivers Table</h4>
-                                    <div class="dashboard-table-wrapper">
-                                        <table class="dashboard-table">
-                                            <thead>
-                                                <tr>
-                                                    <th>Driver (Variable)</th>
-                                                    <th>High-Income (HICs)</th>
-                                                    <th>Middle-Income (MICs)</th>
-                                                    <th>Key Divergence</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td><strong>HDI (Human Development)</strong></td>
-                                                    <td><span class="badge badge-success">+3.4815***</span></td>
-                                                    <td><span class="badge badge-success">+3.8140***</span></td>
-                                                    <td>Strongest impact in both</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><strong>lnLAB (Labor Force)</strong></td>
-                                                    <td><span class="badge badge-success">+1.0499***</span></td>
-                                                    <td><span class="badge badge-success">+0.8098***</span></td>
-                                                    <td>25% stronger in HICs</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><strong>lnKPL (Capital per Labor)</strong></td>
-                                                    <td><span class="badge badge-success">+0.5002***</span></td>
-                                                    <td><span class="badge badge-success">+0.1360***</span></td>
-                                                    <td>3.6x stronger in HICs</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><strong>lnPT (Tech / Patents)</strong></td>
-                                                    <td><span class="badge badge-danger">-0.0213***</span></td>
-                                                    <td><span class="badge badge-success">+0.1238***</span></td>
-                                                    <td>Positive only in MICs</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><strong>CRPT (Corruption Control)</strong></td>
-                                                    <td><span class="badge badge-success">+0.1141***</span></td>
-                                                    <td><span class="badge badge-success">+0.2470***</span></td>
-                                                    <td>2x stronger in MICs</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><strong>Adjusted R2 / Obs</strong></td>
-                                                    <td>0.9828 / 405 obs</td>
-                                                    <td>0.9636 / 302 obs</td>
-                                                    <td>Excellent fit in both</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                <!-- Horizontal Grouped Bar Chart -->
+                                <div class="dashboard-card glass" style="padding: 1.2rem 1.5rem;">
+                                    <h4 style="margin-bottom: 0.8rem;"><i class="fa-solid fa-chart-bar"></i> Macroeconomic Drivers Comparison</h4>
+                                    <div style="position: relative; height: 200px; width: 100%;">
+                                        <canvas id="growthDriversModalBarChart"></canvas>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Right Column: Scatter Plot & Details -->
-                            <div style="display: flex; flex-direction: column; gap: 0.8rem;">
-                                <!-- Scatter Chart -->
-                                <div class="dashboard-card glass">
-                                    <h4><i class="fa-solid fa-chart-scatter"></i> Scatter Plot of Growth Drivers</h4>
-                                    <span class="chart-subtitle">(2005-2020 Macro Panel Data)</span>
-                                    <div style="position: relative; height: 240px; width: 100%;">
-                                        <canvas id="growthDriversScatterChart"></canvas>
-                                    </div>
-                                </div>
-
+                            <!-- Right Column: Project Context & Tasks -->
+                            <div style="display: flex; flex-direction: column; gap: 1.2rem;">
                                 <!-- Context & Actions -->
-                                <div class="dashboard-card glass">
-                                    <h4 style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                                <div class="dashboard-card glass" style="padding: 1.2rem 1.5rem;">
+                                    <h4 style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 0.8rem;">
                                         <span><i class="fa-solid fa-circle-info"></i> Project Context</span>
                                         <a href="${project.pdf}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-xs" style="margin: 0;"><i class="fa-regular fa-file-pdf"></i> Read Paper</a>
                                     </h4>
-                                    <p style="font-size: 0.9rem; line-height: 1.5; color: var(--text-secondary); text-align: justify; margin-bottom: 0.5rem; margin-top: 0;">
+                                    <p style="font-size: 0.9rem; line-height: 1.5; color: var(--text-secondary); text-align: justify; margin-bottom: 0.8rem; margin-top: 0;">
                                         ${project.description}
                                     </p>
-                                    <div class="project-tech-stack" style="margin-bottom: 0.5rem;">
+                                    <div class="project-tech-stack" style="margin-bottom: 0.2rem;">
                                         ${stackBadges}
                                     </div>
                                 </div>
-                            </div>
-                        </div>
 
-                        <div class="project-modal-bottom-full" style="margin-top: 1rem;">
-                            <div class="proj-modal-details-section">
-                                <h4 class="proj-modal-section-title">Metrics & Specific Tasks</h4>
-                                <ul class="proj-modal-bullet-list">
-                                    ${bulletPoints}
-                                </ul>
+                                <!-- Metrics & Specific Tasks moved inside Right Column -->
+                                <div class="dashboard-card glass" style="padding: 1.2rem 1.5rem;">
+                                    <h4 style="margin-bottom: 0.8rem;"><i class="fa-solid fa-bars-progress"></i> Metrics & Specific Tasks</h4>
+                                    <ul class="proj-modal-bullet-list" style="margin: 0; padding: 0;">
+                                        ${bulletPoints}
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     `;
