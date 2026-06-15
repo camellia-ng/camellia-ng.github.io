@@ -873,8 +873,8 @@ document.addEventListener("DOMContentLoaded", () => {
                             <!-- Left Column: Chart Card & Model Diagnostics -->
                             <div style="display: flex; flex-direction: column; gap: 1.2rem;">
                                 <!-- Chart Card (looks exactly like the thumbnail one) -->
-                                <div class="dashboard-card glass" style="padding: 1.2rem 1.5rem; display: flex; flex-direction: column; gap: 0.6rem;">
-                                    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 0.3rem;">
+                                <div class="dashboard-card glass" style="display: flex; flex-direction: column; gap: 0.6rem;">
+                                    <div class="dashboard-badge-row">
                                         <span style="background: rgba(255, 255, 255, 0.05); padding: 0.25rem 0.6rem; border-radius: 4px; border: 1px solid var(--glass-border); font-size: 0.75rem; font-weight: 600; color: var(--text-secondary);">Data: IMF Monthly (2016-2025)</span>
                                         <span style="background: rgba(0, 242, 254, 0.1); color: #00f2fe; padding: 0.25rem 0.6rem; border-radius: 4px; border: 1px solid rgba(0, 242, 254, 0.2); font-size: 0.75rem; font-weight: 600;">Result: 2026 Forecast ~$93.3B</span>
                                     </div>
@@ -887,7 +887,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 </div>
 
                                 <!-- Metrics -->
-                                <div class="dashboard-card glass" style="padding: 1.2rem 1.5rem;">
+                                <div class="dashboard-card glass">
                                     <h4 style="margin-bottom: 0.8rem;"><i class="fa-solid fa-list-check"></i> Model Diagnostics & Fit</h4>
                                     <div class="metrics-comparison-grid">
                                         <div class="metric-row-header">
@@ -927,8 +927,8 @@ document.addEventListener("DOMContentLoaded", () => {
                             <!-- Right Column: Project Context & Tasks -->
                             <div style="display: flex; flex-direction: column; gap: 1.2rem;">
                                 <!-- Context & Actions -->
-                                <div class="dashboard-card glass" style="padding: 1.2rem 1.5rem;">
-                                    <h4 style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 0.8rem;">
+                                <div class="dashboard-card glass">
+                                    <h4 class="dashboard-card-title-row">
                                         <span><i class="fa-solid fa-circle-info"></i> Project Context</span>
                                         <a href="${project.pdf}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-xs" style="margin: 0;"><i class="fa-regular fa-file-pdf"></i> Read Paper</a>
                                     </h4>
@@ -941,7 +941,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 </div>
 
                                 <!-- Metrics & Specific Tasks moved inside Right Column -->
-                                <div class="dashboard-card glass" style="padding: 1.2rem 1.5rem;">
+                                <div class="dashboard-card glass">
                                     <h4 style="margin-bottom: 0.8rem;"><i class="fa-solid fa-bars-progress"></i> Metrics & Specific Tasks</h4>
                                     <ul class="proj-modal-bullet-list" style="margin: 0; padding: 0;">
                                         ${bulletPoints}
@@ -961,7 +961,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             <!-- Left Column: Chart & Indicators Table -->
                             <div style="display: flex; flex-direction: column; gap: 1.2rem;">
                                 <!-- Stacked Area Chart -->
-                                <div class="dashboard-card glass" style="padding: 1.2rem 1.5rem;">
+                                <div class="dashboard-card glass">
                                     <h4><i class="fa-solid fa-chart-line"></i> Sectoral Employment Shifts (14-Year Trend)</h4>
                                     <div style="position: relative; height: 250px; width: 100%;">
                                         <canvas id="projectModalChart"></canvas>
@@ -969,7 +969,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 </div>
 
                                 <!-- Key Labor Market Indicators -->
-                                <div class="dashboard-card glass" style="padding: 1.2rem 1.5rem;">
+                                <div class="dashboard-card glass">
                                     <h4 style="margin-bottom: 0.8rem;"><i class="fa-solid fa-list-check"></i> Key Labor Market Indicators</h4>
                                     <div class="metrics-comparison-grid">
                                         <div class="metric-row-header">
@@ -1004,8 +1004,8 @@ document.addEventListener("DOMContentLoaded", () => {
                             <!-- Right Column: Project Context & Tasks -->
                             <div style="display: flex; flex-direction: column; gap: 1.2rem;">
                                 <!-- Context & Actions -->
-                                <div class="dashboard-card glass" style="padding: 1.2rem 1.5rem;">
-                                    <h4 style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 0.8rem;">
+                                <div class="dashboard-card glass">
+                                    <h4 class="dashboard-card-title-row">
                                         <span><i class="fa-solid fa-circle-info"></i> Project Context</span>
                                         <a href="${project.pdf}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-xs" style="margin: 0;"><i class="fa-regular fa-file-pdf"></i> Read Paper</a>
                                     </h4>
@@ -1018,7 +1018,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 </div>
 
                                 <!-- Metrics & Specific Tasks moved inside Right Column -->
-                                <div class="dashboard-card glass" style="padding: 1.2rem 1.5rem;">
+                                <div class="dashboard-card glass">
                                     <h4 style="margin-bottom: 0.8rem;"><i class="fa-solid fa-bars-progress"></i> Metrics & Specific Tasks</h4>
                                     <ul class="proj-modal-bullet-list" style="margin: 0; padding: 0;">
                                         ${bulletPoints}
@@ -1038,7 +1038,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             <!-- Left Column: Chart & Diagnostics Table -->
                             <div style="display: flex; flex-direction: column; gap: 1.2rem;">
                                 <!-- Scatter Plot Chart -->
-                                <div class="dashboard-card glass" style="padding: 1.2rem 1.5rem;">
+                                <div class="dashboard-card glass">
                                     <h4 style="margin-bottom: 0.8rem;"><i class="fa-solid fa-chart-line"></i> Gender Equality vs. Economic Growth</h4>
                                     <div style="position: relative; height: 250px; width: 100%;">
                                         <canvas id="projectModalScatterChart"></canvas>
@@ -1046,7 +1046,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 </div>
 
                                 <!-- Metrics -->
-                                <div class="dashboard-card glass" style="padding: 1.2rem 1.5rem;">
+                                <div class="dashboard-card glass">
                                     <h4 style="margin-bottom: 0.8rem;"><i class="fa-solid fa-list-check"></i> Econometric Model & Diagnostics</h4>
                                     <div class="metrics-comparison-grid">
                                         <div class="metric-row-header">
@@ -1086,8 +1086,8 @@ document.addEventListener("DOMContentLoaded", () => {
                             <!-- Right Column: Project Context & Tasks -->
                             <div style="display: flex; flex-direction: column; gap: 1.2rem;">
                                 <!-- Context & Actions -->
-                                <div class="dashboard-card glass" style="padding: 1.2rem 1.5rem;">
-                                    <h4 style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 0.8rem;">
+                                <div class="dashboard-card glass">
+                                    <h4 class="dashboard-card-title-row">
                                         <span><i class="fa-solid fa-circle-info"></i> Project Context</span>
                                         <a href="${project.pdf}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-xs" style="margin: 0;"><i class="fa-regular fa-file-pdf"></i> Read Paper</a>
                                     </h4>
@@ -1100,7 +1100,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 </div>
 
                                 <!-- Metrics & Specific Tasks moved inside Right Column -->
-                                <div class="dashboard-card glass" style="padding: 1.2rem 1.5rem;">
+                                <div class="dashboard-card glass">
                                     <h4 style="margin-bottom: 0.8rem;"><i class="fa-solid fa-bars-progress"></i> Metrics & Specific Tasks</h4>
                                     <ul class="proj-modal-bullet-list" style="margin: 0; padding: 0;">
                                         ${bulletPoints}
@@ -1120,7 +1120,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             <!-- Left Column: Metrics & Chart -->
                             <div style="display: flex; flex-direction: column; gap: 1.2rem;">
                                 <!-- Metrics -->
-                                <div class="dashboard-card glass" style="padding: 1.2rem 1.5rem;">
+                                <div class="dashboard-card glass">
                                     <h4 style="margin-bottom: 0.8rem;"><i class="fa-solid fa-list-check"></i> Key Performance Metrics</h4>
                                     <div class="metrics-comparison-grid">
                                         <div class="metric-row-header">
@@ -1157,7 +1157,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 </div>
 
                                 <!-- Horizontal Grouped Bar Chart -->
-                                <div class="dashboard-card glass" style="padding: 1.2rem 1.5rem;">
+                                <div class="dashboard-card glass">
                                     <h4 style="margin-bottom: 0.8rem;"><i class="fa-solid fa-chart-bar"></i> Macroeconomic Drivers Comparison</h4>
                                     <div style="position: relative; height: 200px; width: 100%;">
                                         <canvas id="growthDriversModalBarChart"></canvas>
@@ -1168,8 +1168,8 @@ document.addEventListener("DOMContentLoaded", () => {
                             <!-- Right Column: Project Context & Tasks -->
                             <div style="display: flex; flex-direction: column; gap: 1.2rem;">
                                 <!-- Context & Actions -->
-                                <div class="dashboard-card glass" style="padding: 1.2rem 1.5rem;">
-                                    <h4 style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 0.8rem;">
+                                <div class="dashboard-card glass">
+                                    <h4 class="dashboard-card-title-row">
                                         <span><i class="fa-solid fa-circle-info"></i> Project Context</span>
                                         <a href="${project.pdf}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-xs" style="margin: 0;"><i class="fa-regular fa-file-pdf"></i> Read Paper</a>
                                     </h4>
@@ -1182,7 +1182,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 </div>
 
                                 <!-- Metrics & Specific Tasks moved inside Right Column -->
-                                <div class="dashboard-card glass" style="padding: 1.2rem 1.5rem;">
+                                <div class="dashboard-card glass">
                                     <h4 style="margin-bottom: 0.8rem;"><i class="fa-solid fa-bars-progress"></i> Metrics & Specific Tasks</h4>
                                     <ul class="proj-modal-bullet-list" style="margin: 0; padding: 0;">
                                         ${bulletPoints}
