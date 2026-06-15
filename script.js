@@ -591,33 +591,45 @@ document.addEventListener("DOMContentLoaded", () => {
             };
         } else if (projectId === 'labor-structure') {
             config = {
-                type: 'bar',
+                type: 'line',
                 data: {
-                    labels: ['Nông nghiệp', 'Công nghiệp & XD', 'Dịch vụ', 'Làm công ăn lương'],
+                    labels: ['2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023'],
                     datasets: [
                         {
-                            label: '2010 Share',
-                            data: [48.7, 21.7, 29.6, 33.8],
-                            backgroundColor: 'rgba(94, 234, 212, 0.15)',
-                            borderColor: 'rgba(94, 234, 212, 0.3)',
-                            borderWidth: 1.5,
-                            borderRadius: 4
+                            label: 'Agriculture',
+                            data: [48.7, 48.4, 47.4, 46.8, 46.3, 44.0, 41.9, 40.2, 37.7, 34.5, 33.1, 29.1, 27.5, 26.9],
+                            backgroundColor: 'rgba(244, 63, 94, 0.15)', // Coral/Rose
+                            borderColor: '#f43f5e',
+                            borderWidth: 2.5,
+                            fill: true,
+                            tension: 0.25,
+                            pointRadius: 2,
+                            pointHoverRadius: 4,
+                            pointBackgroundColor: '#f43f5e'
                         },
                         {
-                            label: '2015 Share',
-                            data: [44.0, 22.8, 33.2, 39.3],
-                            backgroundColor: 'rgba(59, 130, 246, 0.4)',
-                            borderColor: '#3B82F6',
-                            borderWidth: 1.5,
-                            borderRadius: 4
+                            label: 'Industry & Construction',
+                            data: [21.7, 21.3, 21.2, 21.2, 21.4, 22.8, 24.7, 25.8, 26.7, 30.1, 30.8, 33.1, 33.4, 33.5],
+                            backgroundColor: 'rgba(255, 122, 0, 0.15)', // Orange
+                            borderColor: '#ff7a00',
+                            borderWidth: 2.5,
+                            fill: true,
+                            tension: 0.25,
+                            pointRadius: 2,
+                            pointHoverRadius: 4,
+                            pointBackgroundColor: '#ff7a00'
                         },
                         {
-                            label: '2023 Share',
-                            data: [26.9, 33.5, 39.6, 53.9],
-                            backgroundColor: '#00f5d4', // Bright neon teal
+                            label: 'Services',
+                            data: [29.6, 30.3, 31.4, 32.0, 32.2, 33.2, 33.4, 34.1, 35.6, 35.4, 36.1, 37.8, 39.0, 39.6],
+                            backgroundColor: 'rgba(0, 245, 212, 0.15)', // Teal
                             borderColor: '#00f5d4',
-                            borderWidth: 1.5,
-                            borderRadius: 4
+                            borderWidth: 2.5,
+                            fill: true,
+                            tension: 0.25,
+                            pointRadius: 2,
+                            pointHoverRadius: 4,
+                            pointBackgroundColor: '#00f5d4'
                         }
                     ]
                 },
@@ -626,34 +638,43 @@ document.addEventListener("DOMContentLoaded", () => {
                     maintainAspectRatio: false,
                     plugins: {
                         legend: {
-                            labels: { color: textColor, font: { family: 'Inter', size: 12, weight: '600' }, boxWidth: 20, padding: 10 }
+                            display: true,
+                            position: 'top',
+                            labels: {
+                                color: textColor,
+                                font: { family: 'Inter', size: 11, weight: '600' },
+                                boxWidth: 15,
+                                padding: 10
+                            }
                         },
                         tooltip: {
                             backgroundColor: isDark ? 'rgba(21, 29, 48, 0.95)' : 'rgba(255, 255, 255, 0.95)',
                             titleColor: isDark ? '#fff' : '#000',
                             bodyColor: isDark ? '#fff' : '#000',
                             borderColor: isDark ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.1)',
-                            borderWidth: 1
+                            borderWidth: 1,
+                            callbacks: {
+                                label: function(context) {
+                                    return context.dataset.label + ': ' + context.parsed.y + '%';
+                                }
+                            }
                         }
                     },
                     scales: {
                         x: {
-                            grid: { color: gridColor },
+                            grid: { display: false },
                             ticks: { color: textColor, font: { family: 'Inter', size: 11, weight: '500' } }
                         },
                         y: {
+                            stacked: true,
                             grid: { color: gridColor },
                             ticks: { 
                                 color: textColor, 
                                 font: { family: 'Inter', size: 11, weight: '500' },
                                 callback: function(value) { return value + '%'; }
                             },
-                            title: {
-                                display: true,
-                                text: 'Employment Share (%)',
-                                color: textColor,
-                                font: { family: 'Inter', size: 12, weight: 'bold' }
-                            }
+                            min: 0,
+                            max: 100
                         }
                     }
                 }
@@ -931,17 +952,25 @@ document.addEventListener("DOMContentLoaded", () => {
                     `;
                 } else if (projectId === 'labor-structure') {
                     modalBody.innerHTML = `
-                        <div class="growth-drivers-dashboard-header" data-project-id="labor-structure">
+                        <div class="growth-drivers-dashboard-header" data-project-id="labor-structure" style="margin-bottom: 1rem; padding-bottom: 0.6rem;">
                             <h3>LABOR STRUCTURE SHIFT IN VIETNAM (IR4.0)</h3>
                             <p>National Employment Sector & Demographic Analysis (2010-2023)</p>
                         </div>
 
-                        <div class="growth-drivers-dashboard">
-                            <!-- Left Column: Metrics & Table -->
-                            <div style="display: flex; flex-direction: column; gap: 0.8rem;">
-                                <!-- Metrics -->
-                                <div class="dashboard-card glass">
-                                    <h4><i class="fa-solid fa-list-check"></i> Key Labor Market Indicators</h4>
+                        <div class="growth-drivers-dashboard" style="gap: 1.2rem; margin-top: 1rem;">
+                            <!-- Left Column: Chart & Indicators Table -->
+                            <div style="display: flex; flex-direction: column; gap: 1.2rem;">
+                                <!-- Stacked Area Chart -->
+                                <div class="dashboard-card glass" style="padding: 1.2rem 1.5rem;">
+                                    <h4><i class="fa-solid fa-chart-line"></i> Sectoral Employment Shifts (14-Year Trend)</h4>
+                                    <div style="position: relative; height: 250px; width: 100%;">
+                                        <canvas id="projectModalChart"></canvas>
+                                    </div>
+                                </div>
+
+                                <!-- Key Labor Market Indicators -->
+                                <div class="dashboard-card glass" style="padding: 1.2rem 1.5rem;">
+                                    <h4 style="margin-bottom: 0.8rem;"><i class="fa-solid fa-list-check"></i> Key Labor Market Indicators</h4>
                                     <div class="metrics-comparison-grid">
                                         <div class="metric-row-header">
                                             <div style="text-align: left;">Key Indicator</div>
@@ -970,89 +999,31 @@ document.addEventListener("DOMContentLoaded", () => {
                                         </div>
                                     </div>
                                 </div>
-
-                                <!-- Comparison Table -->
-                                <div class="dashboard-card glass">
-                                    <h4><i class="fa-solid fa-table"></i> Sectoral Employment Shifts (2010 vs 2023)</h4>
-                                    <div class="dashboard-table-wrapper">
-                                        <table class="dashboard-table">
-                                            <thead>
-                                                <tr>
-                                                    <th>Economic Sector</th>
-                                                    <th>2010 Share</th>
-                                                    <th>2015 Share</th>
-                                                    <th>2023 Share</th>
-                                                    <th>Shift Trend</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td><strong>Nông, lâm, thủy sản</strong></td>
-                                                    <td>48.7%</td>
-                                                    <td>44.0%</td>
-                                                    <td>26.9%</td>
-                                                    <td><span class="badge badge-danger">Decreasing</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><strong>Công nghiệp & xây dựng</strong></td>
-                                                    <td>21.7%</td>
-                                                    <td>22.8%</td>
-                                                    <td>33.5%</td>
-                                                    <td><span class="badge badge-success">Increasing</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><strong>Dịch vụ</strong></td>
-                                                    <td>29.6%</td>
-                                                    <td>33.2%</td>
-                                                    <td>39.6%</td>
-                                                    <td><span class="badge badge-success">Increasing</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><strong>Làm công ăn lương (Formal)</strong></td>
-                                                    <td>33.8%</td>
-                                                    <td>39.3%</td>
-                                                    <td>53.9%</td>
-                                                    <td><span class="badge badge-success">Rapid Growth</span></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
                             </div>
 
-                            <!-- Right Column: Bar Chart & Details -->
-                            <div style="display: flex; flex-direction: column; gap: 0.8rem;">
-                                <!-- Bar Chart -->
-                                <div class="dashboard-card glass">
-                                    <h4><i class="fa-solid fa-chart-column"></i> Sectoral Employment Shift (2010 vs 2023)</h4>
-                                    <span class="chart-subtitle">(Agriculture vs Industry vs Services Share)</span>
-                                    <div style="position: relative; height: 240px; width: 100%;">
-                                        <canvas id="projectModalChart"></canvas>
-                                    </div>
-                                </div>
-
+                            <!-- Right Column: Project Context & Tasks -->
+                            <div style="display: flex; flex-direction: column; gap: 1.2rem;">
                                 <!-- Context & Actions -->
-                                <div class="dashboard-card glass">
-                                    <h4 style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                                <div class="dashboard-card glass" style="padding: 1.2rem 1.5rem;">
+                                    <h4 style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 0.8rem;">
                                         <span><i class="fa-solid fa-circle-info"></i> Project Context</span>
                                         <a href="${project.pdf}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-xs" style="margin: 0;"><i class="fa-regular fa-file-pdf"></i> Read Paper</a>
                                     </h4>
-                                    <p style="font-size: 0.9rem; line-height: 1.5; color: var(--text-secondary); text-align: justify; margin-bottom: 0.5rem; margin-top: 0;">
+                                    <p style="font-size: 0.9rem; line-height: 1.5; color: var(--text-secondary); text-align: justify; margin-bottom: 0.8rem; margin-top: 0;">
                                         ${project.description}
                                     </p>
-                                    <div class="project-tech-stack" style="margin-bottom: 0.5rem;">
+                                    <div class="project-tech-stack" style="margin-bottom: 0.2rem;">
                                         ${stackBadges}
                                     </div>
                                 </div>
-                            </div>
-                        </div>
 
-                        <div class="project-modal-bottom-full" style="margin-top: 1rem;">
-                            <div class="proj-modal-details-section">
-                                <h4 class="proj-modal-section-title">Metrics & Specific Tasks</h4>
-                                <ul class="proj-modal-bullet-list">
-                                    ${bulletPoints}
-                                </ul>
+                                <!-- Metrics & Specific Tasks moved inside Right Column -->
+                                <div class="dashboard-card glass" style="padding: 1.2rem 1.5rem;">
+                                    <h4 style="margin-bottom: 0.8rem;"><i class="fa-solid fa-bars-progress"></i> Metrics & Specific Tasks</h4>
+                                    <ul class="proj-modal-bullet-list" style="margin: 0; padding: 0;">
+                                        ${bulletPoints}
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     `;
