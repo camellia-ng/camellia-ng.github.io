@@ -287,39 +287,42 @@ document.addEventListener("DOMContentLoaded", () => {
             const chart = new Chart(laborCtx, {
                 type: 'line',
                 data: {
-                    labels: ['2010', '2015', '2023'],
+                    labels: ["'10", "'11", "'12", "'13", "'14", "'15", "'16", "'17", "'18", "'19", "'20", "'21", "'22", "'23"],
                     datasets: [
                         {
                             label: 'Agriculture',
-                            data: [48.7, 44.0, 26.9],
+                            data: [48.7, 48.4, 47.4, 46.8, 46.3, 44.0, 41.9, 40.2, 37.7, 34.5, 33.1, 29.1, 27.5, 26.9],
                             backgroundColor: 'rgba(244, 63, 94, 0.15)', // Coral/Rose
                             borderColor: '#f43f5e',
                             borderWidth: 1.8,
                             fill: true,
                             tension: 0.25,
-                            pointRadius: 2,
+                            pointRadius: 1,
+                            pointHoverRadius: 3,
                             pointBackgroundColor: '#f43f5e'
                         },
                         {
                             label: 'Industry & Construction',
-                            data: [21.7, 22.8, 33.5],
+                            data: [21.7, 21.3, 21.2, 21.2, 21.4, 22.8, 24.7, 25.8, 26.7, 30.1, 30.8, 33.1, 33.4, 33.5],
                             backgroundColor: 'rgba(255, 122, 0, 0.15)', // Orange
                             borderColor: '#ff7a00',
                             borderWidth: 1.8,
                             fill: true,
                             tension: 0.25,
-                            pointRadius: 2,
+                            pointRadius: 1,
+                            pointHoverRadius: 3,
                             pointBackgroundColor: '#ff7a00'
                         },
                         {
                             label: 'Services',
-                            data: [29.6, 33.2, 39.6],
+                            data: [29.6, 30.3, 31.4, 32.0, 32.2, 33.2, 33.4, 34.1, 35.6, 35.4, 36.1, 37.8, 39.0, 39.6],
                             backgroundColor: 'rgba(0, 245, 212, 0.15)', // Teal
                             borderColor: '#00f5d4',
                             borderWidth: 1.8,
                             fill: true,
                             tension: 0.25,
-                            pointRadius: 2,
+                            pointRadius: 1,
+                            pointHoverRadius: 3,
                             pointBackgroundColor: '#00f5d4'
                         }
                     ]
