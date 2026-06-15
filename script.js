@@ -6,7 +6,7 @@ const projectsData = {
         role: "Co-author, Data Analyst",
         image: "assets/arima_forecast.png",
         description: "A time-series forecasting project to model and project Vietnam's foreign exchange reserves. Based on historical monthly IMF data (2016–2025), the study selects the ARIMA(1,1,0) model to forecast that Vietnam's reserves will continue an upward trend, reaching approximately $93,294 million (or $93.3 Billion) by December 2026.",
-        stack: ["ARIMA", "Eviews", "Excel", "Time-Series"],
+        stack: ["Eviews", "Excel", "ARIMA Model", "Time-Series Forecasting", "IMF Data"],
         details: [
             "<strong>Literature Review:</strong> Researched and synthesized relevant academic literature on time-series forecasting and international reserves.",
             "<strong>Data Processing:</strong> Collected, cleaned, and processed a monthly time-series dataset of 120 observations (January 2016 – December 2025) from the IMF database.",
@@ -21,7 +21,7 @@ const projectsData = {
         role: "Co-author, Data Analyst",
         image: "assets/vietnam_labor.png",
         description: "An academic research paper published in the State Management Journal (No. 337, Feb 2026) analyzing the sectoral labor structure shifts in Vietnam. The paper highlights a major transition, including a decline in agricultural labor share from 44.0% in 2015 to 26.9% in 2023, and a rise in formal wage-earning employment (Làm công ăn lương) to 53.9%.",
-        stack: ["Excel", "Pivot Tables", "Demographics", "State Journal Publication"],
+        stack: ["Excel", "Pivot Tables", "Sector Shift", "Demographics", "GSO Data", "State Journal Publication"],
         details: [
             "<strong>Framework Synthesis:</strong> Conducted comprehensive research on industrial revolutions and labor market transitions in developing economies.",
             "<strong>Data Acquisition:</strong> Collected, structured, and cleaned national demographic and employment statistics from the General Statistics Office (GSO) from 2010 to 2023.",
@@ -36,7 +36,7 @@ const projectsData = {
         role: "Co-author, Data Analyst",
         image: "assets/gender_equality.png",
         description: "An econometric panel study evaluating the impact of labor-market gender inequality on GDP per capita. Using a Feasible Generalized Least Squares (FGLS) estimator, the study finds that a 1% increase in gender equality in human development (GDI) has a positive impact coefficient of +5.4379, while female labor force participation (lnFELB) has a coefficient of -0.9868 (correcting for heteroscedasticity, autocorrelation, and cross-sectional dependence).",
-        stack: ["Stata", "Excel", "Panel Data", "FGLS Regression"],
+        stack: ["Stata", "Excel", "Panel Regression", "FGLS Estimator", "World Bank Data"],
         details: [
             "<strong>Literature Review:</strong> Researched and synthesized economic literature on gender economics and economic development theories.",
             "<strong>Data Wrangling:</strong> Gathered, cleaned, and merged panel data across 94 developing nations over an 8-year timeframe, totaling 751 observations.",
@@ -51,7 +51,7 @@ const projectsData = {
         role: "Co-author, Data Analyst",
         image: "assets/growth_drivers.png",
         description: "A comparative panel analysis exploring the macroeconomic drivers of GDP growth in middle vs. high-income countries. The research shows that Human Development Index (HDI) is the dominant driver of economic growth in both high-income countries (coefficient +3.4815) and middle-income countries (coefficient +3.8140). Labor force (lnLAB) has coefficients of +1.0499 (HICs) vs. +0.8098 (MICs), and Technology (lnPT) has coefficients of -0.0213 (HICs) vs. +0.1238 (MICs).",
-        stack: ["Stata", "Excel", "Macroeconomics", "Comparative Analysis"],
+        stack: ["Stata", "Excel", "2SLS Regression", "Comparative Analysis", "Endogeneity"],
         details: [
             "<strong>Theory Synthesis:</strong> Synthesized classical and endogenous growth theories and compiled macro-indicators (HDI, capital, labor, technology, corruption).",
             "<strong>Panel Processing:</strong> Collected, cleaned, and structured a macro panel dataset covering 54 countries (27 HICs with 405 obs, 27 MICs with 302 obs) over 15 years.",
