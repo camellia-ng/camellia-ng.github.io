@@ -367,35 +367,34 @@ document.addEventListener("DOMContentLoaded", () => {
             cardCharts.push(chart);
         }
 
-        // 4. Growth Drivers Card Chart (Radar)
+        // 4. Growth Drivers Card Chart (Horizontal Grouped Bar)
         const growthCtx = document.getElementById('cardChart-economic-growth-drivers');
         if (growthCtx) {
             const chart = new Chart(growthCtx, {
-                type: 'radar',
+                type: 'bar',
                 data: {
                     labels: ['GDP Growth', 'R&D Spent', 'Human Capital', 'Trade Openness', 'Urban Pop'],
                     datasets: [
                         {
                             label: 'High-Income',
-                            data: [42, 93, 85, 75, 81], // Scaled values for visualization balance
-                            backgroundColor: 'rgba(0, 242, 254, 0.12)',
+                            data: [2.1, 2.8, 8.5, 7.5, 8.1], // Normalized values (0-10 scale)
+                            backgroundColor: '#00f2fe', // Bright cyan
                             borderColor: '#00f2fe',
-                            borderWidth: 1.8,
-                            pointRadius: 2,
-                            pointBackgroundColor: '#00f2fe'
+                            borderWidth: 1,
+                            borderRadius: 3
                         },
                         {
                             label: 'Middle-Income',
-                            data: [90, 37, 62, 58, 55], // Scaled values for visualization balance
-                            backgroundColor: 'rgba(255, 122, 0, 0.12)',
+                            data: [4.5, 1.1, 6.2, 5.8, 5.5], // Normalized values (0-10 scale)
+                            backgroundColor: '#ff7a00', // Bright orange
                             borderColor: '#ff7a00',
-                            borderWidth: 1.8,
-                            pointRadius: 2,
-                            pointBackgroundColor: '#ff7a00'
+                            borderWidth: 1,
+                            borderRadius: 3
                         }
                     ]
                 },
                 options: {
+                    indexAxis: 'y', // Makes the bar chart horizontal
                     responsive: true,
                     maintainAspectRatio: false,
                     plugins: { 
@@ -416,16 +415,18 @@ document.addEventListener("DOMContentLoaded", () => {
                         } 
                     },
                     scales: {
-                        r: {
-                            grid: { color: isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.06)' },
-                            angleLines: { color: isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.06)' },
-                            ticks: { display: false },
-                            pointLabels: { 
+                        x: { 
+                            grid: { color: gridColor },
+                            ticks: { display: false }, // Hide scale ticks since the metrics use different units
+                            min: 0, 
+                            max: 10 
+                        },
+                        y: { 
+                            grid: { display: false }, 
+                            ticks: { 
                                 color: textColor, 
-                                font: { family: 'Inter', size: 8, weight: '600' }
-                            },
-                            suggestedMin: 0,
-                            suggestedMax: 100
+                                font: { family: 'Inter', size: 8, weight: '600' } 
+                            } 
                         }
                     }
                 }
