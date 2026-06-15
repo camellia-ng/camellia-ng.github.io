@@ -367,49 +367,66 @@ document.addEventListener("DOMContentLoaded", () => {
             cardCharts.push(chart);
         }
 
-        // 4. Growth Drivers Card Chart (Scatter)
+        // 4. Growth Drivers Card Chart (Radar)
         const growthCtx = document.getElementById('cardChart-economic-growth-drivers');
         if (growthCtx) {
             const chart = new Chart(growthCtx, {
-                type: 'scatter',
+                type: 'radar',
                 data: {
+                    labels: ['GDP Growth', 'R&D Spent', 'Human Capital', 'Trade Openness', 'Urban Pop'],
                     datasets: [
                         {
-                            label: 'High',
-                            data: [
-                                {x: 0.25, y: 6.7}, {x: 0.29, y: 6.0}, {x: 0.32, y: 5.9}, {x: 0.34, y: 6.2}, 
-                                {x: 0.58, y: 5.1}, {x: 0.65, y: 5.3}, {x: 0.72, y: 5.2}, {x: 0.85, y: 6.1}
-                            ],
-                            backgroundColor: '#00f2fe', // Bright cyan
-                            pointRadius: 4.5
+                            label: 'High-Income',
+                            data: [42, 93, 85, 75, 81], // Scaled values for visualization balance
+                            backgroundColor: 'rgba(0, 242, 254, 0.12)',
+                            borderColor: '#00f2fe',
+                            borderWidth: 1.8,
+                            pointRadius: 2,
+                            pointBackgroundColor: '#00f2fe'
                         },
                         {
-                            label: 'Middle',
-                            data: [
-                                {x: 0.12, y: 1.1}, {x: 0.18, y: 1.5}, {x: 0.22, y: 2.4}, {x: 0.30, y: 2.3}, 
-                                {x: 0.38, y: 3.1}, {x: 0.45, y: 2.7}, {x: 0.52, y: 3.3}, {x: 0.58, y: 2.4}
-                            ],
-                            backgroundColor: '#ff7a00', // Bright orange
-                            pointRadius: 4.5
-                        },
-                        {
-                            type: 'line',
-                            data: [{x: 0.1, y: 1.5}, {x: 0.9, y: 6.0}],
-                            borderColor: isDark ? 'rgba(255, 255, 255, 0.25)' : 'rgba(0, 0, 0, 0.25)',
-                            borderWidth: 1.5,
-                            borderDash: [3, 3],
-                            pointRadius: 0,
-                            fill: false
+                            label: 'Middle-Income',
+                            data: [90, 37, 62, 58, 55], // Scaled values for visualization balance
+                            backgroundColor: 'rgba(255, 122, 0, 0.12)',
+                            borderColor: '#ff7a00',
+                            borderWidth: 1.8,
+                            pointRadius: 2,
+                            pointBackgroundColor: '#ff7a00'
                         }
                     ]
                 },
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
-                    plugins: { legend: { display: false }, tooltip: { enabled: true } },
+                    plugins: { 
+                        legend: { display: false }, 
+                        tooltip: { 
+                            enabled: true,
+                            callbacks: {
+                                label: function(context) {
+                                    const datasetIndex = context.datasetIndex;
+                                    const index = context.dataIndex;
+                                    const isHic = datasetIndex === 0;
+                                    const realValues = isHic ? 
+                                        ['2.1% (Avg.)', '2.8% of GDP', '0.85 Index', '75% of GDP', '81% Share'] : 
+                                        ['4.5% (Avg.)', '1.1% of GDP', '0.62 Index', '58% of GDP', '55% Share'];
+                                    return context.dataset.label + ': ' + realValues[index];
+                                }
+                            }
+                        } 
+                    },
                     scales: {
-                        x: { grid: { color: gridColor }, ticks: { color: textColor, font: { size: 8 } }, min: 0, max: 1.0 },
-                        y: { grid: { color: gridColor }, ticks: { color: textColor, font: { size: 8 } }, min: 0, max: 8.0 }
+                        r: {
+                            grid: { color: isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.06)' },
+                            angleLines: { color: isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.06)' },
+                            ticks: { display: false },
+                            pointLabels: { 
+                                color: textColor, 
+                                font: { family: 'Inter', size: 8, weight: '600' }
+                            },
+                            suggestedMin: 0,
+                            suggestedMax: 100
+                        }
                     }
                 }
             });
