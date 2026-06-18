@@ -186,33 +186,50 @@
                     <div class="cert-card glass" style="padding: 2.5rem; border-radius: var(--border-radius-lg); display: flex; flex-direction: column; gap: 1.5rem; height: 100%;">
                         <h3 class="column-title" style="margin-bottom: 0.5rem;"><i class="fa-solid fa-award"></i> <span data-i18n="certHeader">Certifications</span></h3>
                         
-                        <div style="display: flex; flex-direction: column; gap: 1.5rem; flex-grow: 1; justify-content: center;">
-                            <!-- Google Data Analysis with Python -->
-                            <div style="display: flex; gap: 1.2rem; align-items: center;">
-                                <div style="width: 50px; height: 50px; border-radius: var(--border-radius-sm); border: 1px solid var(--glass-border); background: rgba(255,255,255,0.03); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #306998; flex-shrink: 0;">
-                                    <i class="fa-brands fa-python"></i>
+                        <div class="skills-tag-container" style="flex-grow: 1; justify-content: center; display: flex; flex-direction: column; gap: 1.2rem;">
+                            <!-- Google Data Analysis with Python Specialization -->
+                            <a href="https://coursera.org/share/48476b8ecc09fda5f693e0c629bad10b" target="_blank" rel="noopener noreferrer" class="skill-tag" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 1.2rem; padding: 1rem;">
+                                <div class="tag-icon" style="background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.1); width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; overflow: hidden; border-radius: 50%; padding: 6px;">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google Logo" style="width: 100%; height: 100%; object-fit: contain;">
                                 </div>
-                                <div style="display: flex; flex-direction: column; gap: 0.3rem;">
-                                    <h4 style="font-family: var(--font-heading); font-size: 1.15rem; font-weight: 700; color: var(--text-primary); line-height: 1.3;" data-i18n="certGoogleName">Google Data Analysis with Python Specialization</h4>
-                                    <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;" data-i18n="certGoogleIssuer">Issued by: Coursera</p>
+                                <div style="flex-grow: 1;">
+                                    <h4 data-i18n="certGoogleName" style="margin: 0 0 0.2rem 0; font-size: 1rem; font-weight: 700; color: var(--text-primary);">Google Data Analysis with Python Specialization</h4>
+                                    <p data-i18n="certGoogleDesc" style="margin: 0; font-size: 0.82rem; line-height: 1.4; color: var(--text-secondary);">Advanced specialization from Google focused on Python for data science, covering data structures, API data scraping, SQL database integration, and exploratory data analysis using Pandas, NumPy, and Matplotlib.</p>
                                 </div>
-                            </div>
+                            </a>
                             
-                            <hr style="border: 0; border-top: 1px solid var(--glass-border); margin: 0.2rem 0;">
-                            
-                            <!-- Microsoft Office Specialist (MOS) -->
-                            <div style="display: flex; gap: 1.2rem; align-items: center;">
-                                <div class="cert-badge-container" style="width: 80px; border-radius: var(--border-radius-sm); overflow: hidden; border: 1px solid var(--glass-border); background: #000; flex-shrink: 0; cursor: pointer;">
-                                    <img src="assets/mos_badges.png" alt="Microsoft Office Specialist Badges" class="cert-badge-img" id="certBadgeImg" style="width: 100%; height: auto; display: block; object-fit: cover; transition: var(--transition-smooth);">
+                            <!-- Microsoft Office Specialist: Excel (Office 2016) -->
+                            <a href="https://www.credly.com/badges/a5c3a39c-d56d-43b4-b378-07b5448dc81a/public_url" target="_blank" rel="noopener noreferrer" class="skill-tag" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 1.2rem; padding: 1rem;">
+                                <div class="tag-icon" style="background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.1); width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; overflow: hidden; border-radius: 50%;">
+                                    <img src="https://images.credly.com/images/d0790dc7-5127-4262-a492-1b60030b0114/linkedin_thumb_MOS_Excel.png" alt="MOS Excel Badge" style="width: 100%; height: 100%; object-fit: contain;">
                                 </div>
-                                <div style="display: flex; flex-direction: column; gap: 0.3rem; flex-grow: 1;">
-                                    <h4 style="font-family: var(--font-heading); font-size: 1.15rem; font-weight: 700; color: var(--text-primary); line-height: 1.3;" data-i18n="certMosName">Microsoft Office Specialist (MOS)</h4>
-                                    <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;" data-i18n="certMosIssuer">Issued by: Microsoft</p>
-                                    <button class="btn btn-xs btn-outline" id="btnCertModal" style="align-self: flex-start; margin-top: 0.2rem; padding: 0.2rem 0.5rem; font-size: 0.75rem;">
-                                        <i class="fa-solid fa-expand"></i> <span data-i18n="btnExpandCredentials">Expand Credentials</span>
-                                    </button>
+                                <div style="flex-grow: 1;">
+                                    <h4 data-i18n="certExcelName" style="margin: 0 0 0.2rem 0; font-size: 1rem; font-weight: 700; color: var(--text-primary);">Microsoft Office Specialist: Excel (Office 2016)</h4>
+                                    <p data-i18n="certExcelDesc" style="margin: 0; font-size: 0.82rem; line-height: 1.4; color: var(--text-secondary);">Certifies professional expertise in advanced formulas, Pivot Tables, data visualization charts, and data auditing using MS Excel.</p>
                                 </div>
-                            </div>
+                            </a>
+
+                            <!-- Microsoft Office Specialist: PowerPoint (Office 2016) -->
+                            <a href="https://www.credly.com/badges/67d5355b-b525-49db-ba8a-f88cc9e58ab6/public_url" target="_blank" rel="noopener noreferrer" class="skill-tag" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 1.2rem; padding: 1rem;">
+                                <div class="tag-icon" style="background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.1); width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; overflow: hidden; border-radius: 50%;">
+                                    <img src="https://images.credly.com/images/96c033ea-d798-45d7-9c2c-80834335706d/linkedin_thumb_MOS_PowerPoint.png" alt="MOS PowerPoint Badge" style="width: 100%; height: 100%; object-fit: contain;">
+                                </div>
+                                <div style="flex-grow: 1;">
+                                    <h4 data-i18n="certPptName" style="margin: 0 0 0.2rem 0; font-size: 1rem; font-weight: 700; color: var(--text-primary);">Microsoft Office Specialist: PowerPoint (Office 2016)</h4>
+                                    <p data-i18n="certPptDesc" style="margin: 0; font-size: 0.82rem; line-height: 1.4; color: var(--text-secondary);">Certifies professional expertise in dynamic slide layout design, multimedia animations/transitions, and custom business presentations.</p>
+                                </div>
+                            </a>
+
+                            <!-- Microsoft Office Specialist: Word (Office 2016) -->
+                            <a href="https://www.credly.com/badges/9eab8b86-02a0-4f47-9516-e381f57b03c9/public_url" target="_blank" rel="noopener noreferrer" class="skill-tag" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 1.2rem; padding: 1rem;">
+                                <div class="tag-icon" style="background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.1); width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; overflow: hidden; border-radius: 50%;">
+                                    <img src="https://images.credly.com/images/fd092703-61db-4e9f-9c7c-2211d44ca87d/linkedin_thumb_MOS_Word.png" alt="MOS Word Badge" style="width: 100%; height: 100%; object-fit: contain;">
+                                </div>
+                                <div style="flex-grow: 1;">
+                                    <h4 data-i18n="certWordName" style="margin: 0 0 0.2rem 0; font-size: 1rem; font-weight: 700; color: var(--text-primary);">Microsoft Office Specialist: Word (Office 2016)</h4>
+                                    <p data-i18n="certWordDesc" style="margin: 0; font-size: 0.82rem; line-height: 1.4; color: var(--text-secondary);">Certifies professional document layouts, dynamic indexing, reference management, page formatting, and custom styling rules.</p>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
