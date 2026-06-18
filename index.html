@@ -185,15 +185,34 @@
                     <!-- Certifications Card -->
                     <div class="cert-card glass" style="padding: 2.5rem; border-radius: var(--border-radius-lg); display: flex; flex-direction: column; gap: 1.5rem; height: 100%;">
                         <h3 class="column-title" style="margin-bottom: 0.5rem;"><i class="fa-solid fa-award"></i> <span data-i18n="certHeader">Certifications</span></h3>
-                        <div class="cert-badge-container" style="border-radius: var(--border-radius-md); overflow: hidden; border: 1px solid var(--glass-border); background: #000;">
-                            <img src="assets/mos_badges.png" alt="Microsoft Office Specialist Badges" class="cert-badge-img" id="certBadgeImg" style="width: 100%; height: auto; display: block; object-fit: cover; transition: var(--transition-smooth);">
-                        </div>
-                        <div class="cert-details" style="display: flex; flex-direction: column; gap: 1rem;">
-                            <h4 class="cert-name" style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700;" data-i18n="certMosName">Microsoft Office Specialist (MOS)</h4>
-                            <p class="cert-issuer" style="font-size: 0.9rem; color: var(--text-muted); margin-top: -0.5rem;" data-i18n="certMosIssuer">Issued by: Microsoft</p>
-                            <button class="btn btn-sm btn-outline btn-cert-details" id="btnCertModal" style="align-self: flex-start; margin-top: 0.5rem;">
-                                <i class="fa-solid fa-expand"></i> <span data-i18n="btnExpandCredentials">Expand Credentials</span>
-                            </button>
+                        
+                        <div style="display: flex; flex-direction: column; gap: 1.5rem; flex-grow: 1; justify-content: center;">
+                            <!-- Google Data Analysis with Python -->
+                            <div style="display: flex; gap: 1.2rem; align-items: center;">
+                                <div style="width: 50px; height: 50px; border-radius: var(--border-radius-sm); border: 1px solid var(--glass-border); background: rgba(255,255,255,0.03); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #306998; flex-shrink: 0;">
+                                    <i class="fa-brands fa-python"></i>
+                                </div>
+                                <div style="display: flex; flex-direction: column; gap: 0.3rem;">
+                                    <h4 style="font-family: var(--font-heading); font-size: 1.15rem; font-weight: 700; color: var(--text-primary); line-height: 1.3;" data-i18n="certGoogleName">Google Data Analysis with Python Specialization</h4>
+                                    <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;" data-i18n="certGoogleIssuer">Issued by: Coursera</p>
+                                </div>
+                            </div>
+                            
+                            <hr style="border: 0; border-top: 1px solid var(--glass-border); margin: 0.2rem 0;">
+                            
+                            <!-- Microsoft Office Specialist (MOS) -->
+                            <div style="display: flex; gap: 1.2rem; align-items: center;">
+                                <div class="cert-badge-container" style="width: 80px; border-radius: var(--border-radius-sm); overflow: hidden; border: 1px solid var(--glass-border); background: #000; flex-shrink: 0; cursor: pointer;">
+                                    <img src="assets/mos_badges.png" alt="Microsoft Office Specialist Badges" class="cert-badge-img" id="certBadgeImg" style="width: 100%; height: auto; display: block; object-fit: cover; transition: var(--transition-smooth);">
+                                </div>
+                                <div style="display: flex; flex-direction: column; gap: 0.3rem; flex-grow: 1;">
+                                    <h4 style="font-family: var(--font-heading); font-size: 1.15rem; font-weight: 700; color: var(--text-primary); line-height: 1.3;" data-i18n="certMosName">Microsoft Office Specialist (MOS)</h4>
+                                    <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;" data-i18n="certMosIssuer">Issued by: Microsoft</p>
+                                    <button class="btn btn-xs btn-outline" id="btnCertModal" style="align-self: flex-start; margin-top: 0.2rem; padding: 0.2rem 0.5rem; font-size: 0.75rem;">
+                                        <i class="fa-solid fa-expand"></i> <span data-i18n="btnExpandCredentials">Expand Credentials</span>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
