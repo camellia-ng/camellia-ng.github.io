@@ -242,7 +242,7 @@ const translations = {
         eduHeader: "Học vấn",
         eduFtuName: "Trường Đại học Ngoại Thương",
         eduFtuYears: "2023 - 2027 (Dự kiến)",
-        eduFtuMajor: "Cử nhân ngành Kinh tế quốc tế",
+        eduFtuMajor: "Sinh viên ngành Kinh tế quốc tế",
         eduFtuGpa: "GPA: <strong>3.63 / 4.00</strong>",
         eduFtuDesc: "Môi trường năng động tại Trường Đại học Ngoại Thương đã giúp tôi rèn luyện tư duy logic, kỹ năng giải quyết vấn đề kinh doanh, cũng như khả năng thuyết trình và hợp tác làm việc nhóm.",
         eduFtuCoursework: "<strong>Môn học liên quan:</strong> Kinh tế lượng, Dự báo trong kinh tế và kinh doanh, Phương pháp nghiên cứu trong kinh tế và kinh doanh, Tin học ứng dụng.",
