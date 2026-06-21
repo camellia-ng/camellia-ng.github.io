@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="../assets/favicon.png">
+    <link rel="icon" type="image/png" href="../assets/favicon.png?v=3.0">
     
     <style>
         /* ==========================================================================
@@ -219,6 +219,28 @@
             color: var(--primary-color);
         }
 
+        .project-tools {
+            margin-top: 0.2rem;
+            margin-bottom: 0.2rem;
+            text-align: justify;
+            font-size: 0.95rem;
+            color: var(--primary-color);
+        }
+
+        .projects-section .resume-entry {
+            position: relative;
+            padding-left: 1.25rem;
+        }
+
+        .projects-section .resume-entry::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            top: -0.05rem;
+            font-size: 1.25rem;
+            color: var(--primary-color);
+        }
+
         .project-metrics-title {
             margin-bottom: 0.2rem;
             font-weight: bold;
@@ -316,6 +338,7 @@
             /* Entry Bullets & Skills Details & Project Overviews (Equal Rank) */
             .entry-bullets,
             .entry-bullets li,
+            .project-tools,
             .project-overview,
             .project-metrics-title,
             .skills-entry {
@@ -370,6 +393,7 @@
             }
             html[lang="vi"] .entry-bullets,
             html[lang="vi"] .entry-bullets li,
+            html[lang="vi"] .project-tools,
             html[lang="vi"] .project-overview,
             html[lang="vi"] .project-metrics-title,
             html[lang="vi"] .skills-entry {
@@ -446,21 +470,23 @@
         </section>
 
         <!-- Projects Section -->
-        <section class="resume-section">
+        <section class="resume-section projects-section">
             <div class="section-title-container">
-                <h2 class="section-title" data-i18n="secProj">Analytics & Econometric Projects</h2>
+                <h2 class="section-title" data-i18n="secProj">Experiences</h2>
             </div>
             
             <!-- Project 1 -->
             <div class="resume-entry">
                 <div class="entry-header">
                     <span class="entry-org" data-i18n="p1Title">FORECASTING VIETNAM'S FOREIGN EXCHANGE RESERVES IN 2026 USING THE ARIMA MODEL</span>
-                    <span class="entry-location">Eviews & Excel</span>
                 </div>
                 <div class="entry-subheader">
                     <span class="entry-title" data-i18n="p1Role">Co-author, Data Analyst</span>
                     <span class="entry-date" data-i18n="p1Date">May 2026 – Jun 2026</span>
                 </div>
+                <p class="project-tools" data-i18n="p1Tools">
+                    <strong>Technologies & Tools:</strong> Eviews & Excel
+                </p>
                 <p class="project-overview" data-i18n="p1Overview">
                     <strong>Overview:</strong> Conducted quantitative forecasting research predicting Vietnam's reserves to reach approximately $93.3 Billion by December 2026.
                 </p>
@@ -477,12 +503,14 @@
             <div class="resume-entry">
                 <div class="entry-header">
                     <span class="entry-org" data-i18n="p2Title">LABOR STRUCTURE IN VIETNAM IN THE CONTEXT OF THE FOURTH INDUSTRIAL REVOLUTION</span>
-                    <span class="entry-location">Excel</span>
                 </div>
                 <div class="entry-subheader">
                     <span class="entry-title" data-i18n="p2Role">Co-author, Data Analyst</span>
                     <span class="entry-date" data-i18n="p2Date">Aug 2025 – Nov 2025</span>
                 </div>
+                <p class="project-tools" data-i18n="p2Tools">
+                    <strong>Technologies & Tools:</strong> Excel
+                </p>
                 <p class="project-overview" data-i18n="p2Overview">
                     <strong>Overview:</strong> Conducted research published in the <em>State Management Journal</em> (No. 337, Feb 2026) on employment structure changes under Industry 4.0.
                 </p>
@@ -499,12 +527,14 @@
             <div class="resume-entry">
                 <div class="entry-header">
                     <span class="entry-org" data-i18n="p3Title">IMPACT OF GENDER INEQUALITY IN LABOR AND EMPLOYMENT ON ECONOMIC GROWTH IN DEVELOPING COUNTRIES (2015-2022)</span>
-                    <span class="entry-location">Stata & Excel</span>
                 </div>
                 <div class="entry-subheader">
                     <span class="entry-title" data-i18n="p3Role">Co-author, Data Analyst</span>
                     <span class="entry-date" data-i18n="p3Date">May 2025 – Jun 2025</span>
                 </div>
+                <p class="project-tools" data-i18n="p3Tools">
+                    <strong>Technologies & Tools:</strong> Stata & Excel
+                </p>
                 <p class="project-overview" data-i18n="p3Overview">
                     <strong>Overview:</strong> Conducted panel study evaluating GDP growth determinants, showing that a 1-unit increase in the Gender Development Index (GDI) has a positive growth coefficient of +5.438 across developing nations.
                 </p>
@@ -521,14 +551,16 @@
             <div class="resume-entry">
                 <div class="entry-header">
                     <span class="entry-org" data-i18n="p4Title">FACTORS AFFECTING ECONOMIC GROWTH IN MIDDLE-INCOME AND HIGH-INCOME COUNTRY GROUPS (2005-2020)</span>
-                    <span class="entry-location">Stata & Excel</span>
                 </div>
                 <div class="entry-subheader">
                     <span class="entry-title" data-i18n="p4Role">Co-author, Data Analyst</span>
                     <span class="entry-date" data-i18n="p4Date">Oct 2024 – Nov 2024</span>
                 </div>
+                <p class="project-tools" data-i18n="p4Tools">
+                    <strong>Technologies & Tools:</strong> Stata & Excel
+                </p>
                 <p class="project-overview" data-i18n="p4Overview">
-                    <strong>Overview:</strong> Comparative panel analysis examining macroeconomic growth drivers (HDI, capital, labor, technology) in middle vs. high-income countries (2005–2020).
+                    <strong>Overview:</strong> Comparative panel analysis examining macroeconomic growth drivers (HDI, capital, labor, technology, corruption) in middle vs. high-income countries (2005–2020).
                 </p>
                 <p class="project-metrics-title" data-i18n="p1MetricsTitle">
                     Metrics & Tasks:
@@ -566,7 +598,7 @@
                 saveResume: "Save Resume",
                 name: "Nguyen Thi Thu Giang",
                 secEdu: "Education",
-                secProj: "Analytics & Econometric Projects",
+                secProj: "Experiences",
                 secSkills: "Skills & Credentials",
                 ftuName: "FOREIGN TRADE UNIVERSITY",
                 ftuLoc: "Hanoi, Vietnam",
@@ -583,6 +615,7 @@
                 p1Title: "FORECASTING VIETNAM'S FOREIGN EXCHANGE RESERVES IN 2026 USING THE ARIMA MODEL",
                 p1Role: "Co-author, Data Analyst",
                 p1Date: "May 2026 – Jun 2026",
+                p1Tools: "<strong>Technologies & Tools:</strong> Eviews & Excel",
                 p1Overview: "<strong>Overview:</strong> Conducted quantitative forecasting research predicting Vietnam's reserves to reach approximately $93.3 Billion by December 2026.",
                 p1MetricsTitle: "Metrics & Tasks:",
                 p1Task1: "Collected, cleaned, and processed a monthly time-series dataset of 120 observations (2016–2025) from the IMF database, applying stationarity and differencing diagnostics.",
@@ -591,6 +624,7 @@
                 p2Title: "LABOR STRUCTURE IN VIETNAM IN THE CONTEXT OF THE FOURTH INDUSTRIAL REVOLUTION",
                 p2Role: "Co-author, Data Analyst",
                 p2Date: "Aug 2025 – Nov 2025",
+                p2Tools: "<strong>Technologies & Tools:</strong> Excel",
                 p2Overview: "<strong>Overview:</strong> Conducted research published in the <em>State Management Journal</em> (No. 337, Feb 2026) on employment structure changes under Industry 4.0.",
                 p2Task1: "Aggregated and engineered a national demographic and employment dataset (2010–2023) from the General Statistics Office (GSO), resolving data anomalies and formatting gaps.",
                 p2Task2: "Executed exploratory data analysis (EDA) using advanced Excel and Pivot Tables to model and visualize employment structure shifts.",
@@ -598,6 +632,7 @@
                 p3Title: "IMPACT OF GENDER INEQUALITY IN LABOR AND EMPLOYMENT ON ECONOMIC GROWTH IN DEVELOPING COUNTRIES (2015-2022)",
                 p3Role: "Co-author, Data Analyst",
                 p3Date: "May 2025 – Jun 2025",
+                p3Tools: "<strong>Technologies & Tools:</strong> Stata & Excel",
                 p3Overview: "<strong>Overview:</strong> Conducted panel study evaluating GDP growth determinants, showing that a 1-unit increase in the Gender Development Index (GDI) has a positive growth coefficient of +5.438 across developing nations.",
                 p3Task1: "Consolidated and cleansed World Bank macroeconomic panel indicators across 94 developing countries over an 8-year timeframe (751 total observations).",
                 p3Task2: "Formulated and estimated panel data regression models (OLS, Fixed Effects, FGLS) in Stata, successfully correcting for heteroscedasticity, autocorrelation, and cross-sectional dependence.",
@@ -605,6 +640,7 @@
                 p4Title: "FACTORS AFFECTING ECONOMIC GROWTH IN MIDDLE-INCOME AND HIGH-INCOME COUNTRY GROUPS (2005-2020)",
                 p4Role: "Co-author, Data Analyst",
                 p4Date: "Oct 2024 – Nov 2024",
+                p4Tools: "<strong>Technologies & Tools:</strong> Stata & Excel",
                 p4Overview: "<strong>Overview:</strong> Comparative panel analysis examining macroeconomic growth drivers (HDI, capital, labor, technology, corruption) in middle vs. high-income countries (2005–2020).",
                 p4Task1: "Extracted and structured macroeconomic panel indicators (HDI, capital, labor, technology, corruption) for 54 nations over a 15-year timeframe (707 total observations).",
                 p4Task2: "Modeled endogeneity and reverse causality of technology and corruption variables using a Two-Stage Least Squares (2SLS) panel estimator in Stata.",
@@ -621,7 +657,7 @@
                 saveResume: "Lưu CV / Tải PDF",
                 name: "Nguyễn Thị Thu Giang",
                 secEdu: "Học vấn",
-                secProj: "Dự án Phân tích & Kinh tế lượng",
+                secProj: "Kinh nghiệm",
                 secSkills: "Kỹ năng & Chứng chỉ",
                 ftuName: "TRƯỜNG ĐẠI HỌC NGOẠI THƯƠNG",
                 ftuLoc: "Hà Nội, Việt Nam",
@@ -638,6 +674,7 @@
                 p1Title: "DỰ BÁO DỰ TRỮ NGOẠI HỐI CỦA VIỆT NAM NĂM 2026 BẰNG MÔ HÌNH ARIMA",
                 p1Role: "Đồng tác giả, Chuyên viên phân tích dữ liệu",
                 p1Date: "05/2026 – 06/2026",
+                p1Tools: "<strong>Công cụ & Công nghệ:</strong> Eviews & Excel",
                 p1Overview: "<strong>Tổng quan:</strong> Thực hiện nghiên cứu dự báo định lượng dự kiến mức dự trữ ngoại hối của Việt Nam đạt khoảng 93.3 tỷ USD vào tháng 12 năm 2026.",
                 p1MetricsTitle: "Các chỉ số & Nhiệm vụ:",
                 p1Task1: "Thu thập, làm sạch và xử lý tập dữ liệu chuỗi thời gian theo tháng gồm 120 quan sát (2016–2025) từ cơ sở dữ liệu IMF, thực hiện kiểm định tính dừng và lấy sai phân.",
@@ -646,6 +683,7 @@
                 p2Title: "CƠ CẤU LAO ĐỘNG Ở VIỆT NAM TRONG BỐI CẢNH CUỘC CÁCH MẠNG CÔNG NGHIỆP LẦN THỨ TƯ",
                 p2Role: "Đồng tác giả, Chuyên viên phân tích dữ liệu",
                 p2Date: "08/2025 – 11/2025",
+                p2Tools: "<strong>Công cụ & Công nghệ:</strong> Excel",
                 p2Overview: "<strong>Tổng quan:</strong> Thực hiện nghiên cứu được đăng trên <em>Tạp chí Quản lý nhà nước</em> (Số 337, tháng 2 năm 2026) về thay đổi cơ cấu việc làm dưới CMCN 4.0.",
                 p2Task1: "Tổng hợp và thiết lập tập dữ liệu nhân khẩu học và việc làm quốc gia (2010–2023) từ Tổng cục Thống kê (GSO), xử lý dữ liệu dị biệt và khoảng trống định dạng.",
                 p2Task2: "Thực hiện phân tích khám phá dữ liệu (EDA) sử dụng các bảng xoay Pivot Tables và Excel nâng cao để mô hình hóa và trực quan hóa dịch chuyển cơ cấu việc làm.",
@@ -653,6 +691,7 @@
                 p3Title: "TÁC ĐỘNG CỦA BẤT BÌNH ĐẲNG GIỚI TRONG LAO ĐỘNG VÀ VIỆC LÀM ĐẾN TĂNG TRƯỞNG KINH TẾ TẠI CÁC QUỐC GIA ĐANG PHÁT TRIỂN GIAI ĐOẠN 2015 - 2022",
                 p3Role: "Đồng tác giả, Chuyên viên phân tích dữ liệu",
                 p3Date: "05/2025 – 06/2025",
+                p3Tools: "<strong>Công cụ & Công nghệ:</strong> Stata & Excel",
                 p3Overview: "<strong>Tổng quan:</strong> Thực hiện nghiên cứu dữ liệu bảng đánh giá các yếu tố quyết định tăng trưởng GDP, chỉ ra rằng mức tăng 1 đơn vị trong Chỉ số phát triển giới (GDI) có hệ số tăng trưởng dương là +5.438 ở các nước đang phát triển.",
                 p3Task1: "Tổng hợp và làm sạch các chỉ số bảng vĩ mô của Ngân hàng Thế giới tại 94 quốc gia đang phát triển trong 8 năm (tổng cộng 751 quan sát).",
                 p3Task2: "Thiết lập và ước lượng các mô hình hồi quy dữ liệu bảng (OLS, Tác động cố định, FGLS) trong Stata, khắc phục các vấn đề phương sai sai số thay đổi, tự tương quan và phụ thuộc chéo.",
@@ -660,6 +699,7 @@
                 p4Title: "CÁC NHÂN TỐ ẢNH HƯỞNG ĐẾN TĂNG TRƯỞNG KINH TẾ Ở NHÓM CÁC QUỐC GIA CÓ THU NHẬP TRUNG BÌNH VÀ THU NHẬP CAO GIAI ĐOẠN 2005 - 2020",
                 p4Role: "Đồng tác giả, Chuyên viên phân tích dữ liệu",
                 p4Date: "10/2024 – 11/2024",
+                p4Tools: "<strong>Công cụ & Công nghệ:</strong> Stata & Excel",
                 p4Overview: "<strong>Tổng quan:</strong> Phân tích bảng so sánh kiểm tra các yếu tố thúc đẩy tăng trưởng (HDI, vốn, lao động, công nghệ, tham nhũng) ở các quốc gia thu nhập trung bình so với thu nhập cao (2005–2020).",
                 p4Task1: "Trích xuất và cấu trúc các chỉ số kinh tế vĩ mô (HDI, vốn, lao động, công nghệ, tham nhũng) cho 54 quốc gia trong 15 năm (tổng cộng 707 quan sát).",
                 p4Task2: "Mô hình hóa tính nội sinh và quan hệ nhân quả ngược của biến công nghệ và tham nhũng sử dụng ước lượng bình phương tối thiểu hai giai đoạn (2SLS) trên Stata.",

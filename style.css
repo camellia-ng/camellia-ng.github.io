@@ -1239,7 +1239,7 @@ ul {
 }
 
 .tag-icon.cert-tag-icon.google-icon {
-    padding: 16px;
+    padding: 32px;
 }
 
 @media (max-width: 576px) {
@@ -1248,7 +1248,7 @@ ul {
         height: 90px;
     }
     .tag-icon.cert-tag-icon.google-icon {
-        padding: 12px;
+        padding: 24px;
     }
 }
 
