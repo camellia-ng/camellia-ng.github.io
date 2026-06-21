@@ -1225,8 +1225,8 @@ ul {
 }
 
 .tag-icon.cert-tag-icon {
-    width: 120px;
-    height: 120px;
+    width: 80px;
+    height: 80px;
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 0;
@@ -1239,23 +1239,24 @@ ul {
 }
 
 .tag-icon.cert-tag-icon.google-icon {
-    padding: 32px;
+    padding: 20px;
 }
 
 @media (max-width: 576px) {
     .tag-icon.cert-tag-icon {
-        width: 90px;
-        height: 90px;
+        width: 65px;
+        height: 65px;
     }
     .tag-icon.cert-tag-icon.google-icon {
-        padding: 24px;
+        padding: 16px;
     }
 }
 
 .skill-tag.cert-skill-tag {
     flex-direction: column;
     align-items: stretch;
-    gap: 1rem;
+    gap: 0.8rem;
+    padding: 0.9rem;
 }
 
 /* Skills Section Spacing Optimizations for Viewport Fit */
