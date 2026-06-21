@@ -156,7 +156,7 @@ const translations = {
         eduTitle: "Education & Certifications",
         eduHeader: "Education",
         eduFtuName: "Foreign Trade University",
-        eduFtuYears: "2023 - now",
+        eduFtuYears: "2023 - Present",
         eduFtuMajor: "Undergraduate in International Economics",
         eduFtuGpa: "GPA: <strong>3.63 / 4.00</strong>",
         eduFtuDesc: "The energetic environment at Foreign Trade University has sharpened my logical reasoning, business problem-solving skills, and ability to present and collaborate in teams.",
