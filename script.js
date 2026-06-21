@@ -1211,12 +1211,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (projectId === 'arima-forecasting') {
             modalBody.innerHTML = `
-                <div class="growth-drivers-dashboard-header" data-project-id="arima-forecasting" style="margin-bottom: 1rem; padding-bottom: 0.6rem;">
+                <div class="growth-drivers-dashboard-header" data-project-id="arima-forecasting" style="margin-bottom: 0.6rem; padding-bottom: 0.4rem;">
                     <h3>${currentLang === 'en' ? "FORECASTING VIETNAM'S FOREIGN EXCHANGE RESERVES IN 2026 USING THE ARIMA MODEL" : "DỰ BÁO DỰ TRỮ NGOẠI HỐI CỦA VIỆT NAM NĂM 2026 BẰNG MÔ HÌNH ARIMA"}</h3>
                     <p>${currentLang === 'en' ? "ARIMA(1, 1, 0) Time-Series Forecasting Model (2016-2026)" : "Mô hình dự báo chuỗi thời gian ARIMA(1, 1, 0) (2016-2026)"}</p>
                 </div>
 
-                <div class="growth-drivers-dashboard" style="gap: 1.2rem; margin-top: 1rem;">
+                <div class="growth-drivers-dashboard" style="gap: 1rem; margin-top: 0.5rem;">
                     <!-- Left Column: Chart Card & Model Diagnostics -->
                     <div style="display: flex; flex-direction: column; gap: 1.2rem;">
                         <!-- Chart Card -->
@@ -1299,12 +1299,12 @@ document.addEventListener("DOMContentLoaded", () => {
             `;
         } else if (projectId === 'labor-structure') {
             modalBody.innerHTML = `
-                <div class="growth-drivers-dashboard-header" data-project-id="labor-structure" style="margin-bottom: 1rem; padding-bottom: 0.6rem;">
+                <div class="growth-drivers-dashboard-header" data-project-id="labor-structure" style="margin-bottom: 0.6rem; padding-bottom: 0.4rem;">
                     <h3>${currentLang === 'en' ? "LABOR STRUCTURE IN VIETNAM IN THE CONTEXT OF THE FOURTH INDUSTRIAL REVOLUTION" : "CƠ CẤU LAO ĐỘNG Ở VIỆT NAM TRONG BỐI CẢNH CUỘC CÁCH MẠNG CÔNG NGHIỆP LẦN THỨ TƯ"}</h3>
                     <p>${currentLang === 'en' ? "National Employment Sector & Demographic Analysis (2010-2023)" : "Phân tích Nhân khẩu học & Cơ cấu ngành việc làm quốc gia (2010-2023)"}</p>
                 </div>
 
-                <div class="growth-drivers-dashboard" style="gap: 1.2rem; margin-top: 1rem;">
+                <div class="growth-drivers-dashboard" style="gap: 1rem; margin-top: 0.5rem;">
                     <!-- Left Column: Chart & Indicators Table -->
                     <div style="display: flex; flex-direction: column; gap: 1.2rem;">
                         <!-- Stacked Area Chart -->
@@ -1376,12 +1376,12 @@ document.addEventListener("DOMContentLoaded", () => {
             `;
         } else if (projectId === 'gender-inequality') {
             modalBody.innerHTML = `
-                <div class="growth-drivers-dashboard-header" data-project-id="gender-inequality" style="margin-bottom: 1rem; padding-bottom: 0.6rem;">
+                <div class="growth-drivers-dashboard-header" data-project-id="gender-inequality" style="margin-bottom: 0.6rem; padding-bottom: 0.4rem;">
                     <h3>${currentLang === 'en' ? "IMPACT OF GENDER INEQUALITY IN LABOR AND EMPLOYMENT ON ECONOMIC GROWTH IN DEVELOPING COUNTRIES (2015-2022)" : "TÁC ĐỘNG CỦA BẤT BÌNH ĐẲNG GIỚI TRONG LAO ĐỘNG VÀ VIỆC LÀM ĐẾN TĂNG TRƯỞNG KINH TẾ TẠI CÁC QUỐC GIA ĐANG PHÁT TRIỂN GIAI ĐOẠN 2015 - 2022"}</h3>
                     <p>${currentLang === 'en' ? "Panel Regression across 94 Developing Countries (2015-2022)" : "Hồi quy dữ liệu bảng của 94 quốc gia đang phát triển (2015-2022)"}</p>
                 </div>
 
-                <div class="growth-drivers-dashboard" style="gap: 1.2rem; margin-top: 1rem;">
+                <div class="growth-drivers-dashboard" style="gap: 1rem; margin-top: 0.5rem;">
                     <!-- Left Column: Chart & Diagnostics Table -->
                     <div style="display: flex; flex-direction: column; gap: 1.2rem;">
                         <!-- Scatter Plot Chart -->
@@ -1458,12 +1458,12 @@ document.addEventListener("DOMContentLoaded", () => {
             `;
         } else if (projectId === 'economic-growth-drivers') {
             modalBody.innerHTML = `
-                <div class="growth-drivers-dashboard-header" data-project-id="economic-growth-drivers" style="margin-bottom: 1rem; padding-bottom: 0.6rem;">
+                <div class="growth-drivers-dashboard-header" data-project-id="economic-growth-drivers" style="margin-bottom: 0.6rem; padding-bottom: 0.4rem;">
                     <h3>${currentLang === 'en' ? "FACTORS AFFECTING ECONOMIC GROWTH IN MIDDLE-INCOME AND HIGH-INCOME COUNTRY GROUPS (2005-2020)" : "CÁC NHÂN TỐ ẢNH HƯỞNG ĐẾN TĂNG TRƯỞNG KINH TẾ Ở NHÓM CÁC QUỐC GIA CÓ THU NHẬP TRUNG BÌNH VÀ THU NHẬP CAO GIAI ĐOẠN 2005 - 2020"}</h3>
                     <p>${currentLang === 'en' ? "High-Income vs Middle-Income Countries (2005-2020)" : "Nhóm quốc gia thu nhập cao vs. nhóm quốc gia thu nhập trung bình (2005-2020)"}</p>
                 </div>
 
-                <div class="growth-drivers-dashboard" style="gap: 1.2rem; margin-top: 1rem;">
+                <div class="growth-drivers-dashboard" style="gap: 1rem; margin-top: 0.5rem;">
                     <!-- Left Column: Metrics & Chart -->
                     <div style="display: flex; flex-direction: column; gap: 1.2rem;">
                         <!-- Metrics -->
