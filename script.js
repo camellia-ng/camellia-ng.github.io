@@ -1680,7 +1680,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (btnHeroEmail) {
         btnHeroEmail.addEventListener("click", (e) => {
             e.preventDefault();
-            const email = "nguyenthithugiang3105@gmail.com";
+            const email = "giangntt.contact@gmail.com";
             navigator.clipboard.writeText(email).then(() => {
                 showToast("Email address copied to clipboard!", "success");
                 setTimeout(() => {
